@@ -311,7 +311,7 @@
 
 @media (max-width: 991px) {
     .header-carousel .header-carousel-item .carousel-caption {
-        padding-top: 45px;
+        /* padding-top: 45px; */
     }
 
     .header-carousel .header-carousel-item {
@@ -931,4 +931,12 @@
 
 .bg-secondary{
     background-color: var(--bs-secondary);
+}
+
+.icon-svg{
+    color: var(--bs-primary);
+}
+
+.icon-svg:hover{
+    color: white;
 }

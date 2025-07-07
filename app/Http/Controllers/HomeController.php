@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Api;
 use App\Models\Banner;
 use App\Models\Brand;
+use App\Models\Characteristic;
 use App\Models\Company;
 use App\Models\Field;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Promotion;
+use App\Models\Service;
 use App\Models\Taxonomy;
+use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
@@ -44,9 +47,10 @@ class HomeController extends Controller
         })->take(8)->get();
 
         $banners = Banner::all();
-        $promotions = Promotion::take(2)->get();
-        $products = Product::where('stock', '>', 0)->take(12)->get();
-        return view('home',compact('categories','banners','promotions','products','business'));
+        $caracteristicas = Characteristic::all();
+        $services = Service::take(4)->get();
+        $teams = Team::all();
+        return view('home',compact('categories','banners','caracteristicas','services','business','teams'));
     }
 
     public function store(Request $request)
@@ -124,7 +128,8 @@ class HomeController extends Controller
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->take(8)->get();
-        return view('services', compact('categories','business','nosotros'));
+        $services = Service::all();
+        return view('services', compact('categories','business','nosotros','services'));
     }
 
     public function facturacion()

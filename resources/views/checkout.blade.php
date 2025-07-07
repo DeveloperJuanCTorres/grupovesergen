@@ -306,7 +306,8 @@
     </div>
     <!-- Checkout End -->
 
-@include('partials.footer')
+    @include('partials.footer')
+    @include('partials.whatsapp')
 
 @push('scripts')
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
