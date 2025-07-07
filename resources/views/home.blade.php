@@ -325,7 +325,7 @@
                     <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="team-item">
                             <div class="team-img">
-                                <img src="img/team-1.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <img src="storage/{{$team->image}}" class="img-fluid rounded-top w-100" alt="">
                                 <div class="team-icon">
                                     <a class="btn btn-primary btn-sm-square rounded-pill mb-2" target="_blank" href="{{$team->link_facebook}}"><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-primary btn-sm-square rounded-pill mb-2" target="_blank" href="{{$team->link_linkeding}}"><i class="fab fa-linkedin-in"></i></a>
