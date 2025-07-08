@@ -38,7 +38,7 @@
                     </a>
                     <div class="d-flex flex-column ms-3">
                         <span>Llama a nuestros expertos</span>
-                        <a href="tel:+ 0123 456 7890"><span class="text-dark">Free: + 0123 456 7890</span></a>
+                        <a href="tel:+ 0123 456 7890"><span class="text-dark">{{$business->phone}}</span></a>
                     </div>
                 </div>
             </nav>
