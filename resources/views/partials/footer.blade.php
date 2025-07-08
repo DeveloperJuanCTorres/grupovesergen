@@ -167,7 +167,7 @@
                     <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Grupo VesergenPerú</a>, Todos los derechos reservados.</span>
                 </div>
                 <div class="col-md-6 text-center text-md-start text-body">
-                    Hecho por <a class="border-bottom text-white" href="https://cesergenperu.com">Grupo VesergenPerú</a>
+                    Hecho por <a class="border-bottom text-white" href="https://vesergenperu.com">Grupo VesergenPerú</a>
                 </div>
             </div>
         </div>
