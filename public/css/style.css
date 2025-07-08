@@ -325,14 +325,14 @@
     }
 
     .header-carousel .owl-nav .owl-prev {
-        bottom: -30px;
+        /* bottom: -30px; */
         left: 50%;
         transform: translateX(-50%);
         margin-left: -45px;
     }
 
     .header-carousel .owl-nav .owl-next {
-        bottom: -30px;
+        /* bottom: -30px; */
         left: 50%;
         transform: translateX(-50%);
         margin-left: 45px;
@@ -934,9 +934,11 @@
 }
 
 .icon-svg{
-    color: var(--bs-primary);
+    fill: var(--bs-primary);
 }
 
-.icon-svg:hover{
-    color: white;
+.feature .feature-item:hover .feature-icon .icon-svg {
+    z-index: 9;
+    fill: white;
 }
+

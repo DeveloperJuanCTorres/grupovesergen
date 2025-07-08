@@ -9,6 +9,7 @@ use App\Models\Characteristic;
 use App\Models\Company;
 use App\Models\Field;
 use App\Models\Order;
+use App\Models\Post;
 use App\Models\Product;
 use App\Models\Promotion;
 use App\Models\Service;
@@ -130,6 +131,23 @@ class HomeController extends Controller
         })->take(8)->get();
         $services = Service::all();
         return view('services', compact('categories','business','nosotros','services'));
+    }
+
+    public function blog()
+    {
+        $business = Company::find(1);
+        $nosotros = Field::find(1);
+        $blogs = Post::all();
+        
+        return view('blog', compact('business','nosotros', 'blogs'));
+    }
+
+    public function blogDetail (Post $blog)
+    {
+        $business = Company::find(1);
+        $blogs = Post::all();
+        
+        return view('blog-detail', compact('blog', 'business','blogs'));
     }
 
     public function facturacion()

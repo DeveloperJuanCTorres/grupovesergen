@@ -5,13 +5,15 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-
+Route::get('/register', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/store', [App\Http\Controllers\HomeController::class, 'store'])->name('store');
 Route::get('/product/{product}', [App\Http\Controllers\HomeController::class, 'detail'])->name('product.detail');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/services', [App\Http\Controllers\HomeController::class, 'services'])->name('services');
+Route::get('/blog', [App\Http\Controllers\HomeController::class, 'blog'])->name('blog');
+Route::get('/blog/{blog}', [App\Http\Controllers\HomeController::class, 'blogDetail'])->name('blog.detail');
 Route::get('/facturacion', [App\Http\Controllers\HomeController::class, 'facturacion'])->name('facturacion');
 Route::get('/checkout', [App\Http\Controllers\HomeController::class, 'checkout'])->name('checkout');
 Route::get('/buscar', [App\Http\Controllers\HomeController::class, 'buscar'])->name('buscar');
@@ -31,4 +33,12 @@ Route::post('/enviar_pedido', [App\Http\Controllers\HomeController::class, 'pedi
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+});
+
+// Desactiva el registro web manual
+Route::get('/register', function () {
+    abort(404);
+});
+Route::post('/register', function () {
+    abort(404);
 });
