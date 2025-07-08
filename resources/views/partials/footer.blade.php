@@ -27,6 +27,7 @@
                                     <a href="/about"><i class="fas fa-angle-right me-2"></i> Nosotros</a>
                                     <a href="/services"><i class="fas fa-angle-right me-2"></i> Servicios</a>
                                     <a href="/store"><i class="fas fa-angle-right me-2"></i> Tienda</a>
+                                    <a href="/blog"><i class="fas fa-angle-right me-2"></i> Blog</a>
                                     <a href="/contact"><i class="fas fa-angle-right me-2"></i> Contáctanos</a>
                                 </div>
                             </div>
