@@ -17,7 +17,7 @@
     <link href="img/favicon.ico" rel="icon">
 
     <?php
-        $version = '1993.2.1';
+        $version = '1993.2.2';
     ?>
 
     <!-- Icon Font Stylesheet -->

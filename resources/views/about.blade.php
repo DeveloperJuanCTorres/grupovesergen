@@ -66,9 +66,16 @@
                         <a href="/about" class="nav-item nav-link active">Nosotros</a>
                         <a href="/services" class="nav-item nav-link">Servicios</a>
                         <a href="/store" class="nav-item nav-link">Tienda</a>
+                        <a href="/blog" class="nav-item nav-link">Blog</a>
                         <a href="/contact" class="nav-item nav-link">Contáctanos</a>
                         <div class="nav-btn px-3">
-                            <button class="btn-search btn btn-primary btn-md-square rounded-circle flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
+                            <!-- <button class="btn-search btn btn-primary btn-md-square rounded-circle flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button> -->
+                            <a href="/cart" class="btn px-0 ml-3">
+                                <i class="fas fa-shopping-cart text-primary" style="font-size: 20px;"></i>
+                                <span id="cartCount" class="badge text-secondary border border-secondary rounded-circle">
+                                    {{\Cart::count()}}
+                                </span>
+                            </a>
                             <a href="#" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"> Live Chat</a>
                         </div>
                     </div>
