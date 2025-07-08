@@ -1,28 +1,55 @@
-<!-- Topbar Start -->
-<div class="container-fluid">
-    <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
-        <div class="col-lg-4">
-            <a href="/" class="text-decoration-none">
-                <img height="50" src="{{asset("storage/$business->image")}}" alt="">
-            </a>
-        </div>
-        <div class="col-lg-4 col-6 text-left">
-            <form action="">
-                <div class="input-group" style="position: relative;">
-                    <input type="text" id="buscar" class="form-control" placeholder="Search for products">
-                    <div class="input-group-append">
-                        <span class="input-group-text bg-transparent text-primary">
-                            <i class="fa fa-search"></i>
-                        </span>
-                    </div>
-                    <ul id="resultados" style="position: absolute; z-index:9;" class="list-group mt-5"></ul>
-                </div>
-            </form>
-        </div>
-        <div class="col-lg-4 col-6 text-right">
-            <p class="m-0">Servicio al cliente</p>
-            <h5 class="m-0">{{$business->phone}}</h5>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
     </div>
-</div>
-<!-- Topbar End -->
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid topbar px-0 px-lg-4 bg-light py-2 d-none d-lg-block">
+        <div class="container">
+            <div class="row gx-0 align-items-center">
+                <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+                    <div class="d-flex flex-wrap">
+                        <div class="border-end border-primary pe-3">
+                            <a href="#" class="text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i>{{$business->address}}</a>
+                        </div>
+                        <div class="ps-3">
+                            <a href="mailto:example@gmail.com" class="text-muted small"><i class="fas fa-envelope text-primary me-2"></i>{{$business->email}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <div class="d-flex justify-content-end">
+                        <div class="d-flex border-end border-primary pe-3">
+                            <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="btn p-0 text-primary me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        @auth
+                        <div class="dropdown ms-3">
+                            <a href="#" class="dropdown-toggle text-dark" data-bs-toggle="dropdown">
+                                <small>
+                                    <i class="fas fa-user text-primary me-2"></i> {{auth::user()->name}}
+                                </small>
+                            </a>
+                            <div class="dropdown-menu rounded">
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                <!-- <a href="#" class="dropdown-item">Cerrar sesión</a> -->
+                                <button type="submit" class="dropdown-item">Cerrar sesión</button>
+                            </div>
+                        </div>
+                        @else
+                        <a class="ms-3 text-dark" href="login">
+                            <i class="fas fa-user text-primary me-2"></i>Iniciar sesión
+                        </a>
+                        @endauth
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->

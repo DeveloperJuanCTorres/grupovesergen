@@ -2,52 +2,7 @@
 
 @section('content')
 
-<!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
-
-    <!-- Topbar Start -->
-    <div class="container-fluid topbar px-0 px-lg-4 bg-light py-2 d-none d-lg-block">
-        <div class="container">
-            <div class="row gx-0 align-items-center">
-                <div class="col-lg-8 text-center text-lg-start mb-lg-0">
-                    <div class="d-flex flex-wrap">
-                        <div class="border-end border-primary pe-3">
-                            <a href="#" class="text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i>Dirección</a>
-                        </div>
-                        <div class="ps-3">
-                            <a href="mailto:example@gmail.com" class="text-muted small"><i class="fas fa-envelope text-primary me-2"></i>example@gmail.com</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 text-center text-lg-end">
-                    <div class="d-flex justify-content-end">
-                        <div class="d-flex border-end border-primary pe-3">
-                            <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-instagram"></i></a>
-                            <a class="btn p-0 text-primary me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                        <div class="dropdown ms-3">
-                            <a href="#" class="dropdown-toggle text-dark" data-bs-toggle="dropdown"><small><i class="fas fa-globe-europe text-primary me-2"></i> English</small></a>
-                            <div class="dropdown-menu rounded">
-                                <a href="#" class="dropdown-item">English</a>
-                                <a href="#" class="dropdown-item">Bangla</a>
-                                <a href="#" class="dropdown-item">French</a>
-                                <a href="#" class="dropdown-item">Spanish</a>
-                                <a href="#" class="dropdown-item">Arabic</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
+    @include('partials.topbar')
 
     <!-- Navbar & Hero Start -->
     <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
@@ -66,7 +21,7 @@
                         <a href="/about" class="nav-item nav-link active">Nosotros</a>
                         <a href="/services" class="nav-item nav-link">Servicios</a>
                         <a href="/store" class="nav-item nav-link">Tienda</a>
-                        <a href="/blog" class="nav-item nav-link">Blog</a>
+                        <a href="/blog" class="nav-item nav-link">Tienda</a>
                         <a href="/contact" class="nav-item nav-link">Contáctanos</a>
                         <div class="nav-btn px-3">
                             <!-- <button class="btn-search btn btn-primary btn-md-square rounded-circle flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button> -->
