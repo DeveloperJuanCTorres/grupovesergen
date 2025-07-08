@@ -16,23 +16,27 @@
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
+    <?php
+        $version = '1993.2.1';
+    ?>
+
     <!-- Icon Font Stylesheet -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
         <!-- Libraries Stylesheet -->
-        <link rel="stylesheet" href="{{asset('lib/animate/animate.min.css')}}"/>
-        <link href="{{asset('lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
-        <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+        <link rel="stylesheet" href="{{asset('lib/animate/animate.min.css')}}?v=<?php echo $version ?>"/>
+        <link href="{{asset('lib/lightbox/css/lightbox.min.css')}}?v=<?php echo $version ?>" rel="stylesheet">
+        <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}?v=<?php echo $version ?>" rel="stylesheet">
 
 
         <!-- Customized Bootstrap Stylesheet -->
-        <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{asset('css/bootstrap.min.css')}}?v=<?php echo $version ?>" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="{{asset('css/style.css')}}" rel="stylesheet">
-        <link href="{{asset('css/whatsapp.css')}}" rel="stylesheet">
-         <link href="{{asset('css/phone.css')}}" rel="stylesheet">
+        <link href="{{asset('css/style.css')}}?v=<?php echo $version ?>" rel="stylesheet">
+        <link href="{{asset('css/whatsapp.css')}}?v=<?php echo $version ?>" rel="stylesheet">
+         <link href="{{asset('css/phone.css')}}?v=<?php echo $version ?>" rel="stylesheet">
 
 
 
