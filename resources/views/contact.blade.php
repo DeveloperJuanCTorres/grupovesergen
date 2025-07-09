@@ -156,7 +156,7 @@
                                     </div>
                                     <div>
                                         <h4>Dirección</h4>
-                                        <p class="mb-0">123 Street New York.USA</p>
+                                        <p class="mb-0">{{$business->address}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +167,7 @@
                                     </div>
                                     <div>
                                         <h4>Correo de contacto</h4>
-                                        <p class="mb-0">info@example.com</p>
+                                        <p class="mb-0">{{$business->email}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -178,7 +178,7 @@
                                     </div>
                                     <div>
                                         <h4>Teléfono</h4>
-                                        <p class="mb-0">(+012) 3456 7890</p>
+                                        <p class="mb-0">{{$business->phone}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -189,7 +189,7 @@
                                     </div>
                                     <div>
                                         <h4>vesergenperu.com</h4>
-                                        <p class="mb-0">(+012) 3456 7890</p>
+                                        <p class="mb-0">{{$business->phone}}</p>
                                     </div>
                                 </div>
                             </div>
