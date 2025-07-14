@@ -73,7 +73,7 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-breadcrumb1">
+    <div class="container-fluid bg-breadcrumb1" style="background: linear-gradient(rgba(1, 95, 201, 0.9), rgba(0, 0, 0, 0.2)), url('{{ asset(str_replace('\\', '/', 'storage/' . $page->image)) }}');background-size: cover; background-position: center;">
         <div class="container text-center py-5" style="max-width: 900px;">
             <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Blog</h4>
               

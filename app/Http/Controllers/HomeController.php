@@ -9,6 +9,7 @@ use App\Models\Characteristic;
 use App\Models\Company;
 use App\Models\Field;
 use App\Models\Order;
+use App\Models\Page;
 use App\Models\Post;
 use App\Models\Product;
 use App\Models\Promotion;
@@ -58,6 +59,7 @@ class HomeController extends Controller
     {
         $business = Company::find(1);
         $products = Product::query()->where('stock', '>', 0);
+        $page = Page::where('title','Tienda')->first();
 
        
         if ($request->filled('categories')) {
@@ -85,7 +87,7 @@ class HomeController extends Controller
         })->get();
 
        
-        return view('store',compact('categories','brands','products','business'));
+        return view('store',compact('categories','brands','products','business','page'));
     }
 
     public function detail (Product $product)
@@ -105,32 +107,38 @@ class HomeController extends Controller
     public function contact()
     {
         $business = Company::find(1);
+        $page = Page::where('title','Contactanos')->first();
+
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->take(8)->get();
 
-        return view('contact',compact('categories','business'));
+        return view('contact',compact('categories','business','page'));
     }
 
     public function about()
     {
         $business = Company::find(1);
         $nosotros = Field::find(1);
+        $page = Page::where('title','Nosotros')->first();
+
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->take(8)->get();
-        return view('about', compact('categories','business','nosotros'));
+        return view('about', compact('categories','business','nosotros','page'));
     }
 
     public function services()
     {
         $business = Company::find(1);
         $nosotros = Field::find(1);
+        $page = Page::where('title','Servicios')->first();
+        
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->take(8)->get();
         $services = Service::all();
-        return view('services', compact('categories','business','nosotros','services'));
+        return view('services', compact('categories','business','nosotros','services','page'));
     }
 
     public function blog()
@@ -138,8 +146,9 @@ class HomeController extends Controller
         $business = Company::find(1);
         $nosotros = Field::find(1);
         $blogs = Post::all();
+        $page = Page::where('title','Blog')->first();
         
-        return view('blog', compact('business','nosotros', 'blogs'));
+        return view('blog', compact('business','nosotros', 'blogs','page'));
     }
 
     public function blogDetail (Post $blog)
@@ -163,11 +172,12 @@ class HomeController extends Controller
     public function checkout()
     {
         $business = Company::find(1);
+        $page = Page::where('title','Tienda')->first();
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->take(8)->get();
 
-        return view('checkout',compact('categories','business'));
+        return view('checkout',compact('categories','business','page'));
     }
 
     public function reclamaciones()

@@ -21,7 +21,7 @@
                         <a href="/about" class="nav-item nav-link active">Nosotros</a>
                         <a href="/services" class="nav-item nav-link">Servicios</a>
                         <a href="/store" class="nav-item nav-link">Tienda</a>
-                        <a href="/blog" class="nav-item nav-link">Tienda</a>
+                        <a href="/blog" class="nav-item nav-link">Blog</a>
                         <a href="/contact" class="nav-item nav-link">Contáctanos</a>
                         <div class="nav-btn px-3">
                             <!-- <button class="btn-search btn btn-primary btn-md-square rounded-circle flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button> -->
@@ -73,7 +73,7 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-breadcrumb1">
+    <div class="container-fluid bg-breadcrumb1" style="background: linear-gradient(rgba(1, 95, 201, 0.9), rgba(0, 0, 0, 0.2)), url('{{ asset(str_replace('\\', '/', 'storage/' . $page->image)) }}');background-size: cover; background-position: center;">
         <div class="container text-center py-5" style="max-width: 900px;">
             <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Nosotros</h4>
               

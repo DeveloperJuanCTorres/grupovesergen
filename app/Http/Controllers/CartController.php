@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Page;
 use App\Models\Product;
 use App\Models\Taxonomy;
 use Illuminate\Http\Request;
@@ -42,11 +43,12 @@ class CartController extends Controller
     public function cart()
     {
         $business = Company::find(1);
+        $page = Page::where('title','Tienda')->first();
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->get();
 
-        return view('cart',compact('categories','business'));
+        return view('cart',compact('categories','business','page'));
     }
 
     public function removeItem(Request $request)

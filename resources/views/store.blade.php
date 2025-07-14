@@ -9,7 +9,6 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light"> 
                 <a href="/" class="navbar-brand p-0">
-                    <!-- <h1 class="text-primary mb-0"><i class="fab fa-slack me-2"></i> LifeSure</h1> -->
                     <img src="img/logo-vesergen.png" width="200" alt="Logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -70,11 +69,11 @@
         </div>
     </div>
     <!-- Modal Search End -->
-
+   
     <!-- Header Start -->
-    <div class="container-fluid bg-breadcrumb-store">
+    <div class="container-fluid bg-breadcrumb-store" style="background: linear-gradient(rgba(1, 95, 201, 0.9), rgba(0, 0, 0, 0.2)), url('{{ asset(str_replace('\\', '/', 'storage/' . $page->image)) }}');background-size: cover; background-position: center;">
         <div class="container text-center py-5" style="max-width: 900px;">
-            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Tienda</h4>
+            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">{{$page->title}}</h4>
               
         </div>
     </div>
