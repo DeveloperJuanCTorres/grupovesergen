@@ -120,12 +120,13 @@ class HomeController extends Controller
     {
         $business = Company::find(1);
         $nosotros = Field::find(1);
+        $teams = Team::all();
         $page = Page::where('title','Nosotros')->first();
 
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->take(8)->get();
-        return view('about', compact('categories','business','nosotros','page'));
+        return view('about', compact('categories','business','nosotros','page','teams'));
     }
 
     public function services()
