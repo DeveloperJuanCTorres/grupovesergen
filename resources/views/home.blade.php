@@ -4,7 +4,6 @@
 
     @include('partials.topbar')
 
-    <?php phpinfo(); ?>
 
     <!-- Navbar & Hero Start -->
     <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
