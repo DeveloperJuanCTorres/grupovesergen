@@ -43,6 +43,14 @@
     <!-- Scripts -->
     <!-- vite(['resources/sass/app.scss', 'resources/js/app.js']) -->
 </head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EWNHQHLLE4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EWNHQHLLE4');
+</script>
 <body>
     <div id="app">
         <main>
