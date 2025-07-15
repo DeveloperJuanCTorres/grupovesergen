@@ -158,8 +158,9 @@ class HomeController extends Controller
     {
         $business = Company::find(1);
         $blogs = Post::all();
+        $page = Page::where('title','Blog')->first();
         
-        return view('blog-detail', compact('blog', 'business','blogs'));
+        return view('blog-detail', compact('blog', 'business','blogs','page'));
     }
 
     public function facturacion()
