@@ -89,7 +89,7 @@
                     <!-- Blog Detail Start -->
                     <div class="mb-5">
                         <img class="img-fluid w-100 rounded mb-5" src="img/blog-1.jpg" alt="">
-                        <h1 class="mb-4">{{$blog->title}}</h1>
+                        <!-- <h1 class="mb-4">{{$blog->title}}</h1> -->
                         {!! Str::markdown($blog->body) !!}
                     </div>
                     <!-- Blog Detail End -->
