@@ -146,7 +146,7 @@
     <!-- Carousel End -->
 
     <!-- Feature Start -->
-    <div class="container-fluid feature bg-light py-5">
+    <!-- <div class="container-fluid feature bg-light py-5">
         <div class="container py-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h4 class="text-primary">Nuestras Características</h4>
@@ -178,8 +178,79 @@
                 @endforeach
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Feature End -->
+
+    <!-- About Start -->
+    <div class="container-fluid bg-light about py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="about-item-content bg-white rounded p-5 h-100">
+                        <h4 class="text-primary">Grupo VesergenPerú</h4>
+                        <h1 class="display-4 mb-4">¿Quiénes somos?</h1>
+                        <p>Bienvenidos a Grupo VesergenPerú, su aliado estratégico en soluciones informáticas.
+                            Somos una empresa peruana dedicada a ofrecer servicios y productos tecnológicos de alta calidad, diseñados para potenciar el crecimiento y la eficiencia de su negocio.
+                        </p>
+                        <p>Grupo VesergenPerú nació con la visión de transformar la manera en que las empresas peruanas interactúan con la tecnología. Con años de experiencia en el sector, hemos evolucionado y crecido junto a nuestros clientes, adaptándonos a los cambios tecnológicos y a las necesidades del mercado.
+                        </p>
+                        <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>We can save your money.</p>
+                        <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>Production or trading of good</p>
+                        <p class="text-dark mb-4"><i class="fa fa-check text-primary me-3"></i>Our life insurance is flexible</p>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="#">More Information</a>
+                    </div>
+                </div>
+                <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
+                    <div class="bg-white rounded p-5 h-100">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-12">
+                                <div class="rounded bg-light">
+                                    <img src="storage/{{$business->banner}}" class="img-fluid rounded w-100" alt="">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="counter-item bg-light rounded p-3 h-100">
+                                    <div class="counter-counting">
+                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">129</span>
+                                        <span class="h1 fw-bold text-primary">+</span>
+                                    </div>
+                                    <h4 class="mb-0 text-dark">Insurance Policies</h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="counter-item bg-light rounded p-3 h-100">
+                                    <div class="counter-counting">
+                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">99</span>
+                                        <span class="h1 fw-bold text-primary">+</span>
+                                    </div>
+                                    <h4 class="mb-0 text-dark">Awards WON</h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="counter-item bg-light rounded p-3 h-100">
+                                    <div class="counter-counting">
+                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">556</span>
+                                        <span class="h1 fw-bold text-primary">+</span>
+                                    </div>
+                                    <h4 class="mb-0 text-dark">Skilled Agents</h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="counter-item bg-light rounded p-3 h-100">
+                                    <div class="counter-counting">
+                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">967</span>
+                                        <span class="h1 fw-bold text-primary">+</span>
+                                    </div>
+                                    <h4 class="mb-0 text-dark">Team Members</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
 
     <!-- Service Start -->
     <div class="container-fluid service py-5">
@@ -229,47 +300,38 @@
                             <h1 class="display-4 mb-0">Preguntas frecuentes comunes</h1>
                         </div>
                         <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Q: What happens during Freshers' Week?
+                            @foreach($questions as $key => $item)
+                            <div class="accordion-item">                                
+                                @if($key == 0)
+                                <h2 class="accordion-header" id="heading{{$key}}">
+                                    <button class="accordion-button border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}" aria-expanded="true" aria-controls="collapse{{$key}}">
+                                        Q: {{$item->pregunta}}
                                     </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show active" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div id="collapse{{$key}}" class="accordion-collapse collapse show active" aria-labelledby="heading{{$key}}" data-bs-parent="#accordionExample">
                                     <div class="accordion-body rounded">
-                                        A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                                        {{$item->respuesta}}
                                     </div>
                                 </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Q: What is the transfer application process?
+                                @else
+                                <h2 class="accordion-header" id="heading{{$key}}">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}" aria-expanded="false" aria-controls="collapse{{$key}}">
+                                        Q: {{$item->pregunta}}
                                     </button>
                                 </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div id="collapse{{$key}}" class="accordion-collapse collapse" aria-labelledby="heading{{$key}}" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                                        {{$item->respuesta}}
                                     </div>
                                 </div>
+                                @endif
                             </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        Q: Why should I attend community college?
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach                            
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
-                    <img src="img/carousel-2.png" class="img-fluid w-100" alt="">
+                    <img src="img/questions.png" class="img-fluid w-100" alt="">
                 </div>
             </div>
         </div>

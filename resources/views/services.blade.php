@@ -103,8 +103,8 @@
                         </div>
                         <div class="service-content p-4">
                             <div class="service-content-inner">
-                                <a href="#" class="d-inline-block h4 mb-4">{{$service->title}}</a>
-                                <p class="mb-4">{!! Str::markdown($service->description) !!}</p>
+                                <a href="#" class="d-inline-block h4">{{$service->title}}</a>
+                                <p class="">{!! Str::markdown($service->description) !!}</p>
                                 <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Leer más</a>
                             </div>
                         </div>

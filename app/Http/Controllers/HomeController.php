@@ -13,6 +13,7 @@ use App\Models\Page;
 use App\Models\Post;
 use App\Models\Product;
 use App\Models\Promotion;
+use App\Models\Question;
 use App\Models\Service;
 use App\Models\Taxonomy;
 use App\Models\Team;
@@ -44,6 +45,7 @@ class HomeController extends Controller
     public function index()
     {
         $business = Company::find(1);
+        $questions = Question::all();
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->take(8)->get();
@@ -52,7 +54,7 @@ class HomeController extends Controller
         $caracteristicas = Characteristic::all();
         $services = Service::take(4)->get();
         $teams = Team::all();
-        return view('home',compact('categories','banners','caracteristicas','services','business','teams'));
+        return view('home',compact('categories','banners','caracteristicas','services','business','teams','questions'));
     }
 
     public function store(Request $request)
@@ -164,10 +166,12 @@ class HomeController extends Controller
     {
         $business = Company::find(1);
         $nosotros = Field::find(1);
+        $questions = Question::all();
+
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->take(8)->get();
-        return view('facturacion', compact('categories','business','nosotros'));
+        return view('facturacion', compact('categories','business','nosotros','questions'));
     }
 
     public function checkout()

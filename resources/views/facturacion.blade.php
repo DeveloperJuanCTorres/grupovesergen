@@ -163,7 +163,7 @@
             </div>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="feature-item p-4 pt-0">
+                    <div class="feature-item-f p-4 pt-0">
                         <div class="feature-icon p-4 mb-4">
                             <i class="far fa-handshake fa-3x"></i>
                         </div>
@@ -173,7 +173,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="feature-item p-4 pt-0">
+                    <div class="feature-item-f p-4 pt-0">
                         <div class="feature-icon p-4 mb-4">
                             <i class="fa fa-dollar-sign fa-3x"></i>
                         </div>
@@ -183,7 +183,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="feature-item p-4 pt-0">
+                    <div class="feature-item-f p-4 pt-0">
                         <div class="feature-icon p-4 mb-4">
                             <i class="fa fa-bullseye fa-3x"></i>
                         </div>
@@ -193,7 +193,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                    <div class="feature-item p-4 pt-0">
+                    <div class="feature-item-f p-4 pt-0">
                         <div class="feature-icon p-4 mb-4">
                             <i class="fa fa-headphones fa-3x"></i>
                         </div>
@@ -203,7 +203,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="feature-item p-4 pt-0">
+                    <div class="feature-item-f p-4 pt-0">
                         <div class="feature-icon p-4 mb-4">
                             <i class="far fa-handshake fa-3x"></i>
                         </div>
@@ -213,7 +213,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="feature-item p-4 pt-0">
+                    <div class="feature-item-f p-4 pt-0">
                         <div class="feature-icon p-4 mb-4">
                             <i class="fa fa-dollar-sign fa-3x"></i>
                         </div>
@@ -223,7 +223,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="feature-item p-4 pt-0">
+                    <div class="feature-item-f p-4 pt-0">
                         <div class="feature-icon p-4 mb-4">
                             <i class="fa fa-bullseye fa-3x"></i>
                         </div>
@@ -233,7 +233,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                    <div class="feature-item p-4 pt-0">
+                    <div class="feature-item-f p-4 pt-0">
                         <div class="feature-icon p-4 mb-4">
                             <i class="fa fa-headphones fa-3x"></i>
                         </div>
@@ -243,7 +243,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="feature-item p-4 pt-0">
+                    <div class="feature-item-f p-4 pt-0">
                         <div class="feature-icon p-4 mb-4">
                             <i class="fa fa-bullseye fa-3x"></i>
                         </div>
@@ -253,7 +253,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                    <div class="feature-item p-4 pt-0">
+                    <div class="feature-item-f p-4 pt-0">
                         <div class="feature-icon p-4 mb-4">
                             <i class="fa fa-headphones fa-3x"></i>
                         </div>
@@ -278,47 +278,38 @@
                             <h1 class="display-4 mb-0">Preguntas frecuentes comunes</h1>
                         </div>
                         <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Q: What happens during Freshers' Week?
+                            @foreach($questions as $key => $item)
+                            <div class="accordion-item">                                
+                                @if($key == 0)
+                                <h2 class="accordion-header" id="heading{{$key}}">
+                                    <button class="accordion-button border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}" aria-expanded="true" aria-controls="collapse{{$key}}">
+                                        Q: {{$item->pregunta}}
                                     </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show active" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div id="collapse{{$key}}" class="accordion-collapse collapse show active" aria-labelledby="heading{{$key}}" data-bs-parent="#accordionExample">
                                     <div class="accordion-body rounded">
-                                        A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                                        {{$item->respuesta}}
                                     </div>
                                 </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Q: What is the transfer application process?
+                                @else
+                                <h2 class="accordion-header" id="heading{{$key}}">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}" aria-expanded="false" aria-controls="collapse{{$key}}">
+                                        Q: {{$item->pregunta}}
                                     </button>
                                 </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div id="collapse{{$key}}" class="accordion-collapse collapse" aria-labelledby="heading{{$key}}" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                                        {{$item->respuesta}}
                                     </div>
                                 </div>
+                                @endif
                             </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        Q: Why should I attend community college?
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach                            
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
-                    <img src="img/carousel-2.png" class="img-fluid w-100" alt="">
+                    <img src="img/questions.png" class="img-fluid w-100" alt="">
                 </div>
             </div>
         </div>
