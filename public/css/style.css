@@ -319,9 +319,27 @@
     }
 }
 
+@media (min-width: 768px) {
+    .mobil{
+        display: none !important;
+    }
+
+    .destock{
+        display: block !important;
+    }
+}
+
 @media (max-width: 767px) {
+    .mobil{
+        display: block !important;
+    }
+
+    .destock{
+        display: none !important;
+    }
+
     .header-carousel .header-carousel-item {
-        height: 950px;
+        height: 560px;
     }
 
     .header-carousel .owl-nav .owl-prev {

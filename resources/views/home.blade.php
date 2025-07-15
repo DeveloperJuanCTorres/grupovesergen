@@ -87,9 +87,9 @@
 
 
     <!-- Carousel Start -->
-    <div class="header-carousel owl-carousel">
+    <div class="header-carousel owl-carousel destock">
         @foreach($banners as $banner)
-        <div class="header-carousel-item bg-primary">
+        <div class="header-carousel-item" style="background: linear-gradient(rgba(1, 95, 201, 0.9), rgba(0, 0, 0, 0.2)),url('{{ asset(str_replace('\\', '/', 'storage/' . $banner->image)) }}');background-size: cover; background-position: center;">
             <div class="carousel-caption">
                 <div class="container">
                     <div class="row g-4 align-items-center">
@@ -107,11 +107,68 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-lg-5 animated fadeInRight">
+                        <!-- <div class="col-lg-5 animated fadeInRight">
                             <div class="calrousel-img" style="object-fit: cover;">
                                 <img src="storage/{{$banner->image}}" class="img-fluid w-100" alt="">
                             </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endforeach
+        <!-- <div class="header-carousel-item bg-primary">
+            <div class="carousel-caption">
+                <div class="container">
+                    <div class="row gy-4 gy-lg-0 gx-0 gx-lg-5 align-items-center">
+                        <div class="col-lg-5 animated fadeInLeft">
+                            <div class="calrousel-img">
+                                <img src="img/img-facturacion.png" class="img-fluid w-100" alt="">
+                            </div>
                         </div>
+                        <div class="col-lg-7 animated fadeInRight">
+                            <div class="text-sm-center text-md-end">
+                                <h4 class="text-white text-uppercase fw-bold mb-4">Bienvenido a VesergenPeru</h4>
+                                <h1 class="display-1 text-white mb-4">Facturación Electrónica</h1>
+                                <p class="mb-5 fs-5">Para más información sobre nuestras soluciones de facturación electrónica y cómo pueden beneficiar a tu empresa, no dudes en contactarnos.
+                                </p>
+                                <div class="d-flex justify-content-center justify-content-md-end flex-shrink-0 mb-4">
+                                    <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a>
+                                    <a class="btn btn-dark rounded-pill py-3 px-4 px-md-5 ms-2" href="/facturacion">Más información</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <div class="header-carousel owl-carousel mobil">
+        @foreach($banners as $banner)
+        <div class="header-carousel-item" style="background: linear-gradient(rgba(1, 95, 201, 0.9), rgba(0, 0, 0, 0.2)),url('{{ asset(str_replace('\\', '/', 'storage/' . $banner->image_mobil)) }}');background-size: cover; background-position: center;">
+            <div class="carousel-caption">
+                <div class="container">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-7 animated fadeInLeft">
+                            <div class="text-sm-center text-md-start">
+                                <h4 class="text-white text-uppercase fw-bold mb-4">{{$banner->subtitulo}}</h4>
+                                <h1 class="display-1 text-white mb-4">{{$banner->titulo}}</h1>
+                                <p class="mb-5 fs-5">{{$banner->description}}
+                                </p>
+                                @if($banner->texto_boton)
+                                <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
+                                    <!-- <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a> -->
+                                    <a class="btn btn-dark rounded-pill py-3 px-4 px-md-5 ms-2" href="{{$banner->enlace_boton}}">{{$banner->texto_boton}}</a>
+                                </div>
+                                @endif
+                            </div>
+                        </div>
+                        <!-- <div class="col-lg-5 animated fadeInRight">
+                            <div class="calrousel-img" style="object-fit: cover;">
+                                <img src="storage/{{$banner->image}}" class="img-fluid w-100" alt="">
+                            </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
