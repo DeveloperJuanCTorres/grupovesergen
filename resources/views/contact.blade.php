@@ -19,7 +19,18 @@
                     <div class="navbar-nav mx-0 mx-lg-auto">
                         <a href="/" class="nav-item nav-link">Inicio</a>
                         <a href="/about" class="nav-item nav-link">Nosotros</a>
-                        <a href="/services" class="nav-item nav-link">Servicios</a>
+                        <div class="nav-item dropdown">
+                            <a href="" class="nav-link" data-bs-toggle="dropdown">
+                                <span class="dropdown-toggle">Servicios</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="/facturacion" class="dropdown-item">Facturación Electrónica</a>
+                                @foreach($services as $service)
+                                <a href="" class="dropdown-item">{{$service->title}}</a>
+                                @endforeach
+                                <a href="/services" class="dropdown-item">Todos los servicios</a>
+                            </div>
+                        </div>
                         <a href="/store" class="nav-item nav-link">Tienda</a>
                         <a href="/blog" class="nav-item nav-link">Blog</a>
                         <a href="/contact" class="nav-item nav-link active">Contáctanos</a>

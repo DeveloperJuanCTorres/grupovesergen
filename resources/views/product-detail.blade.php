@@ -19,7 +19,18 @@
                     <div class="navbar-nav mx-0 mx-lg-auto">
                         <a href="/" class="nav-item nav-link">Inicio</a>
                         <a href="/about" class="nav-item nav-link">Nosotros</a>
-                        <a href="/services" class="nav-item nav-link">Servicios</a>
+                        <div class="nav-item dropdown">
+                            <a href="" class="nav-link" data-bs-toggle="dropdown">
+                                <span class="dropdown-toggle">Servicios</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="/facturacion" class="dropdown-item">Facturación Electrónica</a>
+                                @foreach($services as $service)
+                                <a href="" class="dropdown-item">{{$service->title}}</a>
+                                @endforeach
+                                <a href="/services" class="dropdown-item">Todos los servicios</a>
+                            </div>
+                        </div>
                         <a href="/store" class="nav-item nav-link active">Tienda</a>
                         <a href="/blog" class="nav-item nav-link">Blog</a>
                         <a href="/contact" class="nav-item nav-link">Contáctanos</a>
@@ -72,9 +83,9 @@
     <!-- Modal Search End -->
 
     <!-- Header Start -->
-    <div class="container-fluid bg-breadcrumb1">
-        <div class="container text-center py-5" style="max-width: 900px;">
-            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Checkout</h4>
+    <div class="container-fluid bg-breadcrumb-store" style="background: linear-gradient(rgba(1, 95, 201, 0.9), rgba(0, 0, 0, 0.2)), url('{{ asset(str_replace('\\', '/', 'storage/' . $page->image)) }}');background-size: cover; background-position: center;">
+        <div class="container text-center py-5" style="max-width: 1200px;">
+            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">{{$product->name}}</h4>
               
         </div>
     </div>
@@ -185,9 +196,8 @@
                 </div>
                 <div class="tab-content">
                     <div class="tab-pane fade show active p-4" id="tab-pane-1">
-                        <h4 class="mb-3">Product Description</h4>
-                        <p>Eos no lorem eirmod diam diam, eos elitr et gubergren diam sea. Consetetur vero aliquyam invidunt duo dolores et duo sit. Vero diam ea vero et dolore rebum, dolor rebum eirmod consetetur invidunt sed sed et, lorem duo et eos elitr, sadipscing kasd ipsum rebum diam. Dolore diam stet rebum sed tempor kasd eirmod. Takimata kasd ipsum accusam sadipscing, eos dolores sit no ut diam consetetur duo justo est, sit sanctus diam tempor aliquyam eirmod nonumy rebum dolor accusam, ipsum kasd eos consetetur at sit rebum, diam kasd invidunt tempor lorem, ipsum lorem elitr sanctus eirmod takimata dolor ea invidunt.</p>
-                        <p>Dolore magna est eirmod sanctus dolor, amet diam et eirmod et ipsum. Amet dolore tempor consetetur sed lorem dolor sit lorem tempor. Gubergren amet amet labore sadipscing clita clita diam clita. Sea amet et sed ipsum lorem elitr et, amet et labore voluptua sit rebum. Ea erat sed et diam takimata sed justo. Magna takimata justo et amet magna et.</p>
+                        <h4 class="mb-3">Descripción del Producto</h4>
+                        <p>{{$product->description}}</p>
                     </div>
                 </div>
             </div>

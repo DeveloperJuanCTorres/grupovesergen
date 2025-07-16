@@ -62,7 +62,7 @@ class HomeController extends Controller
         $business = Company::find(1);
         $products = Product::query()->where('stock', '>', 0);
         $page = Page::where('title','Tienda')->first();
-
+        $services = Service::take(4)->get();
        
         if ($request->filled('categories')) {
             $categories = is_array($request->categories) ? $request->categories : [$request->categories];
@@ -89,12 +89,14 @@ class HomeController extends Controller
         })->get();
 
        
-        return view('store',compact('categories','brands','products','business','page'));
+        return view('store',compact('categories','brands','products','business','page','services'));
     }
 
     public function detail (Product $product)
     {
         $business = Company::find(1);
+        $page = Page::where('title','Tienda')->first();
+        $services = Service::take(4)->get();
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->take(8)->get();
@@ -103,19 +105,20 @@ class HomeController extends Controller
                           ->where('id', '!=', $product->id)
                           ->get();
 
-        return view('product-detail', compact('product','categories','relatedProducts','business'));
+        return view('product-detail', compact('product','categories','relatedProducts','business','page','services'));
     }
 
     public function contact()
     {
         $business = Company::find(1);
         $page = Page::where('title','Contactanos')->first();
+        $services = Service::take(4)->get();
 
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->take(8)->get();
 
-        return view('contact',compact('categories','business','page'));
+        return view('contact',compact('categories','business','page','services'));
     }
 
     public function about()
@@ -123,12 +126,13 @@ class HomeController extends Controller
         $business = Company::find(1);
         $nosotros = Field::find(1);
         $teams = Team::all();
+        $services = Service::take(4)->get();
         $page = Page::where('title','Nosotros')->first();
 
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->take(8)->get();
-        return view('about', compact('categories','business','nosotros','page','teams'));
+        return view('about', compact('categories','business','nosotros','page','teams','services'));
     }
 
     public function services()
@@ -149,18 +153,20 @@ class HomeController extends Controller
         $business = Company::find(1);
         $nosotros = Field::find(1);
         $blogs = Post::all();
+        $services = Service::take(4)->get();
         $page = Page::where('title','Blog')->first();
         
-        return view('blog', compact('business','nosotros', 'blogs','page'));
+        return view('blog', compact('business','nosotros', 'blogs','page','services'));
     }
 
     public function blogDetail (Post $blog)
     {
         $business = Company::find(1);
         $blogs = Post::all();
+        $services = Service::take(4)->get();
         $page = Page::where('title','Blog')->first();
         
-        return view('blog-detail', compact('blog', 'business','blogs','page'));
+        return view('blog-detail', compact('blog', 'business','blogs','page','services'));
     }
 
     public function facturacion()
@@ -168,31 +174,36 @@ class HomeController extends Controller
         $business = Company::find(1);
         $nosotros = Field::find(1);
         $questions = Question::all();
+        $services = Service::take(4)->get();
 
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->take(8)->get();
-        return view('facturacion', compact('categories','business','nosotros','questions'));
+        return view('facturacion', compact('categories','business','nosotros','questions','services'));
     }
 
     public function checkout()
     {
         $business = Company::find(1);
         $page = Page::where('title','Tienda')->first();
+        $services = Service::take(4)->get();
+
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->take(8)->get();
 
-        return view('checkout',compact('categories','business','page'));
+        return view('checkout',compact('categories','business','page','services'));
     }
 
     public function reclamaciones()
     {
         $business = Company::find(1);
+        $services = Service::take(4)->get();
+
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->take(8)->get();
-        return view('libro-reclamaciones', compact('categories','business'));
+        return view('libro-reclamaciones', compact('categories','business','services'));
     }
 
     public function buscar(Request $request)
