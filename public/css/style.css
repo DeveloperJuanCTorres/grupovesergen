@@ -608,6 +608,7 @@
 .service .service-item .service-img .service-icon {
     position: absolute;
     width: 70px;
+    height: 70px;
     bottom: 0;
     right: 25px;
     border-top-left-radius: 10px;
@@ -620,14 +621,14 @@
     z-index: 9;
 }
 
-.service .service-item .service-img .service-icon i {
+.service .service-item .service-img .service-icon svg {
     color: var(--bs-primary);
     transition: 0.5s;
 }
 
-.service .service-item:hover .service-img .service-icon i {
+.service .service-item:hover .service-img .service-icon svg {
     transform: rotateX(360deg);
-    color: var(--bs-white);
+    fill: var(--bs-white);
 }
 
 .service .service-item:hover .service-img .service-icon {

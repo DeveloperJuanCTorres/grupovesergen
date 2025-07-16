@@ -98,7 +98,11 @@
                         <div class="service-img">
                             <img src="storage/{{$service->image}}" class="img-fluid rounded-top w-100" alt="">
                             <div class="service-icon p-3">
+                                @if($service->icono)
+                                {!! Str::markdown($service->icono) !!}
+                                @else
                                 <i class="fa fa-users fa-2x"></i>
+                                @endif
                             </div>
                         </div>
                         <div class="service-content p-4">
