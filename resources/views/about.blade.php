@@ -42,7 +42,7 @@
                                     {{\Cart::count()}}
                                 </span>
                             </a>
-                            <a href="#" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"> Live Chat</a>
+                            <!-- <a href="#" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"> Live Chat</a> -->
                         </div>
                     </div>
                 </div>
@@ -226,7 +226,7 @@
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h4 class="text-primary">Nuestro Equipo</h4>
                 <h1 class="display-4 mb-4">Conozca a los miembros de nuestro equipo de expertos</h1>
-                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
+                <!-- <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic. -->
                 </p>
             </div>
             <div class="row g-4">
@@ -235,11 +235,11 @@
                     <div class="team-item">
                         <div class="team-img">
                             <img src="storage/{{$team->image}}" class="img-fluid rounded-top w-100" alt="">
-                            <div class="team-icon">
+                            <!-- <div class="team-icon">
                                 <a class="btn btn-primary btn-sm-square rounded-pill mb-2" target="_blank" href="{{$team->link_facebook}}"><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-primary btn-sm-square rounded-pill mb-2" target="_blank" href="{{$team->link_linkeding}}"><i class="fab fa-linkedin-in"></i></a>
                                 <a class="btn btn-primary btn-sm-square rounded-pill mb-0" target="_blank" href="{{$team->link_instagram}}"><i class="fab fa-instagram"></i></a>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="team-title p-4">
                             <h4 class="mb-0">{{$team->name}}</h4>

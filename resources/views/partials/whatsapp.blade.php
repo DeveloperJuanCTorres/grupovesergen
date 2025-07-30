@@ -9,8 +9,8 @@
   </div>
   <div class="trwpwhatsappinput">
     <form action="https://web.whatsapp.com/send?" method="get" target="_blank">
-      <input type="text" name="phone" value="90" hidden>
-    	<input type="text" name="text" placeholder="Buradan cevap verebilirsiniz." autocomplete="off">
+      <input type="text" name="phone" value="51943512221" hidden>
+    	<input type="text" name="text" placeholder="Escribir mensaje..." autocomplete="off">
       <button class="trwpwhatsappsendbutton btn-boton" type="submit">
       <i class="fa fa-paper-plane"></i>
       </button>

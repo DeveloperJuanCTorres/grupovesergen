@@ -120,14 +120,14 @@
                         <div class="col-lg-3 col-md-6 col-12 mt-4 px-6">
                             <div class="form-floating">
                                 
-                                <input type="number" class="form-control" id="numero_doc" placeholder="Número de documento">
+                                <input type="number" class="form-control" id="numero_doc" placeholder="Número de documento" max="9999999999" oninput="this.value = this.value.slice(0, 10)">
                                 <label for="name">Número de documento</label>
                             </div>                       
                         </div>
                         <div class="col-lg-3 col-md-6 col-12 mt-4 px-6">
                             <div class="form-floating">
                                 
-                                <input type="text" class="form-control" id="nombres" placeholder="Nombre">
+                                <input type="text" class="form-control inputTexto" id="nombres" placeholder="Nombre">
                                 <label for="name">Nombre</label>
                             </div>                        
                         </div>
@@ -135,21 +135,21 @@
                         <div class="col-lg-3 col-md-6 col-12 mt-4 px-6">
                             <div class="form-floating">
                                 
-                                <input type="text" class="form-control" id="apellido_pat" placeholder="Apellido paterno">
+                                <input type="text" class="form-control inputTexto" id="apellido_pat" placeholder="Apellido paterno">
                                 <label for="name">Apellido paterno</label>
                             </div>                        
                         </div>
                         <div class="col-lg-3 col-md-6 col-12 mt-4 px-6">
                             <div class="form-floating">
                                 
-                                <input type="text" class="form-control" id="apellido_mat" placeholder="Apellido materno">
+                                <input type="text" class="form-control inputTexto" id="apellido_mat" placeholder="Apellido materno">
                                 <label for="name">Apellido materno</label>
                             </div>                        
                         </div>
                         <div class="col-lg-3 col-md-6 col-12 mt-4 px-6">
                             <div class="form-floating">
                                 
-                                <input type="email" class="form-control" id="email" placeholder="Email">
+                                <input type="email" class="form-control inputTexto" id="email" placeholder="Email">
                                 <label for="name">Email</label>
                             </div>                       
                         </div>
@@ -190,7 +190,7 @@
                         <div class="col-lg-9 col-md-12 col-12 mt-4 px-6">
                             <div class="form-floating">
                                 
-                                <input type="text" class="form-control" id="direccion" placeholder="Direccion">
+                                <input maxlength="100" type="text" class="form-control" id="direccion" placeholder="Direccion">
                                 <label for="name">Dirección fiscal</label>
                             </div>                       
                         </div>
@@ -200,14 +200,14 @@
                         <div class="col-lg-6 col-md-6 col-12 mt-4 px-6">
                             <div class="form-floating">
                                 
-                                <input type="text" class="form-control" id="orden_compra" placeholder="Orden de compra">
+                                <input type="text" maxlength="10" class="form-control inputTexto" id="orden_compra" placeholder="Orden de compra">
                                 <label for="name">Orden de compra</label>
                             </div>                      
                         </div>
                         <div class="col-lg-6 col-md-6 col-12 mt-4 px-6">
                             <div class="form-floating">
                                 
-                                <input type="number" class="form-control" id="producto" placeholder="Monto del producto/servicio">
+                                <input type="number" class="form-control" id="producto" placeholder="Monto del producto/servicio" max="99999" oninput="this.value = this.value.slice(0, 5)">
                                 <label for="name">Monto del producto/servicio</label>
                             </div>                       
                         </div>
@@ -215,14 +215,14 @@
                         <div class="col-lg-6 col-md-6 col-12 mt-4 px-6">
                             <div class="form-floating">
                                 
-                                <textarea class="form-control" id="reclamo" rows="5" placeholder="Escribe"></textarea>
+                                <textarea maxlength="500" class="form-control inputTexto" id="reclamo" rows="5" placeholder="Escribe"></textarea>
                                 <label for="name">Detalla tu queja/reclamo</label>
                             </div>                        
                         </div>
                         <div class="col-lg-6 col-md-6 col-12 mt-4 px-6">
                             <div class="form-floating">
                                 
-                                <textarea class="form-control" id="pedido" rows="5" placeholder="Escribe"></textarea>
+                                <textarea maxlength="500" class="form-control inputTexto" id="pedido" rows="5" placeholder="Escribe"></textarea>
                                 <label for="name">Pedido</label>
                             </div>                         
                         </div>
@@ -240,5 +240,15 @@
 @include('partials.footer')
 @include('partials.whatsapp')
 
+<script>
+document.querySelectorAll('.inputTexto').forEach(function (input) {
+    input.addEventListener('input', function (e) {
+        const prohibido = /[<>{};*$%=()&]/g; // Caracteres que quieres bloquear
+        if (prohibido.test(e.target.value)) {
+            e.target.value = e.target.value.replace(prohibido, '');
+        }
+    });
+});
+</script>   
 
 @endsection

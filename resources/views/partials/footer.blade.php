@@ -11,7 +11,7 @@
                                         <!-- <h3 class="text-white"><i class="fab fa-slack me-3"></i> LifeSure</h3> -->
                                         <img src="{{asset('storage/' . $business->image)}}" width="250" alt="Logo">
                                     </a>
-                                    <p class="text-white mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
+                                    <p class="text-white mb-4">{{$business->description}}</p>
                                     <div class="footer-btn d-flex">
                                         <a class="btn btn-md-square rounded-circle me-3" target="_blank" href="{{$business->link_facebook}}"><i class="fab fa-facebook-f"></i></a>
                                         <a class="btn btn-md-square rounded-circle me-3" target="_blank" href="{{$business->link_youtube}}"><i class="fab fa-youtube"></i></a>

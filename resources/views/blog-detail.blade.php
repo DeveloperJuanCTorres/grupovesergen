@@ -42,7 +42,7 @@
                                     {{\Cart::count()}}
                                 </span>
                             </a>
-                            <a href="#" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"> Live Chat</a>
+                            <!-- <a href="#" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"> Live Chat</a> -->
                         </div>
                     </div>
                 </div>
