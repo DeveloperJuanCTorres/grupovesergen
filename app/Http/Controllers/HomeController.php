@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Contactanos;
 use App\Models\Api;
 use App\Models\Banner;
 use App\Models\Brand;
@@ -23,7 +24,7 @@ use Illuminate\Support\Str;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Storage;
 use Cart;
-
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -385,5 +386,16 @@ class HomeController extends Controller
         } catch (\Throwable $th) {
             return response()->json(['status' => false, 'msg' => $th->getMessage()]);
         }        
+    }
+
+    public function correoContact(Request $request)
+    {
+        $correo = new Contactanos($request);
+        try {
+            Mail::to('administracion@vesergenperu.com')->send($correo);
+            return response()->json(['status' => true, 'msg' => "El correo fue enviado satisfactoriamente"]);
+        } catch (\Exception $e) {
+            return response()->json(['status' => false, 'msg' => "Hubo un error al enviar, inténtalo de nuevo más tarde."]);
+        }
     }
 }

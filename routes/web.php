@@ -29,6 +29,7 @@ Route::get('cart/clear', [App\Http\Controllers\CartController::class, 'clear'])-
 Route::post('cart/removeitem', [App\Http\Controllers\CartController::class, 'removeItem'])->name('removeitem');
 
 Route::post('/enviar_pedido', [App\Http\Controllers\HomeController::class, 'pedido'])->name('enviar_pedido');
+Route::post('/correo',[App\Http\Controllers\HomeController::class,'correoContact']);
 
 
 Route::group(['prefix' => 'admin'], function () {

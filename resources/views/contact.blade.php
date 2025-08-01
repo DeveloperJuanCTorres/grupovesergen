@@ -7,7 +7,7 @@
     <!-- Navbar & Hero Start -->
     <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light"> 
+            <nav class="navbar navbar-expand-lg navbar-light">
                 <a href="/" class="navbar-brand p-0">
                     <!-- <h1 class="text-primary mb-0"><i class="fab fa-slack me-2"></i> LifeSure</h1> -->
                     <img src="img/logo-vesergen.png" width="200" alt="Logo">
@@ -87,7 +87,7 @@
     <div class="container-fluid bg-breadcrumb1" style="background: linear-gradient(rgba(1, 95, 201, 0.9), rgba(0, 0, 0, 0.2)), url('{{ asset(str_replace('\\', '/', 'storage/' . $page->image)) }}');background-size: cover; background-position: center;">
         <div class="container text-center py-5" style="max-width: 900px;">
             <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Contáctanos</h4>
-              
+
         </div>
     </div>
     <!-- Header End -->
@@ -109,52 +109,51 @@
                 </div>
                 <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
                     <div>
+                        <!-- <form> -->
                         <h4 class="text-primary">Envía tu mensaje</h4>
-                        <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a class="text-primary fw-bold" href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                        <form>
                             <div class="row g-3">
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="name" placeholder="Tu nombre">
+                                        <input type="text" class="form-control border-0 inputTexto" id="name" placeholder="Tu nombre">
                                         <label for="name">Tu nombre</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control border-0" id="email" placeholder="Tu Email">
+                                        <input type="email" class="form-control border-0 inputTexto" id="email" placeholder="Tu Email">
                                         <label for="email">Tu Email</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="phone" class="form-control border-0" id="phone" placeholder="Teléfono">
+                                        <input type="number" class="form-control border-0" id="phone" placeholder="Teléfono" max="99999999999" oninput="this.value = this.value.slice(0, 11)">
                                         <label for="phone">Teléfono</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="project" placeholder="Proyecto">
+                                        <input maxlength="100" type="text" class="form-control border-0 inputTexto" id="project" placeholder="Proyecto">
                                         <label for="project">Proyecto</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="subject" placeholder="Asunto">
+                                        <input maxlength="100" type="text" class="form-control border-0 inputTexto" id="subject" placeholder="Asunto">
                                         <label for="subject">Asunto</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 120px"></textarea>
+                                        <textarea maxlength="500" class="form-control border-0 inputTexto" placeholder="Leave a message here" id="message" style="height: 120px"></textarea>
                                         <label for="message">Mensaje</label>
                                     </div>
 
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3">Enviar mensaje</button>
+                                    <button class="btn btn-primary w-100 py-3 Enviarconsulta">Enviar mensaje</button>
                                 </div>
                             </div>
-                        </form>
+                        <!-- </form> -->
                     </div>
                 </div>
                 <div class="col-12">
@@ -209,18 +208,238 @@
                 </div>
                 <div class="col-12 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="rounded">
-                        <iframe class="rounded w-100" 
-                        style="height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd" 
+                        <iframe class="rounded w-100"
+                        style="height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd"
                         loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Contact End -->   
+    <!-- Contact End -->
 
     @include('partials.footer')
     @include('partials.whatsapp')
 
+<script>
+document.querySelectorAll('.inputTexto').forEach(function (input) {
+    input.addEventListener('input', function (e) {
+        const prohibido = /[<>{};*$%=()&]/g; // Caracteres que quieres bloquear
+        if (prohibido.test(e.target.value)) {
+            e.target.value = e.target.value.replace(prohibido, '');
+        }
+    });
+});
+</script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.getElementById('email').addEventListener('input', function (e) {
+    const email = e.target.value;
+    const valido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!valido) {
+        e.target.setCustomValidity('Correo no válido');
+    } else {
+        e.target.setCustomValidity('');
+    }
+    });
+</script>
+<script>
+    let token = $('meta[name="csrf-token"]').attr('content');
+
+    $(function() {
+        $(".Enviarconsulta").on('click',function () {
+            var nombre = $("#name").val();
+            var email = $("#email").val();
+            var telefono = $("#phone").val();
+            var proyecto = $("#project").val();
+            var asunto = $("#subject").val();
+            var mensaje = $("#message").val();
+
+            if(nombre == ''){
+                const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+                });
+                Toast.fire({
+                icon: "warning",
+                title: "Tienes que ingresar tu nombre"
+                });
+                return false;
+            }
+            if(email == ''){
+                const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+                });
+                Toast.fire({
+                icon: "warning",
+                title: "Tiene que ingresar un correo electrónico"
+                });
+                return false;
+            }
+            else
+            {
+                const valido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+                if (!valido) {
+                    const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                    });
+                    Toast.fire({
+                    icon: "error",
+                    title: "Correo no válido"
+                    });
+                    return false;
+                }
+            }
+
+            if(telefono == ''){
+                const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+                });
+                Toast.fire({
+                icon: "warning",
+                title: "Tiene que ingresar un Teléfono para contacto"
+                });
+                return false;
+            }
+            if(proyecto == ''){
+                const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+                });
+                Toast.fire({
+                icon: "warning",
+                title: "Tiene que ingresar el nombre de su proyecto"
+                });
+                return false;
+            }
+            if(asunto == ''){
+                const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+                });
+                Toast.fire({
+                icon: "warning",
+                title: "Tiene que ingresar el asunto del mensaje"
+                });
+                return false;
+            }
+            if(mensaje == ''){
+                const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+                });
+                Toast.fire({
+                icon: "warning",
+                title: "Tiene que ingresar el mensaje"
+                });
+                return false;
+            }
+            Swal.fire({
+                header: '...',
+                title: 'loading...',
+                allowOutsideClick:false,
+                didOpen: () => {
+                    Swal.showLoading()
+                }
+            });
+
+            $.ajax({
+                url: "/correo",
+                method: "post",
+                dataType: 'json',
+                data: {
+                    _token: token,
+                    nombre : nombre,
+                    email : email,
+                    telefono: telefono,
+                    proyecto: proyecto,
+                    asunto: asunto,
+                    mensaje: mensaje,
+                },
+                success: function (response) {
+                    if (response.status) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'OK',
+                            text: response.msg,
+                        })
+        // window.location.href = "https://elsvan.onfleekmedia.com/brochure.pdf";
+                    } else {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Oops...',
+                            text: response.msg,
+                        })
+                    }
+                    $("#name").val('');
+                    $("#email").val('');
+                    $("#phone").val('');
+                    $("#project").val('');
+                    $("#subject").val('');
+                    $("#message").val('');
+                },
+                error: function () {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...!!',
+                        text: 'Algo salió mal, Inténtalo más tarde!',
+                    })
+                }
+            });
+        });
+    })
+</script>
 
 @endsection
