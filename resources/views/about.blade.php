@@ -106,10 +106,10 @@
                         </p>
                         <p>Grupo VesergenPerú nació con la visión de transformar la manera en que las empresas peruanas interactúan con la tecnología. Con años de experiencia en el sector, hemos evolucionado y crecido junto a nuestros clientes, adaptándonos a los cambios tecnológicos y a las necesidades del mercado.
                         </p>
-                        <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>We can save your money.</p>
+                        <!-- <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>We can save your money.</p>
                         <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>Production or trading of good</p>
                         <p class="text-dark mb-4"><i class="fa fa-check text-primary me-3"></i>Our life insurance is flexible</p>
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="#">More Information</a>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="#">More Information</a> -->
                     </div>
                 </div>
                 <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
@@ -126,19 +126,19 @@
                                         <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">129</span>
                                         <span class="h1 fw-bold text-primary">+</span>
                                     </div>
-                                    <h4 class="mb-0 text-dark">Insurance Policies</h4>
+                                    <h4 class="mb-0 text-dark">Clientes</h4>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="counter-item bg-light rounded p-3 h-100">
                                     <div class="counter-counting">
-                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">99</span>
+                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">599</span>
                                         <span class="h1 fw-bold text-primary">+</span>
                                     </div>
-                                    <h4 class="mb-0 text-dark">Awards WON</h4>
+                                    <h4 class="mb-0 text-dark">Proyectos</h4>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <!-- <div class="col-sm-6">
                                 <div class="counter-item bg-light rounded p-3 h-100">
                                     <div class="counter-counting">
                                         <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">556</span>
@@ -155,7 +155,7 @@
                                     </div>
                                     <h4 class="mb-0 text-dark">Team Members</h4>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

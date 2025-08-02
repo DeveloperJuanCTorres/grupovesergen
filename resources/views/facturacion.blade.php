@@ -119,28 +119,10 @@
                             <div class="col-sm-6">
                                 <div class="counter-item bg-light rounded p-3 h-100">
                                     <div class="counter-counting">
-                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">99</span>
-                                        <span class="h1 fw-bold text-primary">+</span>
-                                    </div>
-                                    <h4 class="mb-0 text-dark">Premios</h4>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="counter-item bg-light rounded p-3 h-100">
-                                    <div class="counter-counting">
                                         <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">556</span>
                                         <span class="h1 fw-bold text-primary">+</span>
                                     </div>
                                     <h4 class="mb-0 text-dark">Agentes calificados</h4>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="counter-item bg-light rounded p-3 h-100">
-                                    <div class="counter-counting">
-                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">967</span>
-                                        <span class="h1 fw-bold text-primary">+</span>
-                                    </div>
-                                    <h4 class="mb-0 text-dark">Team Members</h4>
                                 </div>
                             </div>
                         </div>
@@ -154,9 +136,6 @@
                         </p>
                         <p>Para más información sobre nuestras soluciones de facturación electrónica y cómo pueden beneficiar a tu empresa, no dudes en contactarnos.
                         </p>
-                        <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>We can save your money.</p>
-                        <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>Production or trading of good</p>
-                        <p class="text-dark mb-4"><i class="fa fa-check text-primary me-3"></i>Our life insurance is flexible</p>
                         <a class="btn btn-primary rounded-pill py-3 px-5" href="#">Cotice ahora</a>
                     </div>
                 </div>                
@@ -166,7 +145,7 @@
     <!-- About End -->
 
     <!-- Feature Start -->
-    <div class="container-fluid feature bg-light py-5">
+    <div class="container-fluid feature bg-light">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <!-- <h4 class="text-primary">Nuestros Servicios</h4> -->
@@ -279,14 +258,14 @@
     <!-- Feature End -->
 
     <!-- PRECIOS -->
-    <div id="generic_price_table">   
+    <div class="bg-light" id="generic_price_table">   
         <section>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <!--PRICE HEADING START-->
                         <div class="price-heading clearfix py-5">
-                            <h1>Nuestros planes</h1>
+                            <h2 class="display-4 mb-4">Nuestros Planes</h2>
                         </div>
                         <!--//PRICE HEADING END-->
                     </div>

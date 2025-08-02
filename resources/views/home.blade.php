@@ -237,10 +237,10 @@
                         </p>
                         <p>Grupo VesergenPerú nació con la visión de transformar la manera en que las empresas peruanas interactúan con la tecnología. Con años de experiencia en el sector, hemos evolucionado y crecido junto a nuestros clientes, adaptándonos a los cambios tecnológicos y a las necesidades del mercado.
                         </p>
-                        <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>We can save your money.</p>
+                        <!-- <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>We can save your money.</p>
                         <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>Production or trading of good</p>
-                        <p class="text-dark mb-4"><i class="fa fa-check text-primary me-3"></i>Our life insurance is flexible</p>
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="#">More Information</a>
+                        <p class="text-dark mb-4"><i class="fa fa-check text-primary me-3"></i>Our life insurance is flexible</p> -->
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="/about">Más Información</a>
                     </div>
                 </div>
                 <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
