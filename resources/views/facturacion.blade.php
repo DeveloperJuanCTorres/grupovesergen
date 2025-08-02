@@ -490,7 +490,7 @@
                                 @if($key == 0)
                                 <h2 class="accordion-header" id="heading{{$key}}">
                                     <button class="accordion-button border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}" aria-expanded="true" aria-controls="collapse{{$key}}">
-                                        Q: {{$item->pregunta}}
+                                        {{$item->pregunta}}
                                     </button>
                                 </h2>
                                 <div id="collapse{{$key}}" class="accordion-collapse collapse show active" aria-labelledby="heading{{$key}}" data-bs-parent="#accordionExample">
@@ -501,7 +501,7 @@
                                 @else
                                 <h2 class="accordion-header" id="heading{{$key}}">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}" aria-expanded="false" aria-controls="collapse{{$key}}">
-                                        Q: {{$item->pregunta}}
+                                        {{$item->pregunta}}
                                     </button>
                                 </h2>
                                 <div id="collapse{{$key}}" class="accordion-collapse collapse" aria-labelledby="heading{{$key}}" data-bs-parent="#accordionExample">
