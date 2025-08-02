@@ -378,7 +378,7 @@
                     </div>
                 </div>
                 <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
-                    <img src="img/questions.png" class="img-fluid w-100" alt="">
+                    <img src="img/preguntas.png" class="img-fluid w-100" alt="">
                 </div>
             </div>
         </div>

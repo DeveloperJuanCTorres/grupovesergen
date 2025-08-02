@@ -30,6 +30,7 @@ Route::post('cart/removeitem', [App\Http\Controllers\CartController::class, 'rem
 
 Route::post('/enviar_pedido', [App\Http\Controllers\HomeController::class, 'pedido'])->name('enviar_pedido');
 Route::post('/correo',[App\Http\Controllers\HomeController::class,'correoContact']);
+Route::post('/reclamo',[App\Http\Controllers\HomeController::class,'correoReclamo']);
 
 
 Route::group(['prefix' => 'admin'], function () {

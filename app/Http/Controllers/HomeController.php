@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\Contactanos;
+use App\Mail\Reclamos;
 use App\Models\Api;
 use App\Models\Banner;
 use App\Models\Brand;
@@ -393,6 +394,18 @@ class HomeController extends Controller
         $correo = new Contactanos($request);
         try {
             Mail::to('administracion@vesergenperu.com')->send($correo);
+            return response()->json(['status' => true, 'msg' => "El correo fue enviado satisfactoriamente"]);
+        } catch (\Exception $e) {
+            return response()->json(['status' => false, 'msg' => "Hubo un error al enviar, inténtalo de nuevo más tarde." . $e->getMessage()]);
+        }
+    }
+
+    public function correoReclamo(Request $request)
+    {
+        $correo = new Reclamos($request);
+        try {
+            // Mail::to('administracion@vesergenperu.com')->send($correo);
+            Mail::to('jtorres@vesergenperu.com')->send($correo);
             return response()->json(['status' => true, 'msg' => "El correo fue enviado satisfactoriamente"]);
         } catch (\Exception $e) {
             return response()->json(['status' => false, 'msg' => "Hubo un error al enviar, inténtalo de nuevo más tarde." . $e->getMessage()]);

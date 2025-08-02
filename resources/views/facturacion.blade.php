@@ -279,42 +279,198 @@
     <!-- Feature End -->
 
     <!-- PRECIOS -->
-    <div class="pricingTable">
-        <h2 class="pricingTable-title">Find a plan that's right for you.</h2>
-        <h3 class="pricingTable-subtitle">Every plan comes with a 30-day   free trial.</h3>
-        
-        <ul class="pricingTable-firstTable">
-            <li class="pricingTable-firstTable_table">
-            <h1 class="pricingTable-firstTable_table__header">Bronze Packege</h1>
-            <p class="pricingTable-firstTable_table__pricing"><span>$</span><span>10</span><span>Month</span></p>
-            <ul class="pricingTable-firstTable_table__options">
-                <li>Unlimited Listing</li>
-                <li>Edit Your Listing</li>
-                <li>Approve Reviews</li>
-            </ul>
-            <button class="pricingTable-firstTable_table__getstart">Get Started Now</button>
-            </li><li class="pricingTable-firstTable_table">
-            <h1 class="pricingTable-firstTable_table__header">Gold Packege</h1>
-            <p class="pricingTable-firstTable_table__pricing"><span>$</span><span>19</span><span>Month</span></p>
-            <ul class="pricingTable-firstTable_table__options">
-                <li>Unlimited Listing</li>
-                <li>Edit Your Listing</li>
-                <li>Approve Reviews</li>
-                <li>Take Booking Online</li>
-                <li>24/7 Support Service</li>
-            </ul>
-            <button class="pricingTable-firstTable_table__getstart">Get Started Now</button>
-            </li><li class="pricingTable-firstTable_table">
-            <h1 class="pricingTable-firstTable_table__header">Platinum Packege</h1>
-            <p class="pricingTable-firstTable_table__pricing"><span>$</span><span>49</span><span>Month</span></p>
-            <ul class="pricingTable-firstTable_table__options">
-                <li>Unlimited Listing</li>
-                <li>Edit Your Listing</li>
-                <li>Approve Reviews</li>
-            </ul>
-            <button class="pricingTable-firstTable_table__getstart">Get Started Now</button>
-            </li>
-        </ul>
+    <div id="generic_price_table">   
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!--PRICE HEADING START-->
+                        <div class="price-heading clearfix py-5">
+                            <h1>Nuestros planes</h1>
+                        </div>
+                        <!--//PRICE HEADING END-->
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                
+                <!--BLOCK ROW START-->
+                <div class="row">
+                    <div class="col-md-4">
+                    
+                        <!--PRICE CONTENT START-->
+                        <div class="generic_content clearfix">
+                            
+                            <!--HEAD PRICE DETAIL START-->
+                            <div class="generic_head_price clearfix">
+                            
+                                <!--HEAD CONTENT START-->
+                                <div class="generic_head_content clearfix">
+                                
+                                    <!--HEAD START-->
+                                    <div class="head_bg"></div>
+                                    <div class="head">
+                                        <span>BÁSICO</span>
+                                    </div>
+                                    <!--//HEAD END-->
+                                    
+                                </div>
+                                <!--//HEAD CONTENT END-->
+                                
+                                <!--PRICE START-->
+                                <div class="generic_price_tag clearfix">	
+                                    <span class="price">
+                                        <span class="sign">S/.</span>
+                                        <span class="currency">59</span>
+                                        <span class="cent">.90</span>
+                                        <span class="month">+ IGV</span>
+                                    </span>
+                                </div>
+                                <!--//PRICE END-->
+                                
+                            </div>                            
+                            <!--//HEAD PRICE DETAIL END-->
+                            
+                            <!--FEATURE LIST START-->
+                            <div class="generic_feature_list">
+                                <ul>
+                                    <li><span>90</span> Comprobantes</li>
+                                    <li><span>3</span> Usuarios</li>
+                                    <li><span>24/7</span> Soporte Técnico</li>
+                                    <li> Panel de control para contador</li>
+                                </ul>
+                            </div>
+                            <!--//FEATURE LIST END-->
+                            
+                            <!--BUTTON START-->
+                            <div class="generic_price_btn clearfix">
+                                <a class="" href="/contact">Cotizar</a>
+                            </div>
+                            <!--//BUTTON END-->
+                            
+                        </div>
+                        <!--//PRICE CONTENT END-->
+                            
+                    </div>
+                    
+                    <div class="col-md-4">
+                    
+                        <!--PRICE CONTENT START-->
+                        <div class="generic_content active clearfix">
+                            
+                            <!--HEAD PRICE DETAIL START-->
+                            <div class="generic_head_price clearfix">
+                            
+                                <!--HEAD CONTENT START-->
+                                <div class="generic_head_content clearfix">
+                                
+                                    <!--HEAD START-->
+                                    <div class="head_bg"></div>
+                                    <div class="head">
+                                        <span>ESTÁNDAR</span>
+                                    </div>
+                                    <!--//HEAD END-->
+                                    
+                                </div>
+                                <!--//HEAD CONTENT END-->
+                                
+                                <!--PRICE START-->
+                                <div class="generic_price_tag clearfix">	
+                                    <span class="price">
+                                        <span class="sign">S/.</span>
+                                        <span class="currency">75</span>
+                                        <span class="cent">.80</span>
+                                        <span class="month">+ IGV</span>
+                                    </span>
+                                </div>
+                                <!--//PRICE END-->
+                                
+                            </div>                            
+                            <!--//HEAD PRICE DETAIL END-->
+                            
+                            <!--FEATURE LIST START-->
+                            <div class="generic_feature_list">
+                                <ul>
+                                    <li><span>200</span> Comprobantes</li>
+                                    <li><span>5</span> Usuarios</li>
+                                    <li><span>24/7</span> Soporte Técnico</li>
+                                    <li>Panel de control para contador</li>
+                                </ul>
+                            </div>
+                            <!--//FEATURE LIST END-->
+                            
+                            <!--BUTTON START-->
+                            <div class="generic_price_btn clearfix">
+                                <a class="" href="/contact">Cotizar</a>
+                            </div>
+                            <!--//BUTTON END-->
+                            
+                        </div>
+                        <!--//PRICE CONTENT END-->
+                            
+                    </div>
+                    <div class="col-md-4">
+                    
+                        <!--PRICE CONTENT START-->
+                        <div class="generic_content clearfix">
+                            
+                            <!--HEAD PRICE DETAIL START-->
+                            <div class="generic_head_price clearfix">
+                            
+                                <!--HEAD CONTENT START-->
+                                <div class="generic_head_content clearfix">
+                                
+                                    <!--HEAD START-->
+                                    <div class="head_bg"></div>
+                                    <div class="head">
+                                        <span>PREMIUM</span>
+                                    </div>
+                                    <!--//HEAD END-->
+                                    
+                                </div>
+                                <!--//HEAD CONTENT END-->
+                                
+                                <!--PRICE START-->
+                                <div class="generic_price_tag clearfix">	
+                                    <span class="price">
+                                        <span class="sign">S/.</span>
+                                        <span class="currency">95</span>
+                                        <span class="cent">.50</span>
+                                        <span class="month">+ IGV</span>
+                                    </span>
+                                </div>
+                                <!--//PRICE END-->
+                                
+                            </div>                            
+                            <!--//HEAD PRICE DETAIL END-->
+                            
+                            <!--FEATURE LIST START-->
+                            <div class="generic_feature_list">
+                                <ul>
+                                    <li><span>500</span> Comprobantes</li>
+                                    <li>Multiusuarios</li>
+                                    <li><span>24/7</span> Soporte Técnico</li>
+                                    <li>Panel de control para contador</li>
+                                    <li>Control remoto del sistema de ventas</li>
+                                </ul>
+                            </div>
+                            <!--//FEATURE LIST END-->
+                            
+                            <!--BUTTON START-->
+                            <div class="generic_price_btn clearfix">
+                                <a class="" href="/contact">Cotizar</a>
+                            </div>
+                            <!--//BUTTON END-->
+                            
+                        </div>
+                        <!--//PRICE CONTENT END-->
+                            
+                    </div>
+                </div>	
+                <!--//BLOCK ROW END-->
+                
+            </div>
+        </section>   
     </div>
     <!-- END PRECIOS -->
 
@@ -360,7 +516,7 @@
                     </div>
                 </div>
                 <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
-                    <img src="img/questions.png" class="img-fluid w-100" alt="">
+                    <img src="img/preguntas.png" class="img-fluid w-100" alt="">
                 </div>
             </div>
         </div>

@@ -231,18 +231,8 @@ document.querySelectorAll('.inputTexto').forEach(function (input) {
     });
 });
 </script>
-	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-    document.getElementById('email').addEventListener('input', function (e) {
-    const email = e.target.value;
-    const valido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    if (!valido) {
-        e.target.setCustomValidity('Correo no válido');
-    } else {
-        e.target.setCustomValidity('');
-    }
-    });
-</script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
     let token = $('meta[name="csrf-token"]').attr('content');
 
