@@ -250,43 +250,25 @@
                                 <div class="rounded bg-light">
                                     <img src="storage/{{$business->banner}}" class="img-fluid rounded w-100" alt="">
                                 </div>
-                            </div>
+                            </div>                            
                             <div class="col-sm-6">
                                 <div class="counter-item bg-light rounded p-3 h-100">
                                     <div class="counter-counting">
                                         <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">129</span>
                                         <span class="h1 fw-bold text-primary">+</span>
                                     </div>
-                                    <h4 class="mb-0 text-dark">Insurance Policies</h4>
+                                    <h4 class="mb-0 text-dark">Clientes</h4>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="counter-item bg-light rounded p-3 h-100">
                                     <div class="counter-counting">
-                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">99</span>
+                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">599</span>
                                         <span class="h1 fw-bold text-primary">+</span>
                                     </div>
-                                    <h4 class="mb-0 text-dark">Awards WON</h4>
+                                    <h4 class="mb-0 text-dark">Proyectos</h4>
                                 </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="counter-item bg-light rounded p-3 h-100">
-                                    <div class="counter-counting">
-                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">556</span>
-                                        <span class="h1 fw-bold text-primary">+</span>
-                                    </div>
-                                    <h4 class="mb-0 text-dark">Skilled Agents</h4>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="counter-item bg-light rounded p-3 h-100">
-                                    <div class="counter-counting">
-                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">967</span>
-                                        <span class="h1 fw-bold text-primary">+</span>
-                                    </div>
-                                    <h4 class="mb-0 text-dark">Team Members</h4>
-                                </div>
-                            </div>
+                            </div>                            
                         </div>
                     </div>
                 </div>
