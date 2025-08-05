@@ -253,7 +253,7 @@
     <!-- Feature End -->
 
     <!-- PRECIOS -->
-    <div class="bg-light" id="generic_price_table">   
+    <div class="bg-white" id="generic_price_table">   
         <section>
             <div class="container">
                 <div class="row">
@@ -267,182 +267,89 @@
                 </div>
             </div>
             <div class="container">
-                
-                <!--BLOCK ROW START-->
-                <div class="row">
-                    <div class="col-md-4">
-                    
-                        <!--PRICE CONTENT START-->
-                        <div class="generic_content clearfix">
-                            
-                            <!--HEAD PRICE DETAIL START-->
-                            <div class="generic_head_price clearfix">
-                            
-                                <!--HEAD CONTENT START-->
-                                <div class="generic_head_content clearfix">
-                                
-                                    <!--HEAD START-->
-                                    <div class="head_bg"></div>
-                                    <div class="head">
-                                        <span>BÁSICO</span>
-                                    </div>
-                                    <!--//HEAD END-->
-                                    
-                                </div>
-                                <!--//HEAD CONTENT END-->
-                                
-                                <!--PRICE START-->
-                                <div class="generic_price_tag clearfix">	
-                                    <span class="price">
-                                        <span class="sign">S/.</span>
-                                        <span class="currency">59</span>
-                                        <span class="cent">.90</span>
-                                        <span class="month">+ IGV</span>
-                                    </span>
-                                </div>
-                                <!--//PRICE END-->
-                                
-                            </div>                            
-                            <!--//HEAD PRICE DETAIL END-->
-                            
-                            <!--FEATURE LIST START-->
-                            <div class="generic_feature_list">
-                                <ul>
-                                    <li><span>90</span> Comprobantes</li>
-                                    <li><span>3</span> Usuarios</li>
-                                    <li><span>24/7</span> Soporte Técnico</li>
-                                    <li> Panel de control para contador</li>
-                                </ul>
-                            </div>
-                            <!--//FEATURE LIST END-->
-                            
-                            <!--BUTTON START-->
-                            <div class="generic_price_btn clearfix">
-                                <a class="" href="/contact">Cotizar</a>
-                            </div>
-                            <!--//BUTTON END-->
-                            
+                <div class="row justify-content-center align-items-center mb-5">
+                    <div class="col-md-3 ps-md-0">
+                        <div class="card-pricing2 card-success">
+                        <div class="pricing-header">
+                            <h3 class="fw-bold mb-3 text-white">Básico</h3>
+                            <!-- <span class="sub-title text-white">Lorem ipsum</span> -->
                         </div>
-                        <!--//PRICE CONTENT END-->
-                            
-                    </div>
-                    
-                    <div class="col-md-4">
-                    
-                        <!--PRICE CONTENT START-->
-                        <div class="generic_content active clearfix">
-                            
-                            <!--HEAD PRICE DETAIL START-->
-                            <div class="generic_head_price clearfix">
-                            
-                                <!--HEAD CONTENT START-->
-                                <div class="generic_head_content clearfix">
-                                
-                                    <!--HEAD START-->
-                                    <div class="head_bg"></div>
-                                    <div class="head">
-                                        <span>ESTÁNDAR</span>
-                                    </div>
-                                    <!--//HEAD END-->
-                                    
-                                </div>
-                                <!--//HEAD CONTENT END-->
-                                
-                                <!--PRICE START-->
-                                <div class="generic_price_tag clearfix">	
-                                    <span class="price">
-                                        <span class="sign">S/.</span>
-                                        <span class="currency">75</span>
-                                        <span class="cent">.80</span>
-                                        <span class="month">+ IGV</span>
-                                    </span>
-                                </div>
-                                <!--//PRICE END-->
-                                
-                            </div>                            
-                            <!--//HEAD PRICE DETAIL END-->
-                            
-                            <!--FEATURE LIST START-->
-                            <div class="generic_feature_list">
-                                <ul>
-                                    <li><span>200</span> Comprobantes</li>
-                                    <li><span>5</span> Usuarios</li>
-                                    <li><span>24/7</span> Soporte Técnico</li>
-                                    <li>Panel de control para contador</li>
-                                </ul>
+                        <div class="price-value">
+                            <div class="value">
+                            <span class="currency">S/.</span>
+                            <span class="amount">59.<span>90</span></span>
+                            <span class="month">/method_exists</span>
                             </div>
-                            <!--//FEATURE LIST END-->
-                            
-                            <!--BUTTON START-->
-                            <div class="generic_price_btn clearfix">
-                                <a class="" href="/contact">Cotizar</a>
-                            </div>
-                            <!--//BUTTON END-->
-                            
                         </div>
-                        <!--//PRICE CONTENT END-->
-                            
-                    </div>
-                    <div class="col-md-4">
-                    
-                        <!--PRICE CONTENT START-->
-                        <div class="generic_content clearfix">
-                            
-                            <!--HEAD PRICE DETAIL START-->
-                            <div class="generic_head_price clearfix">
-                            
-                                <!--HEAD CONTENT START-->
-                                <div class="generic_head_content clearfix">
-                                
-                                    <!--HEAD START-->
-                                    <div class="head_bg"></div>
-                                    <div class="head">
-                                        <span>PREMIUM</span>
-                                    </div>
-                                    <!--//HEAD END-->
-                                    
-                                </div>
-                                <!--//HEAD CONTENT END-->
-                                
-                                <!--PRICE START-->
-                                <div class="generic_price_tag clearfix">	
-                                    <span class="price">
-                                        <span class="sign">S/.</span>
-                                        <span class="currency">95</span>
-                                        <span class="cent">.50</span>
-                                        <span class="month">+ IGV</span>
-                                    </span>
-                                </div>
-                                <!--//PRICE END-->
-                                
-                            </div>                            
-                            <!--//HEAD PRICE DETAIL END-->
-                            
-                            <!--FEATURE LIST START-->
-                            <div class="generic_feature_list">
-                                <ul>
-                                    <li><span>500</span> Comprobantes</li>
-                                    <li>Multiusuarios</li>
-                                    <li><span>24/7</span> Soporte Técnico</li>
-                                    <li>Panel de control para contador</li>
-                                    <li>Control remoto del sistema de ventas</li>
-                                </ul>
-                            </div>
-                            <!--//FEATURE LIST END-->
-                            
-                            <!--BUTTON START-->
-                            <div class="generic_price_btn clearfix">
-                                <a class="" href="/contact">Cotizar</a>
-                            </div>
-                            <!--//BUTTON END-->
-                            
+                        <ul class="pricing-content">
+                            <li>90 Comprobantes</li>
+                            <li>3 Usuarios</li>
+                            <li>24/7 Soporte Técnico</li>
+                            <li>Panenotrol para Contador</li>
+                            <li class="disable">Control remoto del Sistema de Ventas</li>
+                        </ul>
+                        <a
+                            href="/contact"
+                            class="btn btn-success btn-border btn-lg w-75 fw-bold mb-3"
+                            >Cotizar</a
+                        >
                         </div>
-                        <!--//PRICE CONTENT END-->
-                            
                     </div>
-                </div>	
-                <!--//BLOCK ROW END-->
-                
+                    <div class="col-md-3 ps-md-0 pe-md-0">
+                        <div class="card-pricing2 card-primary">
+                        <div class="pricing-header">
+                            <h3 class="fw-bold mb-3 text-white">Estándar</h3>
+                            <!-- <span class="sub-title">Lorem ipsum</span> -->
+                        </div>
+                        <div class="price-value">
+                            <div class="value">
+                            <span class="currency">S/.</span>
+                            <span class="amount">75.<span>80</span></span>
+                            <span class="month">/mes</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-content">
+                            <li>200 Comprobantes</li>
+                            <li>5 Usuarios</li>
+                            <li>24/7 Soporte Técnico</li>
+                            <li>Panel de control para Contador</li>
+                            <li class="disable">Control remoto del Sistema de Ventas</li>
+                        </ul>
+                        <a
+                            href="#"
+                            class="btn btn-primary btn-border btn-lg w-75 fw-bold mb-3"
+                            >Sign up</a
+                        >
+                        </div>
+                    </div>
+                    <div class="col-md-3 pe-md-0">
+                        <div class="card-pricing2 card-secondary">
+                        <div class="pricing-header">
+                            <h3 class="fw-bold mb-3 text-white">Premium</h3>
+                            <!-- <span class="sub-title">Lorem ipsum</span> -->
+                        </div>
+                        <div class="price-value">
+                            <div class="value">
+                            <span class="currency">S/.</span>
+                            <span class="amount">95.<span>50</span></span>
+                            <span class="month">/mes</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-content">
+                            <li>500 Comprobantes</li>
+                            <li>Multiusuarios</li>
+                            <li>24/7 Soporte Técnico</li>
+                            <li>Panel de control para Contador</li>
+                            <li>Control remoto del Sistema de Ventas</li>
+                        </ul>
+                        <a
+                            href="#"
+                            class="btn btn-secondary btn-border btn-lg w-75 fw-bold mb-3"
+                            >Sign up</a
+                        >
+                        </div>
+                    </div>
+                </div>                
             </div>
         </section>   
     </div>

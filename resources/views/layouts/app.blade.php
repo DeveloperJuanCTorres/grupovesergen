@@ -20,6 +20,25 @@
         $version = '1993.2.7';
     ?>
 
+    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: {
+          families: [
+            "Font Awesome 5 Solid",
+            "Font Awesome 5 Regular",
+            "Font Awesome 5 Brands",
+            "simple-line-icons",
+          ],
+          urls: ["assets/css/fonts.min.css"],
+        },
+        active: function () {
+          sessionStorage.fonts = true;
+        },
+      });
+    </script>
+
     <!-- Icon Font Stylesheet -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
