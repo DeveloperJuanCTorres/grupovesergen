@@ -19,6 +19,7 @@ use App\Models\Question;
 use App\Models\Service;
 use App\Models\Taxonomy;
 use App\Models\Team;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
@@ -56,7 +57,9 @@ class HomeController extends Controller
         $caracteristicas = Characteristic::all();
         $services = Service::take(4)->get();
         $teams = Team::all();
-        return view('home',compact('categories','banners','caracteristicas','services','business','teams','questions'));
+        $testimonios = Testimonial::all();
+
+        return view('home',compact('categories','banners','caracteristicas','services','business','teams','questions','testimonios'));
     }
 
     public function store(Request $request)
@@ -178,11 +181,12 @@ class HomeController extends Controller
         $questions = Question::all();
         $services = Service::take(4)->get();
         $page = Page::where('title','Facturación Electrónica')->first();
+        $testimonios = Testimonial::all();
 
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->take(8)->get();
-        return view('facturacion', compact('categories','business','nosotros','questions','services','page'));
+        return view('facturacion', compact('categories','business','nosotros','questions','services','page','testimonios'));
     }
 
     public function checkout()
