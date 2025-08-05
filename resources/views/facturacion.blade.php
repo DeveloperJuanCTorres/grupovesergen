@@ -84,13 +84,10 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-breadcrumb">
-        <div class="container text-center py-5" style="max-width: 900px;height: 200px;">
-            <!-- <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s"></h4> -->
-            <!-- <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                <li class="breadcrumb-item"><a href="/">Inicio</a></li>
-                <li class="breadcrumb-item active text-primary">Facturacion electronica</li>
-            </ol>     -->
+    <div class="container-fluid bg-breadcrumb" style="background: linear-gradient(rgba(1, 95, 201, 0.9), rgba(0, 0, 0, 0.2)), url('{{ asset(str_replace('\\', '/', 'storage/' . $page->image)) }}');background-size: cover; background-position: center;">
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">{{$page->title}}</h4>
+              
         </div>
     </div>
     <!-- Header End -->
@@ -104,7 +101,7 @@
                         <div class="row g-4 justify-content-center">
                             <div class="col-12">
                                 <div class="rounded bg-light">
-                                    <img src="img/facturacion-1.jpg" class="img-fluid rounded w-100" alt="">
+                                    <img src="storage/{{$page->image_secondary}}" class="img-fluid rounded w-100" alt="">
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -131,10 +128,8 @@
                 <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
                     <div class="about-item-content bg-white rounded p-5 h-100">
                         <h4 class="text-primary">Conoce nuestra plataforma</h4>
-                        <h1 class="display-4 mb-4">High Range of Exploring Protection</h1>
-                        <p>Simplifica tu contabilidad y mejora tu eficiencia con nuestra solución de facturación electrónica. ¡Transforma tu negocio hoy!
-                        </p>
-                        <p>Para más información sobre nuestras soluciones de facturación electrónica y cómo pueden beneficiar a tu empresa, no dudes en contactarnos.
+                        <h1 class="display-4 mb-4">{{$page->excerpt}}</h1>
+                        <p>{!! Str::markdown($page->body) !!}
                         </p>
                         <a class="btn btn-primary rounded-pill py-3 px-5" href="#">Cotice ahora</a>
                     </div>

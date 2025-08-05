@@ -177,11 +177,12 @@ class HomeController extends Controller
         $nosotros = Field::find(1);
         $questions = Question::all();
         $services = Service::take(4)->get();
+        $page = Page::where('title','Facturación Electrónica')->first();
 
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->take(8)->get();
-        return view('facturacion', compact('categories','business','nosotros','questions','services'));
+        return view('facturacion', compact('categories','business','nosotros','questions','services','page'));
     }
 
     public function checkout()
