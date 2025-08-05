@@ -17,7 +17,7 @@
     <link href="img/favicon.ico" rel="icon">
 
     <?php
-        $version = '1993.2.7';
+        $version = '1993.2.8';
     ?>
 
     <script src="assets/js/plugin/webfont/webfont.min.js"></script>
