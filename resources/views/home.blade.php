@@ -325,8 +325,8 @@
                 <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
                     <div class="h-100">
                         <div class="mb-5">
-                            <h4 class="text-primary">Algunas preguntas frecuentes importantes</h4>
-                            <h1 class="display-4 mb-0">Preguntas frecuentes comunes</h1>
+                            <!-- <h4 class="text-primary">Algunas preguntas frecuentes importantes</h4> -->
+                            <h1 class="display-4 mb-0">Preguntas frecuentes</h1>
                         </div>
                         <div class="accordion" id="accordionExample">
                             @foreach($questions as $key => $item)
@@ -372,7 +372,7 @@
         <div class="container pt-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h4 class="text-primary">Nuestro Equipo</h4>
-                <h1 class="display-4 mb-4">Conozca a los miembros de nuestro equipo de expertos</h1>
+                <h1 class="display-4 mb-4">Conozca al talento detrás de nuestros servicios</h1>
                 <!-- <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic. -->
                 </p>
             </div>
@@ -406,7 +406,7 @@
         <div class="container pb-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h4 class="text-primary">Testimonial</h4>
-                <h1 class="display-4 mb-4">Lo   ue dicen nuestros clientes</h1>
+                <h1 class="display-4 mb-4">Lo que dicen nuestros clientes</h1>
                 <!-- <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic. -->
                 </p>
             </div>
