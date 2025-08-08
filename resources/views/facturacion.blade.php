@@ -150,7 +150,7 @@
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="feature-item-f p-4 pt-0 text-center">
                         <div class="p-4">
-                            <img src="img/SUNAT.png" width="170" alt="">
+                            <img src="img/SUNAT1.png" width="170" alt="">
                             <!-- <i class="far fa-handshake" style="font-size: 100px;"></i> -->
                         </div>
                         <h5 style="font-weight: bold;">Validación OSE-SUNAT</h5>
@@ -161,7 +161,7 @@
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
                     <div class="feature-item-f p-4 pt-0 text-center">
                         <div class="p-4">
-                            <img src="img/VENTAS.png" width="170" alt="">
+                            <img src="img/VENTAS1.png" width="170" alt="">
                             <!-- <i class="fa fa-dollar-sign" style="font-size: 100px;"></i> -->
                         </div>
                         <h5 style="font-weight: bold;">Gestión de ventas</h5>
