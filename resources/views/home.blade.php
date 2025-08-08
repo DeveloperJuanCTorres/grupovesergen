@@ -111,7 +111,7 @@
                                 <p class="mb-5 fs-5">{{$banner->description}}
                                 </p>
                                 @if($banner->texto_boton)
-                                <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
+                                <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4" style="margin-top: 300px;">
                                     <!-- <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a> -->
                                     <a class="btn btn-dark rounded-pill py-3 px-4 px-md-5 ms-2" href="{{$banner->enlace_boton}}">{{$banner->texto_boton}}</a>
                                 </div>
