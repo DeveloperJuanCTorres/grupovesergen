@@ -84,7 +84,7 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-breadcrumb" style="background: linear-gradient(rgba(1, 95, 201, 0.9), rgba(0, 0, 0, 0.2)), url('{{ asset(str_replace('\\', '/', 'storage/' . $page->image)) }}');background-size: cover; background-position: center;">
+    <div class="container-fluid bg-breadcrumb" style="background: linear-gradient(rgba(0, 0, 0, 0.2)), url('{{ asset(str_replace('\\', '/', 'storage/' . $page->image)) }}');background-size: cover; background-position: center;">
         <div class="container text-center py-5" style="max-width: 900px;">
             <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">{{$page->title}}</h4>
               
@@ -140,110 +140,120 @@
     <!-- About End -->
 
     <!-- Feature Start -->
-    <div class="container-fluid feature bg-light">
+    <div class="container-fluid feature bg-white py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <!-- <h4 class="text-primary">Nuestros Servicios</h4> -->
                 <h2 class="display-4 mb-4">Nuestros Servicios</h2>
             </div>
-            <div class="row g-4">
+            <div class="row g-4 d-flex justify-content-center">
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="feature-item-f p-4 pt-0">
-                        <div class="feature-icon p-4 mb-4">
-                            <i class="far fa-handshake fa-3x"></i>
+                    <div class="feature-item-f p-4 pt-0 text-center">
+                        <div class="p-4">
+                            <img src="img/SUNAT.png" width="170" alt="">
+                            <!-- <i class="far fa-handshake" style="font-size: 100px;"></i> -->
                         </div>
-                        <h4 class="mb-4">Validación OSE-SUNAT</h4>
-                        <p class="mb-4">Normativa vigente de la SUNAT.
+                        <h5 style="font-weight: bold;">Validación OSE-SUNAT</h5>
+                        <p class="">Normativa vigente de la SUNAT.
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="feature-item-f p-4 pt-0">
-                        <div class="feature-icon p-4 mb-4">
-                            <i class="fa fa-dollar-sign fa-3x"></i>
+                    <div class="feature-item-f p-4 pt-0 text-center">
+                        <div class="p-4">
+                            <img src="img/VENTAS.png" width="170" alt="">
+                            <!-- <i class="fa fa-dollar-sign" style="font-size: 100px;"></i> -->
                         </div>
-                        <h4 class="mb-4">Gestión de ventas</h4>
-                        <p class="mb-4">Emisión de facturas, boletas, proformas, etc.
+                        <h5 style="font-weight: bold;">Gestión de ventas</h5>
+                        <p class="">Emisión de facturas, boletas, proformas, etc.
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="feature-item-f p-4 pt-0">
-                        <div class="feature-icon p-4 mb-4">
-                            <i class="fa fa-bullseye fa-3x"></i>
+                    <div class="feature-item-f p-4 pt-0 text-center">
+                        <div class="p-4">
+                            <img src="img/COMPRAS.png" width="170" alt="">
+                            <!-- <i class="fa fa-bullseye" style="font-size: 100px;"></i> -->
                         </div>
-                        <h4 class="mb-4">Gestión de compras</h4>
-                        <p class="mb-4">Registro de compras, proveedores, clientes.
+                        <h5 style="font-weight: bold;">Gestión de compras</h5>
+                        <p class="">Registro de compras, proveedores, clientes.
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                    <div class="feature-item-f p-4 pt-0">
-                        <div class="feature-icon p-4 mb-4">
-                            <i class="fa fa-headphones fa-3x"></i>
+                    <div class="feature-item-f p-4 pt-0 text-center">
+                        <div class="p-4">
+                            <img src="img/INVENTARIO.png" width="170" alt="">
+                            <!-- <i class="fa fa-headphones" style="font-size: 100px;"></i> -->
                         </div>
-                        <h4 class="mb-4">Gestión de inventario</h4>
-                        <p class="mb-4">Registro de productos, stock, Kardex, etc.
+                        <h5 style="font-weight: bold;">Gestión de inventario</h5>
+                        <p class="">Registro de productos, stock, Kardex, etc.
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="feature-item-f p-4 pt-0">
-                        <div class="feature-icon p-4 mb-4">
-                            <i class="far fa-handshake fa-3x"></i>
+                    <div class="feature-item-f p-4 pt-0 text-center">
+                        <div class="p-4">
+                            <img src="img/REMISION.png" width="170" alt="">
+                            <!-- <i class="far fa-handshake" style="font-size: 100px;"></i> -->
                         </div>
-                        <h4 class="mb-4">Guías de remisión</h4>
-                        <p class="mb-4">Registro de traslado, transportista, etc.
+                        <h5 style="font-weight: bold;">Guías de remisión</h5>
+                        <p class="">Registro de traslado, transportista, etc.
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="feature-item-f p-4 pt-0">
-                        <div class="feature-icon p-4 mb-4">
-                            <i class="fa fa-dollar-sign fa-3x"></i>
+                    <div class="feature-item-f p-4 pt-0 text-center">
+                        <div class="p-4">
+                            <img src="img/ESTADISTICA.png" width="170" alt="">
+                            <!-- <i class="fa fa-dollar-sign" style="font-size: 100px;"></i> -->
                         </div>
-                        <h4 class="mb-4">Reportes y estadísticas</h4>
-                        <p class="mb-4">Visualiza y descarga reportes en formato Excel.
+                        <h4 style="font-weight: bold;">Reportes y estadísticas</h4>
+                        <p class="">Visualiza y descarga reportes en formato Excel.
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="feature-item-f p-4 pt-0">
-                        <div class="feature-icon p-4 mb-4">
-                            <i class="fa fa-bullseye fa-3x"></i>
+                    <div class="feature-item-f p-4 pt-0 text-center">
+                        <div class="p-4">
+                            <img src="img/PERSONALIZADA.png" width="170" alt="">
+                            <!-- <i class="fa fa-bullseye" style="font-size: 100px;"></i> -->
                         </div>
-                        <h4 class="mb-4">Documentación personalizada</h4>
-                        <p class="mb-4">Agrega tu logo, datos, contacto, etc.
+                        <h4 style="font-weight: bold;">Documentación personalizada</h4>
+                        <p class="">Agrega tu logo, datos, contacto, etc.
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                    <div class="feature-item-f p-4 pt-0">
-                        <div class="feature-icon p-4 mb-4">
-                            <i class="fa fa-headphones fa-3x"></i>
+                    <div class="feature-item-f p-4 pt-0 text-center">
+                        <div class="p-4">
+                            <img src="img/REMISION.png" width="170" alt="">
+                            <!-- <i class="fa fa-headphones" style="font-size: 100px;"></i> -->
                         </div>
-                        <h4 class="mb-4">Soluciones a medida</h4>
-                        <p class="mb-4">Desarrollo personalizado acorde al rubro.
+                        <h4 style="font-weight: bold;">Soluciones a medida</h4>
+                        <p class="">Desarrollo personalizado acorde al rubro.
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="feature-item-f p-4 pt-0">
-                        <div class="feature-icon p-4 mb-4">
-                            <i class="fa fa-bullseye fa-3x"></i>
+                    <div class="feature-item-f p-4 pt-0 text-center">
+                        <div class="p-4">
+                            <img src="img/SEGURIDAD.png" width="170" alt="">
+                            <!-- <i class="fa fa-bullseye" style="font-size: 100px;"></i> -->
                         </div>
-                        <h4 class="mb-4">Seguridad de la información</h4>
-                        <p class="mb-4">Confidencialidad de datos.
+                        <h4 style="font-weight: bold;">Seguridad de la información</h4>
+                        <p class="">Confidencialidad de datos.
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                    <div class="feature-item-f p-4 pt-0">
-                        <div class="feature-icon p-4 mb-4">
-                            <i class="fa fa-headphones fa-3x"></i>
+                    <div class="feature-item-f p-4 pt-0 text-center">
+                        <div class="p-4">
+                            <img src="img/REMOTO.png" width="170" alt="">
+                            <!-- <i class="fa fa-headphones" style="font-size: 100px;"></i> -->
                         </div>
-                        <h4 class="mb-4">Asesoría remota</h4>
-                        <p class="mb-4">Soluciones a distancia.
+                        <h4 style="font-weight: bold;">Asesoría remota</h4>
+                        <p class="">Soluciones a distancia.
                         </p>
                     </div>
                 </div>
@@ -278,7 +288,7 @@
                             <div class="value">
                             <span class="currency">S/.</span>
                             <span class="amount">59.<span>90</span></span>
-                            <span class="month">/method_exists</span>
+                            <span class="month">/mes</span>
                             </div>
                         </div>
                         <ul class="pricing-content">
@@ -316,9 +326,9 @@
                             <li class="disable">Control remoto del Sistema de Ventas</li>
                         </ul>
                         <a
-                            href="#"
+                            href="/contact"
                             class="btn btn-primary btn-border btn-lg w-75 fw-bold mb-3"
-                            >Sign up</a
+                            >Cotizar</a
                         >
                         </div>
                     </div>
@@ -343,9 +353,9 @@
                             <li>Control remoto del Sistema de Ventas</li>
                         </ul>
                         <a
-                            href="#"
+                            href="/contact"
                             class="btn btn-secondary btn-border btn-lg w-75 fw-bold mb-3"
-                            >Sign up</a
+                            >Cotizar</a
                         >
                         </div>
                     </div>
