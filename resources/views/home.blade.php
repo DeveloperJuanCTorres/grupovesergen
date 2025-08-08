@@ -100,7 +100,7 @@
     <!-- Carousel Start -->
     <div class="header-carousel owl-carousel destock">
         @foreach($banners as $banner)
-        <div class="header-carousel-item" style="background: linear-gradient(rgba(1, 95, 201, 0.9), rgba(0, 0, 0, 0.2)),url('{{ asset(str_replace('\\', '/', 'storage/' . $banner->image)) }}');background-size: cover; background-position: center;">
+        <div class="header-carousel-item" style="background: url('{{ asset(str_replace('\\', '/', 'storage/' . $banner->image)) }}');background-size: cover; background-position: center;">
             <div class="carousel-caption">
                 <div class="container">
                     <div class="row g-4 align-items-center">
@@ -132,7 +132,7 @@
 
     <div class="header-carousel owl-carousel mobil">
         @foreach($banners as $banner)
-        <div class="header-carousel-item" style="background: linear-gradient(rgba(1, 95, 201, 0.9), rgba(0, 0, 0, 0.2)),url('{{ asset(str_replace('\\', '/', 'storage/' . $banner->image_mobil)) }}');background-size: cover; background-position: center;">
+        <div class="header-carousel-item" style="background: url('{{ asset(str_replace('\\', '/', 'storage/' . $banner->image_mobil)) }}');background-size: cover; background-position: center;">
             <div class="carousel-caption">
                 <div class="container">
                     <div class="row g-4 align-items-center">
@@ -186,96 +186,7 @@
             </div>
         </div> -->
     </div>
-    <!-- Carousel End -->
-
-    <!-- Feature Start -->
-    <!-- <div class="container-fluid feature bg-light py-5">
-        <div class="container py-5">
-            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                <h4 class="text-primary">Nuestras Características</h4>
-                <h1 class="display-4 mb-4">El seguro te proporciona un futuro mejor</h1>
-                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                </p>
-            </div>
-            <div class="row g-4">
-                @foreach($caracteristicas as $item)
-                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="feature-item p-4 pt-0">
-                        <div class="feature-icon p-4 mb-4">
-                            @if($item->icon)
-                            {!! Str::markdown($item->icon) !!}
-                            @else
-                            <svg class="icon-svg" id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
-                                <path d="M3.61,165.6c0-8.37,0-16.74,0-25.11.12-.65.29-1.3.36-1.95,2.68-26,11.51-49.69,26.81-70.92C66.49,18.03,127.93-3.87,186.16,11.26c74.93,19.47,121.91,92.04,107.31,168-11.36,59.16-47.64,97.27-105.2,115.02-8.65,2.67-17.63,3.77-26.59,4.85h-23.97c-4.79-.69-9.64-1.09-14.36-2.1-58.66-12.6-96.87-47.67-114.78-104.87-2.7-8.64-3.8-17.62-4.97-26.56ZM149.75,30.02c-68.08.59-122.83,54.18-122.94,122.9-.1,67.95,53.85,122.85,122.7,123,68.3.16,123.07-54.19,123.07-122.91,0-68.32-54.33-122.34-122.84-123Z""/>
-                                <path d="M137.68,80c8.55.25,16.96-.58,25.25.93,19.21,3.48,33.49,21.13,32.72,41.46-.68,18.27-15.06,34.79-33.73,37.76q-5.82.92-6.34,6.71c-.52,5.72-5.84,10.4-11.75,10.31-5.95-.08-11.23-4.83-11.4-10.62-.19-6.17-.16-12.36-.01-18.54.13-5.34,4.48-9.84,9.86-10.56,4.92-.66,9.88-.07,14.82-.45,7.16-.56,13.33-6.08,14.67-13.09,2.05-10.78-5.65-20.17-16.8-20.26-13.12-.11-26.24.02-39.37-.06-7.47-.04-12.57-5.99-11.7-13.4.58-4.97,4.86-9.28,10.05-9.8,7.97-.79,15.96-.1,23.74-.38Z"/>
-                                <path d="M159.61,206.32c-.03,8.72-6.84,15.49-15.6,15.5-8.87.01-15.67-6.84-15.64-15.76.03-8.68,6.92-15.54,15.6-15.55,8.81,0,15.67,6.93,15.64,15.8Z"/>
-                            </svg>
-                            @endif
-                        </div>
-                        <h4 class="mb-4">{{$item->title}}</h4>
-                        <p class="mb-4" style="text-align: justify;">{!! Str::markdown($item->description) !!}
-                        </p>
-                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Leer más</a>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </div> -->
-    <!-- Feature End -->
-
-    <!-- About Start -->
-    <div class="container-fluid bg-light about py-5">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
-                    <div class="about-item-content bg-white rounded p-5 h-100">
-                        <h4 class="text-primary">Grupo VesergenPerú</h4>
-                        <h1 class="display-4 mb-4">¿Quiénes somos?</h1>
-                        <p>Bienvenidos a Grupo VesergenPerú, su aliado estratégico en soluciones informáticas.
-                            Somos una empresa peruana dedicada a ofrecer servicios y productos tecnológicos de alta calidad, diseñados para potenciar el crecimiento y la eficiencia de su negocio.
-                        </p>
-                        <p>Grupo VesergenPerú nació con la visión de transformar la manera en que las empresas peruanas interactúan con la tecnología. Con años de experiencia en el sector, hemos evolucionado y crecido junto a nuestros clientes, adaptándonos a los cambios tecnológicos y a las necesidades del mercado.
-                        </p>
-                        <!-- <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>We can save your money.</p>
-                        <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>Production or trading of good</p>
-                        <p class="text-dark mb-4"><i class="fa fa-check text-primary me-3"></i>Our life insurance is flexible</p> -->
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="/about">Más Información</a>
-                    </div>
-                </div>
-                <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
-                    <div class="bg-white rounded p-5 h-100">
-                        <div class="row g-4 justify-content-center">
-                            <div class="col-12">
-                                <div class="rounded bg-light">
-                                    <img src="storage/{{$business->banner}}" class="img-fluid rounded w-100" alt="">
-                                </div>
-                            </div>                            
-                            <div class="col-sm-6">
-                                <div class="counter-item bg-light rounded p-3 h-100">
-                                    <div class="counter-counting">
-                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">129</span>
-                                        <span class="h1 fw-bold text-primary">+</span>
-                                    </div>
-                                    <h4 class="mb-0 text-dark">Clientes</h4>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="counter-item bg-light rounded p-3 h-100">
-                                    <div class="counter-counting">
-                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">599</span>
-                                        <span class="h1 fw-bold text-primary">+</span>
-                                    </div>
-                                    <h4 class="mb-0 text-dark">Proyectos</h4>
-                                </div>
-                            </div>                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
+    <!-- Carousel End -->    
 
     <!-- Service Start -->
     <div class="container-fluid service py-5">

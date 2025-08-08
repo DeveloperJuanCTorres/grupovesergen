@@ -92,7 +92,7 @@
     </div>
     <!-- Header End -->
 
-<div class="container">
+<div class="container py-5">
     <div class="row">
         <div class="col-lg-12">
             <div class="page-content px-4">

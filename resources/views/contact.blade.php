@@ -84,7 +84,7 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-breadcrumb1" style="background: linear-gradient(rgba(1, 95, 201, 0.9), rgba(0, 0, 0, 0.2)), url('{{ asset(str_replace('\\', '/', 'storage/' . $page->image)) }}');background-size: cover; background-position: center;">
+    <div class="container-fluid bg-breadcrumb1" style="background: url('{{ asset(str_replace('\\', '/', 'storage/' . $page->image)) }}');background-size: cover; background-position: center;">
         <div class="container text-center py-5" style="max-width: 900px;">
             <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Contáctanos</h4>
 
@@ -195,7 +195,7 @@
                             <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.8s">
                                 <div class="contact-add-item">
                                     <div class="contact-icon text-primary mb-4">
-                                        <i class="fab fa-firefox-browser fa-2x"></i>
+                                        <i class="fas fa-globe fa-2x"></i>
                                     </div>
                                     <div>
                                         <h4>vesergenperu.com</h4>
@@ -209,7 +209,7 @@
                 <div class="col-12 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="rounded">
                         <iframe class="rounded w-100"
-                        style="height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd"
+                        style="height: 400px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1981.0335958378207!2d-79.8404645!3d-6.7616618!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904cef1e2d024143%3A0xea6fe9b4ff3b26d4!2sGrupo%20VesergenPeru%20-%20Electronic%20invoice%20Peru!5e0!3m2!1ses-419!2spe!4v1754666327986!5m2!1ses-419!2spe"
                         loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
