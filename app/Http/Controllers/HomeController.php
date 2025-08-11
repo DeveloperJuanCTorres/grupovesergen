@@ -13,6 +13,7 @@ use App\Models\Field;
 use App\Models\Order;
 use App\Models\Page;
 use App\Models\Post;
+use App\Models\Price;
 use App\Models\Product;
 use App\Models\Promotion;
 use App\Models\Question;
@@ -182,11 +183,12 @@ class HomeController extends Controller
         $services = Service::take(4)->get();
         $page = Page::where('title','Facturación Electrónica')->first();
         $testimonios = Testimonial::all();
+        $precios = Price::all();
 
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->take(8)->get();
-        return view('facturacion', compact('categories','business','nosotros','questions','services','page','testimonios'));
+        return view('facturacion', compact('categories','business','nosotros','questions','services','page','testimonios','precios'));
     }
 
     public function checkout()

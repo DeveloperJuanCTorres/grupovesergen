@@ -278,25 +278,37 @@
             </div>
             <div class="container">
                 <div class="row justify-content-center align-items-center mb-5">
+                    @foreach($precios as $item)
                     <div class="col-md-3 ps-md-0">
-                        <div class="card-pricing2 card-success">
+                        <div class="card-pricing2 {{$item->color}}">
                         <div class="pricing-header">
-                            <h3 class="fw-bold mb-3 text-white">Básico</h3>
-                            <!-- <span class="sub-title text-white">Lorem ipsum</span> -->
+                            <h3 class="fw-bold mb-3 text-white">{{$item->name}}</h3>
                         </div>
                         <div class="price-value">
                             <div class="value">
                             <span class="currency">S/.</span>
-                            <span class="amount">59.<span>90</span></span>
-                            <span class="month">/mes</span>
+                            <span class="amount">{{$item->monto_entero}}.<span>{{$item->monto_decimal}}</span></span>
+                            <span class="month">/{{$item->periodo}}</span>
                             </div>
                         </div>
                         <ul class="pricing-content">
-                            <li>90 Comprobantes</li>
-                            <li>3 Usuarios</li>
+                            <li>{{$item->comprobantes}} Comprobantes</li>
+                            <li>{{$item->usuarios}} Usuarios</li>
+                            @if($item->soporte == 1)
                             <li>24/7 Soporte Técnico</li>
+                            @else
+                            <li class="disable">24/7 Soporte Técnico</li>
+                            @endif
+                            @if($item->contador == 1)
                             <li>Panenotrol para Contador</li>
+                            @else
+                            <li class="disable">Panenotrol para Contador</li>
+                            @endif
+                            @if($item->remoto == 1)
+                            <li>Control remoto del Sistema de Ventas</li>
+                            @else
                             <li class="disable">Control remoto del Sistema de Ventas</li>
+                            @endif
                         </ul>
                         <a
                             href="/contact"
@@ -305,11 +317,11 @@
                         >
                         </div>
                     </div>
-                    <div class="col-md-3 ps-md-0 pe-md-0">
+                    @endforeach
+                    <!-- <div class="col-md-3 ps-md-0 pe-md-0">
                         <div class="card-pricing2 card-primary">
                         <div class="pricing-header">
                             <h3 class="fw-bold mb-3 text-white">Estándar</h3>
-                            <!-- <span class="sub-title">Lorem ipsum</span> -->
                         </div>
                         <div class="price-value">
                             <div class="value">
@@ -336,7 +348,6 @@
                         <div class="card-pricing2 card-secondary">
                         <div class="pricing-header">
                             <h3 class="fw-bold mb-3 text-white">Premium</h3>
-                            <!-- <span class="sub-title">Lorem ipsum</span> -->
                         </div>
                         <div class="price-value">
                             <div class="value">
@@ -358,7 +369,7 @@
                             >Cotizar</a
                         >
                         </div>
-                    </div>
+                    </div> -->
                 </div>                
             </div>
         </section>   

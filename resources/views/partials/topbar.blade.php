@@ -23,10 +23,18 @@
                 <div class="col-lg-4 text-center text-lg-end">
                     <div class="d-flex justify-content-end">
                         <div class="d-flex border-end border-primary pe-3">
+                            @if($business->link_facebook)
                             <a class="btn p-0 text-primary me-3" target="_blank" href="{{$business->link_facebook}}"><i class="fab fa-facebook-f"></i></a>
+                            @endif
+                            @if($business->link_youtube)
                             <a class="btn p-0 text-primary me-3" target="_blank" href="{{$business->link_youtube}}"><i class="fab fa-youtube"></i></a>
+                            @endif
+                            @if($business->link_instagram)
                             <a class="btn p-0 text-primary me-3" target="_blank" href="{{$business->link_instagram}}"><i class="fab fa-instagram"></i></a>
+                            @endif
+                            @if($business->link_linkedin)
                             <a class="btn p-0 text-primary me-0" target="_blank" href="{{$business->link_linkedin}}"><i class="fab fa-linkedin-in"></i></a>
+                            @endif
                         </div>
                         @auth
                         <div class="dropdown ms-3">

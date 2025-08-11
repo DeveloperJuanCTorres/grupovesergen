@@ -28,7 +28,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-6 col-xl-3">
+                            <!-- <div class="col-md-6 col-lg-6 col-xl-3">
                                 <div class="footer-item">
                                     <h4 class="text-white mb-4">Enlaces Útiles</h4>
                                     <a href="/"><i class="fas fa-angle-right me-2"></i> Inicio</a>
@@ -38,10 +38,10 @@
                                     <a href="/blog"><i class="fas fa-angle-right me-2"></i> Blog</a>
                                     <a href="/contact"><i class="fas fa-angle-right me-2"></i> Contáctanos</a>
                                 </div>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-xl-4">
+                            </div> -->
+                            <div class="col-md-6 col-lg-6 col-xl-6">
                                 <div class="footer-item">
-                                    <h4 class="mb-4 text-white">Instagram</h4>
+                                    <h4 class="mb-4 text-white">Ubícanos</h4>
                                     <div class="row g-3">
                                         <div class="col-lg-12 col-xl-12">
                                             <div class="d-flex">
