@@ -26,7 +26,7 @@
                             <div class="dropdown-menu">
                                 <a href="/facturacion" class="dropdown-item">Facturación Electrónica</a>
                                 @foreach($services as $service)
-                                <a href="" class="dropdown-item">{{$service->title}}</a>
+                                <a href="{{route('service.detail', $service)}}" class="dropdown-item">{{$service->title}}</a>
                                 @endforeach
                                 <a href="/services" class="dropdown-item">Todos los servicios</a>
                             </div>
@@ -300,9 +300,9 @@
                             <li class="disable">24/7 Soporte Técnico</li>
                             @endif
                             @if($item->contador == 1)
-                            <li>Panenotrol para Contador</li>
+                            <li>Panel de control para Contador</li>
                             @else
-                            <li class="disable">Panenotrol para Contador</li>
+                            <li class="disable">Panel de control para Contador</li>
                             @endif
                             @if($item->remoto == 1)
                             <li>Control remoto del Sistema de Ventas</li>
@@ -318,58 +318,6 @@
                         </div>
                     </div>
                     @endforeach
-                    <!-- <div class="col-md-3 ps-md-0 pe-md-0">
-                        <div class="card-pricing2 card-primary">
-                        <div class="pricing-header">
-                            <h3 class="fw-bold mb-3 text-white">Estándar</h3>
-                        </div>
-                        <div class="price-value">
-                            <div class="value">
-                            <span class="currency">S/.</span>
-                            <span class="amount">75.<span>80</span></span>
-                            <span class="month">/mes</span>
-                            </div>
-                        </div>
-                        <ul class="pricing-content">
-                            <li>200 Comprobantes</li>
-                            <li>5 Usuarios</li>
-                            <li>24/7 Soporte Técnico</li>
-                            <li>Panel de control para Contador</li>
-                            <li class="disable">Control remoto del Sistema de Ventas</li>
-                        </ul>
-                        <a
-                            href="/contact"
-                            class="btn btn-primary btn-border btn-lg w-75 fw-bold mb-3"
-                            >Cotizar</a
-                        >
-                        </div>
-                    </div>
-                    <div class="col-md-3 pe-md-0">
-                        <div class="card-pricing2 card-secondary">
-                        <div class="pricing-header">
-                            <h3 class="fw-bold mb-3 text-white">Premium</h3>
-                        </div>
-                        <div class="price-value">
-                            <div class="value">
-                            <span class="currency">S/.</span>
-                            <span class="amount">95.<span>50</span></span>
-                            <span class="month">/mes</span>
-                            </div>
-                        </div>
-                        <ul class="pricing-content">
-                            <li>500 Comprobantes</li>
-                            <li>Multiusuarios</li>
-                            <li>24/7 Soporte Técnico</li>
-                            <li>Panel de control para Contador</li>
-                            <li>Control remoto del Sistema de Ventas</li>
-                        </ul>
-                        <a
-                            href="/contact"
-                            class="btn btn-secondary btn-border btn-lg w-75 fw-bold mb-3"
-                            >Cotizar</a
-                        >
-                        </div>
-                    </div> -->
                 </div>                
             </div>
         </section>   

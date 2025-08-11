@@ -27,7 +27,7 @@
                             <div class="dropdown-menu">
                                 <a href="/facturacion" class="dropdown-item">Facturación Electrónica</a>
                                 @foreach($services as $service)
-                                <a href="" class="dropdown-item">{{$service->title}}</a>
+                                <a href="{{route('service.detail', $service)}}" class="dropdown-item">{{$service->title}}</a>
                                 @endforeach
                                 <a href="/services" class="dropdown-item">Todos los servicios</a>
                             </div>

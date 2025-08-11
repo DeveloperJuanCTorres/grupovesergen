@@ -12,6 +12,7 @@ Route::get('/product/{product}', [App\Http\Controllers\HomeController::class, 'd
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/services', [App\Http\Controllers\HomeController::class, 'services'])->name('services');
+Route::get('/service/{service}', [App\Http\Controllers\HomeController::class, 'serviceDetail'])->name('service.detail');
 Route::get('/blog', [App\Http\Controllers\HomeController::class, 'blog'])->name('blog');
 Route::get('/blog/{blog}', [App\Http\Controllers\HomeController::class, 'blogDetail'])->name('blog.detail');
 Route::get('/facturacion', [App\Http\Controllers\HomeController::class, 'facturacion'])->name('facturacion');

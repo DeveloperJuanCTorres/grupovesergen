@@ -10,7 +10,7 @@
             <nav class="navbar navbar-expand-lg navbar-light"> 
                 <a href="/" class="navbar-brand p-0">
                     <!-- <h1 class="text-primary mb-0"><i class="fab fa-slack me-2"></i> LifeSure</h1> -->
-                    <img src="img/logo-vesergen.png" width="200" alt="Logo">
+                    <img src="{{asset("img/logo-vesergen.png")}}" width="200" alt="Logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -19,20 +19,20 @@
                     <div class="navbar-nav mx-0 mx-lg-auto">
                         <a href="/" class="nav-item nav-link">Inicio</a>
                         <a href="/about" class="nav-item nav-link">Nosotros</a>
-                        <div class="nav-item dropdown">
+                        <div class="nav-item dropdown active">
                             <a href="" class="nav-link" data-bs-toggle="dropdown">
                                 <span class="dropdown-toggle">Servicios</span>
                             </a>
                             <div class="dropdown-menu">
                                 <a href="/facturacion" class="dropdown-item">Facturación Electrónica</a>
-                                @foreach($services as $service)
-                                <a href="{{route('service.detail', $service)}}" class="dropdown-item">{{$service->title}}</a>
+                                @foreach($otherServices as $item)
+                                <a href="{{route('service.detail', $item)}}" class="dropdown-item">{{$item->title}}</a>
                                 @endforeach
                                 <a href="/services" class="dropdown-item">Todos los servicios</a>
                             </div>
                         </div>
                         <a href="/store" class="nav-item nav-link">Tienda</a>
-                        <a href="/blog" class="nav-item nav-link active">Blog</a>
+                        <a href="/blog" class="nav-item nav-link">Blog</a>
                         <a href="/contact" class="nav-item nav-link">Contáctanos</a>
                         <div class="nav-btn px-3">
                             <!-- <button class="btn-search btn btn-primary btn-md-square rounded-circle flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button> -->
@@ -82,55 +82,104 @@
     </div>
     <!-- Modal Search End -->
 
-
     <!-- Header Start -->
-    <div class="container-fluid bg-breadcrumb1" style="background: url('{{ asset(str_replace('\\', '/', 'storage/' . $page->image)) }}');background-size: cover; background-position: center;">
-        <div class="container text-center py-5" style="max-width: 900px;">
-            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Blog</h4>
+    <div class="container-fluid bg-breadcrumb-store" style="background: linear-gradient(rgba(0, 0, 0, 0.2)), url('{{ asset(str_replace('\\', '/', 'storage/' . $page->image)) }}');background-size: cover; background-position: center;">
+        <div class="container text-center py-5" style="max-width: 1200px;">
+            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">{{$service->title}}</h4>
               
         </div>
     </div>
     <!-- Header End -->
 
-     <!-- Blog Start -->
-        <div class="container-fluid blog py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Nuestro Blog</h4>
-                    <h1 class="display-4 mb-4">Noticias y Actualizaciones</h1>
-                    <!-- <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic. -->
-                    </p>
-                </div>
-                <div class="row g-4 justify-content-center">
-                    @foreach($blogs as $blog)
-                    <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="storage/{{$blog->image}}" class="img-fluid rounded-top w-100" alt="">
-                                <div class="blog-categiry py-2 px-4">
-                                    <span>Business</span>
-                                </div>
-                            </div>
-                            <div class="blog-content p-4">
-                                <div class="blog-comment d-flex justify-content-between mb-3">
-                                    <!-- <div class="small"><span class="fa fa-user text-primary"></span> Martin.C</div> -->
-                                    <div class="small"><span class="fa fa-calendar text-primary"></span> {{ \Carbon\Carbon::parse($blog->created_at)->translatedFormat('d M Y') }}</div>
-                                    <div class="small"><span class="fa fa-comment-alt text-primary"></span> 0 Comentarios</div>
-                                </div>
-                                <a href="{{route('blog.detail', $blog)}}" class="h4 d-inline-block mb-3">{{$blog->title}}</a>
-                                <p class="mb-3">{!! Str::markdown(Str::limit(strip_tags($blog->body), 100)) !!}</p>
-                                <a href="{{route('blog.detail', $blog)}}" class="btn p-0">Leer más  <i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>                    
-                    @endforeach
+
+<!-- Shop Detail Start -->
+<div class="container-fluid pb-5 pt-5">
+    <div class="row px-xl-5">
+        <div class="col-lg-5 mb-30">
+            <div id="product-carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner bg-white">
+                    <!-- php
+                        imagenes = json_decode(product->images)
+                    endphp -->
+                  
+                    <div class="">
+                        <img class="w-100 h-100" src="{{asset('storage/' . $service->image)}}" alt="Image">
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Blog End -->  
+
+        <div class="col-lg-7 h-auto mb-30">
+            <div class="h-100 bg-light p-4">
+                <h3>{{$service->title}}</h3>
+                <p class="mb-4">{{$service->description}}</p>
+                                
+                <div class="d-flex pt-2">
+                    <strong class="text-dark mr-2">Encuentranos en:</strong>
+                    <div class="d-inline-flex">
+                        <a class="text-dark px-2" href="">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="text-dark px-2" href="">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="text-dark px-2" href="">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a class="text-dark px-2" href="">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Shop Detail End -->
+ 
+<!-- Portafolio -->
+<div class="container-fluid pb-5 pt-5">
+    <div class="container pb-5 pt-5">
+        <div class="text-center mx-auto pb-5 wow fadeIn mb-4" data-wow-delay=".3s" style="max-width: 600px;">
+            <h5 class="text-primary">Nuestros recientes proyectos</h5>
+            <h1>Portafolio</h1>
+        </div>
+        <div class="row g-5">
+            <div class="m-p-g">
+                <div class="m-p-g__thumbs" data-google-image-layout data-max-height="350">
+                    @php
+                        $portafolio = json_decode($service->portafolio);
+                    @endphp
+                    @if($portafolio)
+                        @foreach($portafolio as $item)
+                        <img style="padding: 2px;" src="{{config('url')}}/storage/{{$item}}" data-full="{{config('url')}}/storage/{{$item}}" class="m-p-g__thumbs-img" />
+                        @endforeach
+                    @else
+                    <span>No se encontraron proyectos</span>
+                    @endif
+                </div>
+
+                <div class="m-p-g__fullscreen"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Portafolio End -->
 
     @include('partials.footer')
     @include('partials.whatsapp')
 
+@push('scripts')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="{{asset('js/addcart.js')}}"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/45226/material-photo-gallery.min.js"></script>
+<script>
+	var elem = document.querySelector('.m-p-g');
+
+	document.addEventListener('DOMContentLoaded', function() {
+		var gallery = new MaterialPhotoGallery(elem);
+	});
+</script>
+    @endpush
 
 @endsection

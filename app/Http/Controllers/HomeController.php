@@ -154,6 +154,15 @@ class HomeController extends Controller
         return view('services', compact('categories','business','nosotros','services','page'));
     }
 
+     public function serviceDetail (Service $service)
+    {
+        $business = Company::find(1);
+        $otherServices = Service::take(4)->get();
+        $page = Page::where('title','Servicios')->first();
+    
+        return view('service-detail', compact('service', 'business','page','otherServices'));
+    }
+
     public function blog()
     {
         $business = Company::find(1);

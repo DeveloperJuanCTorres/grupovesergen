@@ -92,7 +92,7 @@
                 </p>
             </div>
             <div class="row g-4 justify-content-center">
-                @foreach($services as $service)
+                @foreach($services as $key => $service)
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="service-item">
                         <div class="service-img">
@@ -109,7 +109,7 @@
                             <div class="service-content-inner">
                                 <a href="#" class="d-inline-block h4">{{$service->title}}</a>
                                 <p class="">{!! Str::markdown($service->description) !!}</p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Leer más</a>
+                                <a class="btn btn-primary rounded-pill py-2 px-4" href="{{route('service.detail', $service)}}">Leer más</a>
                             </div>
                         </div>
                     </div>
