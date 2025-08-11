@@ -215,7 +215,7 @@
                             <div class="service-content-inner">
                                 <a href="#" class="d-inline-block h4">{{$service->title}}</a>
                                 <p class="">{!! Str::markdown($service->description) !!}</p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Leer más</a>
+                                <a class="btn btn-primary rounded-pill py-2 px-4" href="{{route('service.detail', $service)}}">Leer más</a>
                             </div>
                         </div>
                     </div>
