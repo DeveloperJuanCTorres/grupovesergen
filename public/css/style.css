@@ -546,6 +546,16 @@
     color: var(--bs-white);
 }
 
+.feature .feature-item:hover h5,
+.feature .feature-item:hover p {
+    color: var(--bs-white);
+}
+
+.feature .feature-item-f:hover h5,
+.feature .feature-item-f:hover p {
+    color: var(--bs-white);
+}
+
 .feature .feature-item:hover a.btn {
     background: var(--bs-white);
     color: var(--bs-primary);
@@ -1037,6 +1047,12 @@
     z-index: 9;
     fill: white;
 }
+
+.feature .feature-item-f:hover .hijo .icon-svg {
+    z-index: 9;
+    fill: white;
+}
+
 
 
 
