@@ -620,11 +620,38 @@ document.querySelectorAll('.inputTexto').forEach(function (input) {
                 },
                 success: function (response) {
                     if (response.status) {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'OK',
-                            text: response.msg,
-                        })
+                        const Toast = Swal.mixin({
+                        toast: true,
+                        position: "top-end",
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.onmouseenter = Swal.stopTimer;
+                            toast.onmouseleave = Swal.resumeTimer;
+                        }
+                        });
+                        Toast.fire({
+                        icon: "success",
+                        title: response.msg
+                        });
+                        $("#fecha_nac").val('');
+                        $("#tipo_doc").val('');
+                        $("#numero_doc").val('');
+                        $("#nombres").val('');
+                        $("#apellido_pat").val('');
+                        $("#apellido_mat").val('');
+                        $("#email").val('');
+                        $("#telefono").val('');
+                        $("#departamento").val('');
+                        $("#provincia").val('');
+                        $("#distrito").val('');
+                        $("#direccion").val('');
+                        $("#orden_compra").val('');
+                        $("#monto").val('');
+                        $("#reclamo").val('');
+                        $("#pedido").val('');
+                        return false;
                     } else {
                         Swal.fire({
                             icon: 'warning',
