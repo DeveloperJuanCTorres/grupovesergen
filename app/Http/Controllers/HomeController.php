@@ -421,7 +421,7 @@ class HomeController extends Controller
         $correo = new Reclamos($request);
         try {
             // Mail::to('administracion@vesergenperu.com')->send($correo);
-            Mail::to('jtorres@vesergenperu.com')->send($correo);
+            Mail::to('administracion@vesergenperu.com')->send($correo);
             return response()->json(['status' => true, 'msg' => "El correo fue enviado satisfactoriamente"]);
         } catch (\Exception $e) {
             return response()->json(['status' => false, 'msg' => "Hubo un error al enviar, inténtalo de nuevo más tarde." . $e->getMessage()]);
