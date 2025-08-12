@@ -108,7 +108,7 @@
                     <!-- Comment List Start -->
                     <div class="mb-5">
                         <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="mb-0">0 Comentarios</h3>
+                            <!-- <h3 class="mb-0">0 Comentarios</h3> -->
                         </div>
                         <!-- <div class="d-flex mb-4">
                             <img src="img/user.jpg" class="img-fluid rounded" style="width: 45px; height: 45px;">
@@ -141,7 +141,7 @@
                     <!-- Comment List End -->
     
                     <!-- Comment Form Start -->
-                    <div class="bg-light rounded p-5">
+                    <!-- <div class="bg-light rounded p-5">
                         <div class="section-title section-title-sm position-relative pb-3 mb-4">
                             <h3 class="mb-0">Deja un comentario</h3>
                         </div>
@@ -164,7 +164,7 @@
                                 </div>
                             </div>
                         </form>
-                    </div>
+                    </div> -->
                     <!-- Comment Form End -->
                 </div>
     

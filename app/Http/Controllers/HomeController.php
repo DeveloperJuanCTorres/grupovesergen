@@ -217,11 +217,12 @@ class HomeController extends Controller
     {
         $business = Company::find(1);
         $services = Service::take(4)->get();
+        $page = Page::where('title','Libro Reclamaciones')->first();
 
         $categories = Taxonomy::whereHas('products', function ($query) {
             $query->where('stock', '>', 0);
         })->take(8)->get();
-        return view('libro-reclamaciones', compact('categories','business','services'));
+        return view('libro-reclamaciones', compact('categories','business','services', 'page'));
     }
 
     public function buscar(Request $request)
