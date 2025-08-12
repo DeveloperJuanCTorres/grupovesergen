@@ -140,7 +140,7 @@
     <!-- About End -->
 
     <!-- Feature Start -->
-    <div class="container-fluid feature bg-white py-5">
+    <div class="container-fluid feature bg-light py-5">
         <div class="container">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h2 class="text-primary">Nuestros servicios</h2>
@@ -330,7 +330,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <!--PRICE HEADING START-->
-                        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                        <div class="text-center mx-auto pb-5 wow fadeInUp py-5" data-wow-delay="0.2s" style="max-width: 800px;">
                             <h2 class="text-primary">Nuestros Planes</h2>
                         </div>
                         <!--//PRICE HEADING END-->
