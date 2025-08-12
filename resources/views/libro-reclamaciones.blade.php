@@ -632,19 +632,19 @@ document.querySelectorAll('.inputTexto').forEach(function (input) {
                             text: response.msg,
                         })
                     }
-                    $("#fechanac").val('');
-                    $("#tipodoc").val('');
-                    $("#numerodoc").val('');
+                    $("#fecha_nac").val('');
+                    $("#tipo_doc").val('');
+                    $("#numero_doc").val('');
                     $("#nombres").val('');
-                    $("#apellidopat").val('');
-                    $("#apellidomat").val('');
+                    $("#apellido_pat").val('');
+                    $("#apellido_mat").val('');
                     $("#email").val('');
                     $("#telefono").val('');
                     $("#departamento").val('');
                     $("#provincia").val('');
                     $("#distrito").val('');
                     $("#direccion").val('');
-                    $("#ordencompra").val('');
+                    $("#orden_compra").val('');
                     $("#monto").val('');
                     $("#reclamo").val('');
                     $("#pedido").val('');
