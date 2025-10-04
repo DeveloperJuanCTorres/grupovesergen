@@ -33,6 +33,8 @@ Route::post('/enviar_pedido', [App\Http\Controllers\HomeController::class, 'pedi
 Route::post('/correo',[App\Http\Controllers\HomeController::class,'correoContact']);
 Route::post('/reclamo',[App\Http\Controllers\HomeController::class,'correoReclamo']);
 
+Route::get('/redes', [App\Http\Controllers\HomeController::class, 'redes'])->name('redes');
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

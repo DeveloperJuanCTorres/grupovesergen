@@ -17,6 +17,7 @@ use App\Models\Price;
 use App\Models\Product;
 use App\Models\Promotion;
 use App\Models\Question;
+use App\Models\Rede;
 use App\Models\Service;
 use App\Models\Taxonomy;
 use App\Models\Team;
@@ -427,5 +428,12 @@ class HomeController extends Controller
         } catch (\Exception $e) {
             return response()->json(['status' => false, 'msg' => "Hubo un error al enviar, inténtalo de nuevo más tarde." . $e->getMessage()]);
         }
+    }
+
+    public function redes()
+    {
+        $business = Company::find(1);
+        $redes = Rede::all();
+        return view('redes', compact('redes','business'));
     }
 }
