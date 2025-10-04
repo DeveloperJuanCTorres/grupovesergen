@@ -433,7 +433,7 @@ class HomeController extends Controller
     public function redes()
     {
         $business = Company::find(1);
-        $redes = Rede::all();
+        $redes = Rede::orderBy('orden', 'asc')->get();
         return view('redes', compact('redes','business'));
     }
 }
