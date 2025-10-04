@@ -133,7 +133,7 @@
                 
                     
             </div>
-            <a href="#" target="_blank" rel="noopener" class="social-btn mt-4" aria-label="Ir a Google Maps">
+            <a href="google.com/maps?ll=-6.761866,-79.839262&z=22&t=m&hl=es-419&gl=PE&mapclient=embed&cid=16892977690875471572" target="_blank" rel="noopener" class="social-btn mt-4" aria-label="Ir a Google Maps">
                 <div class="social-label">Ir a Google Maps</div>
                 <div class="spacer">&nbsp;</div>
             </a>
