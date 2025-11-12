@@ -17,18 +17,18 @@
     <link href="img/favicon.ico" rel="icon">
 
     <?php
-        $version = '1993.3.6';
+        $version = '1993.3.7';
     ?>
 
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('logos/16x16.png') }}?v=<?php echo $version ?>">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('logos/32x32.png') }}?v=<?php echo $version ?>">
-    <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('logos/48x48.png') }}?v=<?php echo $version ?>">
-    <link rel="icon" type="image/png" sizes="64x64" href="{{ asset('logos/64x64.png') }}?v=<?php echo $version ?>">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('logos/96x96.png') }}?v=<?php echo $version ?>">
-    <link rel="icon" type="image/png" sizes="128x128" href="{{ asset('logos/128x128.png') }}?v=<?php echo $version ?>">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('logos/192x192.png') }}?v=<?php echo $version ?>">
-    <link rel="icon" type="image/png" sizes="256x256" href="{{ asset('logos/256x256.png') }}?v=<?php echo $version ?>">
-    <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('logos/512x512.png') }}?v=<?php echo $version ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('logos/img16.png') }}?v=<?php echo $version ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('logos/img32.png') }}?v=<?php echo $version ?>">
+    <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('logos/img48.png') }}?v=<?php echo $version ?>">
+    <link rel="icon" type="image/png" sizes="64x64" href="{{ asset('logos/img64.png') }}?v=<?php echo $version ?>">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('logos/img96.png') }}?v=<?php echo $version ?>">
+    <link rel="icon" type="image/png" sizes="128x128" href="{{ asset('logos/img128.png') }}?v=<?php echo $version ?>">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('logos/img192.png') }}?v=<?php echo $version ?>">
+    <link rel="icon" type="image/png" sizes="256x256" href="{{ asset('logos/img256.png') }}?v=<?php echo $version ?>">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('logos/img512.png') }}?v=<?php echo $version ?>">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('logos/apple-touch-icon.png') }}?v=<?php echo $version ?>">
 
     <script src="assets/js/plugin/webfont/webfont.min.js"></script>
