@@ -66,8 +66,10 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
+        $search = $request->input('search');
         $business = Company::find(1);
-        $products = Product::query()->where('stock', '>', 0);
+        $products = Product::query()->where('stock', '>', 0)
+                    ->where('name', 'like', "%{$search}%");
         $page = Page::where('title','Tienda')->first();
         $services = Service::take(4)->get();
        
@@ -78,6 +80,11 @@ class HomeController extends Controller
 
         if ($request->has('brands')) {
             $products->whereIn('brand_id', $request->brands);
+        }
+
+        if ($request->filled('search')) {
+            $search = trim($request->search);
+            $products->where('name', 'like', "%{$search}%");
         }
 
         $products = $products->paginate(6);

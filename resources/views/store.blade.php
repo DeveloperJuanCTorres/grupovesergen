@@ -98,63 +98,90 @@
             <div class="col-lg-3 col-md-4 pt-4">
                 <!-- Category Start -->
                 <!-- <h5 class="section-title position-relative text-uppercase mb-3"><span class="pr-3">Filtrar por categoría</span></h5> -->
-                <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
-                    <div class="input-group">
-                        <input type="text" id="buscar" class="form-control p-3" placeholder="Buscar producto">
-                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                 <form id="filterForm">
+                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                        <div class="input-group">
+                            <input type="text" name="search" class="form-control p-3" placeholder="Buscar producto" id="searchInput" value="{{ request('search') }}">
+                            <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                        </div>                    
                     </div>
-                    <ul id="resultados" style="position: absolute; z-index:9;width: 320px;" class="list-group"></ul>
-                </div>
-                <form id="filterForm">
-                    <div class="accordion" id="accordionExample">
-                       
-                        <div class="accordion-item">                                
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                    Filtrar por Categoría
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <div class="bg-white mb-30" style="border-radius: 15px;">
-                                        @foreach($categories as $category)
-                                        <div class="mb-3">
-                                            <input type="radio" class="custom-control-input" style="width: 20px;" name="categories[]" value="{{ $category->id }}">                       
-                                            <label class="custom-control-label">{{$category->name}}</label>
-                                            <span class="badge border font-weight-normal bg-primary" style="float: right;">{{$category->productsInStock->count()}}</span>
-                                        </div>
-                                        @endforeach
-                                    </div>
+
+                    <div class="filtro-mobil pb-4">
+                        <h4>Filtros</h4>
+                        <a href="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCategoria" aria-controls="offcanvasCategoria">
+                            <span class="badge bg-info text-dark">Categorías</span>                            
+                        </a>
+                        <a href="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMarca" aria-controls="offcanvasMarca">
+                            <span class="badge bg-info text-dark">Marcas</span>
+                        </a>
+                    </div>
+
+                    <div class="offcanvas offcanvas-end offcanvas-70" tabindex="-1" id="offcanvasCategoria" aria-labelledby="offcanvasCategoriaLabel">
+                        <div class="offcanvas-header">
+                            <h5 id="offcanvasCategoriaLabel">Categorías</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            @foreach($categories as $key => $category)                        
+                            <div class="additional-product-item d-flex align-items-center justify-content-between py-2">
+                                <div class="d-flex align-items-center flex-grow-1 me-2">
+                                    <input type="radio" class="me-2" id="categorym-{{$key}}" name="categories[]" value="{{ $category->id }}" {{ request('categories') == $category->id ? 'checked' : '' }}>
+                                    <label for="categorym-{{$key}}" class="text-dark mb-0" style="font-size: 14px; word-break: break-word;">{{$category->name}}</label>
                                 </div>
-                            </div>                            
-                        </div>  
+                                <span class="badge border font-weight-normal bg-primary">{{$category->productsInStock->count()}}</span>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <div class="offcanvas offcanvas-end offcanvas-70" tabindex="-1" id="offcanvasMarca" aria-labelledby="offcanvasMarcaLabel">
+                        <div class="offcanvas-header">
+                            <h5 id="offcanvasMarcaLabel">Marcas</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            @foreach($brands as $key => $brand)
+                            <div class="additional-product-item d-flex align-items-center justify-content-between py-2">
+                                <div class="d-flex align-items-center flex-grow-1 me-2">
+                                    <input type="radio" class="me-2" id="brandm-{{$key}}" name="brands[]" value="{{ $brand->id }}">
+                                    <label for="brandm-{{$key}}" class="text-dark mb-0" style="font-size: 13px; word-break: break-word;">{{$brand->name}}</label>
+                                </div>
+                                <span class="badge border font-weight-normal bg-primary">{{$brand->productsInStock->count()}}</span>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <div class="mb-4 w-100">
+                        <button type="button" id="resetFilters" class="btn btn-sm btn-danger">Limpiar filtros</button>
+                    </div>
+                    <h4 class="filtro-destock">Categorías</h4>
+                    <div class="additional-product mb-4 overflow-auto filtro-destock" style="max-height: 400px;">
                         
-                        <div class="accordion-item">                                
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Filtrar por Marca
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <div class="bg-white mb-30" style="border-radius: 15px;">
-                                        @foreach($brands as $brand)
-                                        <div class="mb-3">
-                                            <input type="radio" class="custom-control-input" style="width: 20px;" name="brands[]" value="{{ $brand->id }}">
-                                            <label class="custom-control-label">{{$brand->name}}</label>
-                                            <span class="badge border font-weight-normal bg-primary" style="float: right;">{{$brand->productsInStock->count()}}</span>
-                                        </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            </div>                            
-                        </div> 
+                        @foreach($categories as $key => $category)                        
+                        <div class="additional-product-item d-flex align-items-center justify-content-between py-2">
+                            <div class="d-flex align-items-center flex-grow-1 me-2">
+                                <input type="radio" class="me-2" id="category-{{$key}}" name="categories[]" value="{{ $category->id }}" {{ request('categories') == $category->id ? 'checked' : '' }}>
+                                <label for="category-{{$key}}" class="text-dark mb-0" style="font-size: 14px; word-break: break-word;">{{$category->name}}</label>
+                            </div>
+                            <span class="badge border font-weight-normal bg-primary">{{$category->productsInStock->count()}}</span>
+                        </div>
+                        @endforeach
                     </div>
-                    <!-- Category End -->
-                
-                    <!-- Brand Start -->
-                   
-                    <!-- Brand End -->
+                    <hr class="filtro-destock">
+                    <h4 class="filtro-destock">Marcas</h4>
+                    <div class="additional-product mb-4 overflow-auto filtro-destock" style="max-height: 400px;">
+                        
+                        @foreach($brands as $key => $brand)
+                        <div class="additional-product-item d-flex align-items-center justify-content-between py-2">
+                            <div class="d-flex align-items-center flex-grow-1 me-2">
+                                <input type="radio" class="me-2" id="brand-{{$key}}" name="brands[]" value="{{ $brand->id }}">
+                                <label for="brand-{{$key}}" class="text-dark mb-0" style="font-size: 14px; word-break: break-word;">{{$brand->name}}</label>
+                            </div>
+                            <span class="badge border font-weight-normal bg-primary">{{$brand->productsInStock->count()}}</span>
+                        </div>
+                        @endforeach
+                    </div>
                 </form>
             </div>
             <!-- Shop Sidebar End -->
@@ -188,6 +215,27 @@
     const form = document.getElementById('filterForm');
     const productContainer = document.getElementById('productContainer');
     const loadingSpinner = document.getElementById('loadingSpinner');
+    const searchInput = document.getElementById('searchInput');
+    const resetFilters = document.getElementById('resetFilters');
+
+    let debounceTimeout;
+
+    searchInput.addEventListener('input', function () {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(() => {
+            fetchProducts();
+        }, 300);
+    });
+
+    // 🟥 Limpiar todos los filtros
+    resetFilters.addEventListener('click', function () {
+        form.reset(); // limpia todos los inputs del formulario
+        searchInput.value = '';  
+        $('#buscar').val('');
+        form.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(el => el.checked = false);
+        updateURLWithoutParams();
+        fetchProducts(); // recarga todos los productos
+    });
 
     form.addEventListener('change', function () {
         fetchProducts();
@@ -207,6 +255,7 @@
         .then(response => response.text())
         .then(html => {
             productContainer.innerHTML = html;
+            updateURLParams(params);
         })
         .finally(() => {
             loadingSpinner.classList.add('hidden'); // Ocultar spinner
@@ -222,6 +271,18 @@
             fetchProducts(page);
         }
     });
+
+    // 🧩 Actualiza la URL en tiempo real sin recargar la página
+    function updateURLParams(params) {
+        const newUrl = `${window.location.pathname}?${params.toString()}`;
+        window.history.replaceState({}, '', newUrl);
+    }
+
+    // 🧼 Limpia la URL completamente (sin parámetros)
+    function updateURLWithoutParams() {
+        const cleanUrl = window.location.origin + window.location.pathname;
+        window.history.replaceState({}, '', cleanUrl);
+    }
 });
 </script>
 @endpush
