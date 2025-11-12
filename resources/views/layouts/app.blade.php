@@ -20,6 +20,17 @@
         $version = '1993.3.4';
     ?>
 
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('logos/16x16.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('logos/32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('logos/48x48.png') }}">
+    <link rel="icon" type="image/png" sizes="64x64" href="{{ asset('logos/64x64.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('logos/96x96.png') }}">
+    <link rel="icon" type="image/png" sizes="128x128" href="{{ asset('logos/128x128.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('logos/192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="256x256" href="{{ asset('logos/256x256.png') }}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('logos/512x512.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('logos/apple-touch-icon.png') }}">
+
     <script src="assets/js/plugin/webfont/webfont.min.js"></script>
     <script>
       WebFont.load({
