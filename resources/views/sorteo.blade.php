@@ -105,7 +105,7 @@
                         </div>
                         <div class="service-content p-4">
                             <div class="service-content-inner">
-                                <a href="#" class="d-inline-block h4">{{$sorteo->name}}</a>
+                                <a href="javascript:void(0)" class="d-inline-block h4 open-video" data-video="{{ $sorteo->video_url }}">{{$sorteo->name}}</a>
                                 <p class="">{!! Str::markdown($sorteo->description) !!}</p>
                                 <div class="text-center">
                                     <a class="btn btn-primary rounded-pill px-4 btn-participar" 
@@ -244,6 +244,40 @@
             timer: 3000
         })
     @endif
+</script>
+
+<script>
+    document.querySelectorAll(".open-video").forEach(btn => {
+        btn.addEventListener("click", function () {
+
+            let video = this.dataset.video;
+
+            if (!video) {
+                Swal.fire({
+                    icon: "error",
+                    text: "Este sorteo no tiene video disponible."
+                });
+                return;
+            }
+
+            Swal.fire({
+                title: "Vista previa del premio",
+                html: `
+                    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                        <iframe src="${video}" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        </iframe>
+                    </div>
+                `,
+                width: "800px",
+                showCloseButton: true,
+                showConfirmButton: false
+            });
+        });
+    });
 </script>
     
 @endsection
