@@ -34,6 +34,9 @@
                         <a href="/store" class="nav-item nav-link">Tienda</a>
                         <a href="/blog" class="nav-item nav-link">Blog</a>
                         <a href="/contact" class="nav-item nav-link">Contáctanos</a>
+                        
+                        <a href="/sorteo" class="nav-item nav-link">Sorteo</a>
+                        
                         <div class="nav-btn px-3">
                             <!-- <button class="btn-search btn btn-primary btn-md-square rounded-circle flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button> -->
                             <a href="/cart" class="btn px-0 ml-3">

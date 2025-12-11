@@ -34,20 +34,10 @@
                         </div>
                         <a href="/store" class="nav-item nav-link">Tienda</a>
                         <a href="/blog" class="nav-item nav-link">Blog</a>
-                        <!-- <a href="blog.html" class="nav-item nav-link">Blog</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-bs-toggle="dropdown">
-                                <span class="dropdown-toggle">Pages</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a href="feature.html" class="dropdown-item">Our Features</a>
-                                <a href="team.html" class="dropdown-item">Our team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="FAQ.html" class="dropdown-item">FAQs</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
-                            </div>
-                        </div> -->
                         <a href="/contact" class="nav-item nav-link">Contáctanos</a>
+                       
+                        <a href="/sorteo" class="nav-item nav-link">Sorteo</a>
+                      
                         <div class="nav-btn px-3">
                             <!-- <button class="btn-search btn btn-primary btn-md-square rounded-circle flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button> -->
                             <a href="/cart" class="btn px-0 ml-3">

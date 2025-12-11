@@ -19,6 +19,8 @@ use App\Models\Promotion;
 use App\Models\Question;
 use App\Models\Rede;
 use App\Models\Service;
+use App\Models\Share;
+use App\Models\Sorteo;
 use App\Models\Taxonomy;
 use App\Models\Team;
 use App\Models\Testimonial;
@@ -443,4 +445,45 @@ class HomeController extends Controller
         $redes = Rede::orderBy('orden', 'asc')->get();
         return view('redes', compact('redes','business'));
     }
+
+    public function sorteo()
+    {
+        $business = Company::find(1);
+        $nosotros = Field::find(1);
+        $page = Page::where('title','Sorteos')->first();
+        
+        $categories = Taxonomy::whereHas('products', function ($query) {
+            $query->where('stock', '>', 0);
+        })->take(8)->get();
+        $sorteos = Sorteo::all();
+        return view('sorteo', compact('categories','business','nosotros','sorteos','page'));
+    }
+
+    public function participar($id, $cantidad)
+    {
+        $sorteo = Sorteo::findOrFail($id);
+        $user = auth()->user();
+
+        $costoTotal = $sorteo->credito * $cantidad;
+
+        if ($user->creditos < $costoTotal) {
+            return back()->with('error', 'No tienes créditos suficientes.');
+        }
+
+        // Descontar créditos
+        $user->creditos -= $costoTotal;
+        $user->save();
+
+        // Registrar múltiples participaciones
+        for ($i = 0; $i < $cantidad; $i++) {
+            Share::create([
+                'user_id' => $user->id,
+                'sorteo_id' => $sorteo->id,
+            ]);
+        }
+
+        return back()->with('success', "Participaste {$cantidad} veces en este sorteo.");
+    }
+
+
 }

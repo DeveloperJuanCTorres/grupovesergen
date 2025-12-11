@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/register', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/register', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/store', [App\Http\Controllers\HomeController::class, 'store'])->name('store');
 Route::get('/product/{product}', [App\Http\Controllers\HomeController::class, 'detail'])->name('product.detail');
@@ -35,15 +35,34 @@ Route::post('/reclamo',[App\Http\Controllers\HomeController::class,'correoReclam
 
 Route::get('/redes', [App\Http\Controllers\HomeController::class, 'redes'])->name('redes');
 
+Route::get('/sorteo', [App\Http\Controllers\HomeController::class, 'sorteo'])->name('sorteo');
+
+Route::get('/sorteo/participar/{id}/{cantidad}', 
+    [App\Http\Controllers\HomeController::class, 'participar'])
+    ->middleware('auth');
+
+Route::get('/user/credit-check', function () {
+    if (!auth()->check()) {
+        return response()->json([
+            'logged' => false
+        ]);
+    }
+
+    return response()->json([
+        'logged' => true,
+        'creditos' => auth()->user()->creditos // AJUSTA si tu campo es diferente
+    ]);
+});
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
 // Desactiva el registro web manual
-Route::get('/register', function () {
-    abort(404);
-});
-Route::post('/register', function () {
-    abort(404);
-});
+// Route::get('/register', function () {
+//     abort(404);
+// });
+// Route::post('/register', function () {
+//     abort(404);
+// });

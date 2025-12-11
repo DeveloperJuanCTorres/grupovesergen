@@ -15,11 +15,16 @@
                         <div class="border-end border-primary pe-3">
                             <a href="#" class="text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i>{{$business->address}}</a>
                         </div>
-                        <div class="ps-3">
+                        <div class="border-end border-primary px-3">
                             <a href="mailto:example@gmail.com" class="text-muted small"><i class="fas fa-envelope text-primary me-2"></i>{{$business->email}}</a>
                         </div>
+                        <div class="ps-3 d-flex" style="right: 0;">
+                            <span class="text-primary"> Tienes {{auth::user()->creditos}} créditos disponibles</span>
+                        </div>
+                        
                     </div>
                 </div>
+                    
                 <div class="col-lg-4 text-center text-lg-end">
                     <div class="d-flex justify-content-end">
                         <div class="d-flex border-end border-primary pe-3">
@@ -43,7 +48,7 @@
                                     <i class="fas fa-user text-primary me-2"></i> {{auth::user()->name}}
                                 </small>
                             </a>
-                            <div class="dropdown-menu rounded">
+                            <div class="dropdown-menu rounded">                                
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                 <!-- <a href="#" class="dropdown-item">Cerrar sesión</a> -->
