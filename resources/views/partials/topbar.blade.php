@@ -19,7 +19,9 @@
                             <a href="mailto:example@gmail.com" class="text-muted small"><i class="fas fa-envelope text-primary me-2"></i>{{$business->email}}</a>
                         </div>
                         <div class="ps-3 d-flex" style="right: 0;">
+                            @auth
                             <span class="text-primary"> Tienes {{auth::user()->creditos}} créditos disponibles</span>
+                            @endauth
                         </div>
                         
                     </div>
