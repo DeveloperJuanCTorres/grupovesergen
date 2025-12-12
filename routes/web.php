@@ -5,6 +5,22 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('/fix-config', function () {
+
+    try {
+        Artisan::call('config:clear');
+        Artisan::call('cache:clear');
+        Artisan::call('route:clear');
+        Artisan::call('view:clear');
+        Artisan::call('optimize:clear');
+
+        return '✔ Limpieza completada correctamente.';
+    } catch (\Exception $e) {
+        return '❌ Error: ' . $e->getMessage();
+    }
+
+});
+
 // Route::get('/register', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/store', [App\Http\Controllers\HomeController::class, 'store'])->name('store');
