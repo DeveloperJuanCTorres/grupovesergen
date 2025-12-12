@@ -21,6 +21,12 @@ class User extends \TCG\Voyager\Models\User
         'name',
         'email',
         'password',
+        'tipo_doc',
+        'numero_doc',
+        'direccion',
+        'departamento',
+        'provincia',
+        'distrito',
     ];
 
     /**
