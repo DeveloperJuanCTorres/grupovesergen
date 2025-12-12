@@ -52,6 +52,12 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'tipo_doc' => ['required', 'string', 'max:50'],
+            'numero_doc' => ['required', 'string', 'max:50'],
+            'direccion' => ['required', 'string', 'max:255'],
+            'departamento' => ['required', 'string', 'max:255'],
+            'provincia' => ['required', 'string', 'max:255'],
+            'distrito' => ['required', 'string', 'max:255'],
             'g-recaptcha-response' => ['required', 'captcha'],
         ]);
     }
@@ -68,6 +74,12 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'tipo_doc' => $data['tipo_doc'],
+            'numero_doc' => $data['numero_doc'],
+            'direccion' => $data['direccion'],
+            'departamento' => $data['departamento'],
+            'provincia' => $data['provincia'],
+            'distrito' => $data['distrito'],            
         ]);
     }
 }

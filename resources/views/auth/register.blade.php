@@ -44,10 +44,28 @@
         
       </div>
       <div class="formbg-outer">
-        <div class="formbg">
+        <div class="formbg_r">
           <div class="formbg-inner padding-horizontal--48">
             <form method="POST" action="{{ route('register') }}">
               @csrf
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="field padding-bottom--24">
+                    <label for="name">Tipo documento</label>
+                    <select class="form-control" name="tipo_doc" id="tipo_doc">
+                      <option value="DNI">DNI</option>
+                      <option value="PASAPORTE">PASAPORTE</option>
+                      <option value="CARNET">CARNET EXTRANJERIA</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="field padding-bottom--24">
+                    <label for="name">Número documento</label>
+                    <input type="text" name="numero_doc" id="numero_doc">
+                  </div>
+                </div>
+              </div>
                 <div class="field padding-bottom--24">
                     <label for="name">Nombre</label>
                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -70,21 +88,70 @@
                     @enderror
                 </div>
 
-                <div class="field padding-bottom--24">
-                    <label for="password">{{ __('Password') }}</label>
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="field padding-bottom--24">
+                      <div class="form-floating">
+                          
+                          <select id="departamento" class="form-control departamento" name="mauticform[departamento]">    
+                              <option data-id="" value="">-Seleccionar-</option>
+                          </select>
+                          <label for="name">Departamento</label>
+                      </div>   
+                    </div>                    
+                  </div>
+                  <div class="col-md-4">
+                    <div class="field padding-bottom--24">
+                      <div class="form-floating">
+                          
+                          <select id="provincia" class="form-control provincia" name="mauticform[provincia1]">
+                              <option data-id="" value="Chachapoyas">-Seleccionar-</option>                
+                          </select>
+                          <label for="name">Provincia</label>
+                      </div>    
+                    </div>                       
+                  </div>
+                  <div class="col-md-4">
+                    <div class="field padding-bottom--24">
+                      <div class="form-floating">
+                          
+                          <select id="distrito" class="form-control distrito" name="mauticform[distrito1]">
+                              <option data-id="" value="">-Seleccionar-</option>
+                          </select>
+                          <label for="name">Distrito</label>
+                      </div>        
+                    </div>                 
+                  </div>
 
-                    @error('password')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                  <div class="col-md-12">
+                    <div class="field padding-bottom--24">
+                        <label for="name">Dirección</label> 
+                        <input maxlength="100" type="text" class="form-control" id="direccion">                        
+                    </div>                     
+                  </div>
                 </div>
 
-                <div class="field padding-bottom--24">
-                    <label for="password-confirm">Confirmar Password</label>
-                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="field padding-bottom--24">
+                        <label for="password">{{ __('Password') }}</label>
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="field padding-bottom--24">
+                        <label for="password-confirm">Confirmar Password</label>
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                    </div>
+                  </div>
+                </div>        
 
               <input type="hidden" name="g-recaptcha-response" id="recaptcha">
 
