@@ -97,7 +97,7 @@
 
             <script>
                 grecaptcha.ready(function() {
-                    grecaptcha.execute('TU_SITE_KEY', {action: 'register'}).then(function(token) {
+                    grecaptcha.execute('6LdvDSksAAAAAC_j43AdGyeKsbngkBxjibcVyjkr', {action: 'register'}).then(function(token) {
                         document.getElementById('recaptcha').value = token;
                     });
                 });
