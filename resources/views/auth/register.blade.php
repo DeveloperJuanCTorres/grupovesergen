@@ -96,7 +96,7 @@
                     <div class="field padding-bottom--24">
                       <div class="form-floating">
                           
-                          <select id="departamento" class="form-control departamento" name="mauticform[departamento]">    
+                          <select id="departamento" class="form-control departamento" name="departamento">    
                               <option data-id="" value="">-Seleccionar-</option>
                           </select>
                           <label for="name">Departamento</label>
@@ -107,7 +107,7 @@
                     <div class="field padding-bottom--24">
                       <div class="form-floating">
                           
-                          <select id="provincia" class="form-control provincia" name="mauticform[provincia1]">
+                          <select id="provincia" class="form-control provincia" name="provincia">
                               <option data-id="" value="Chachapoyas">-Seleccionar-</option>                
                           </select>
                           <label for="name">Provincia</label>
@@ -118,7 +118,7 @@
                     <div class="field padding-bottom--24">
                       <div class="form-floating">
                           
-                          <select id="distrito" class="form-control distrito" name="mauticform[distrito1]">
+                          <select id="distrito" class="form-control distrito" name="distrito">
                               <option data-id="" value="">-Seleccionar-</option>
                           </select>
                           <label for="name">Distrito</label>
@@ -129,7 +129,7 @@
                   <div class="col-md-12">
                     <div class="field padding-bottom--24">
                         <label for="name">Dirección</label> 
-                        <input maxlength="100" type="text" class="form-control" id="direccion">                        
+                        <input maxlength="100" type="text" class="form-control" id="direccion" name="direccion">                        
                     </div>                     
                   </div>
                 </div>
