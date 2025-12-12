@@ -1,5 +1,8 @@
 @extends('layouts.app')
-<link href="{{asset('css/login.css')}}" rel="stylesheet">
+<?php
+        $version = '1993.0.1';
+    ?>
+<link href="{{asset('css/login.css')}}?v=<?php echo $version ?>" rel="stylesheet">
 @section('content')
 
 <div class="login-root">
