@@ -215,3 +215,8 @@ a.ssolink {
     transform: translateX(0px);
   }
 } 
+
+#btn-login-rec,
+#btn-login-rec * {
+  color: #ffffff !important;
+}

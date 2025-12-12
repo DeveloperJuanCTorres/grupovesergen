@@ -106,7 +106,11 @@
                         <div class="service-content p-4">
                             <div class="service-content-inner">
                                 <a href="javascript:void(0)" class="d-inline-block h4 open-video" data-video="{{ $sorteo->video_url }}">{{$sorteo->name}}</a>
+                                @if($sorteo->fecha_sorteo)
+                                <p class="">Sorteo: {{$sorteo->fecha_sorteo}}</p>
+                                @endif
                                 <p class="">{!! Str::markdown($sorteo->description) !!}</p>
+                                
                                 <div class="text-center">
                                     <a class="btn btn-primary rounded-pill px-4 btn-participar" 
                                     href="javascript:void(0)" 

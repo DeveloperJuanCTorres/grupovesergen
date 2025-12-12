@@ -86,10 +86,22 @@
                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                 </div>
 
+              <input type="hidden" name="g-recaptcha-response" id="recaptcha">
+
               <div class="field">
                 <input class="btn btn-primary" type="submit" name="submit" value="Registrar">
               </div>
             </form>
+
+            <script src="https://www.google.com/recaptcha/api.js?render=6LdvDSksAAAAAC_j43AdGyeKsbngkBxjibcVyjkr"></script>
+
+            <script>
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('TU_SITE_KEY', {action: 'register'}).then(function(token) {
+                        document.getElementById('recaptcha').value = token;
+                    });
+                });
+            </script>
           </div>
         </div>          
       </div>

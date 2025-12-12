@@ -46,7 +46,7 @@
       <div class="formbg-outer">
         <div class="formbg">
           <div class="formbg-inner padding-horizontal--48">
-            <form method="POST" action="{{ route('login') }}">
+            <form id="form-login" method="POST" action="{{ route('login') }}">
               @csrf
               <div class="field padding-bottom--24">
                   <label for="email">Email</label>
@@ -79,10 +79,21 @@
                       </label>
                   </div>
               </div>
-              <div class="field padding-bottom--24">
+              <!-- <div class="field padding-bottom--24">
                 <input class="btn btn-primary" type="submit" name="submit" value="Iniciar Sesión">
-              </div>
-              <div class="field text-center">
+              </div> -->
+
+              {{-- 🔥 BOTÓN INVISIBLE DE reCAPTCHA v3 --}}
+              {!! NoCaptcha::displaySubmit('form-login', 'Iniciar Sesión', ['data-size' => 'invisible', 'class' => 'btn btn-primary w-100','id' => 'btn-login-rec']) !!}
+
+              @error('g-recaptcha-response')
+                  <span class="text-danger">{{ $message }}</span>
+              @enderror
+
+              {{-- 🔥 SCRIPT DEL reCAPTCHA --}}
+              {!! NoCaptcha::renderJs() !!}
+
+              <div class="field text-center mt-3">
                   @if (Route::has('password.request'))
                       <a class="btn btn-link" style="color: #044969;" href="{{ route('password.request') }}">
                           ¿Olvidaste tu contraseña?
