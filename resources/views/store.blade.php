@@ -9,7 +9,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light"> 
                 <a href="/" class="navbar-brand p-0">
-                    <img src="img/logo-vesergen.png" width="200" alt="Logo">
+                    <img src="{{asset('storage/' . $business->image)}}" width="200" alt="Logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
