@@ -29,8 +29,12 @@ Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])-
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/services', [App\Http\Controllers\HomeController::class, 'services'])->name('services');
 Route::get('/service/{service}', [App\Http\Controllers\HomeController::class, 'serviceDetail'])->name('service.detail');
+
+if(config('features.vistas'))
+{
 Route::get('/blog', [App\Http\Controllers\HomeController::class, 'blog'])->name('blog');
 Route::get('/blog/{blog}', [App\Http\Controllers\HomeController::class, 'blogDetail'])->name('blog.detail');
+}
 Route::get('/facturacion', [App\Http\Controllers\HomeController::class, 'facturacion'])->name('facturacion');
 Route::get('/checkout', [App\Http\Controllers\HomeController::class, 'checkout'])->name('checkout');
 Route::get('/buscar', [App\Http\Controllers\HomeController::class, 'buscar'])->name('buscar');

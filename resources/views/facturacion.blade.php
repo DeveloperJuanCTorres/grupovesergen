@@ -32,10 +32,15 @@
                             </div>
                         </div>
                         <a href="/store" class="nav-item nav-link">Tienda</a>
+                        
+                        @if(config('features.vistas'))
                         <a href="/blog" class="nav-item nav-link">Blog</a>
+                        @endif
                         <a href="/contact" class="nav-item nav-link">Contáctanos</a>
-                     
+                       
+                        @if(config('features.vistas'))
                         <a href="/sorteo" class="nav-item nav-link">Sorteo</a>
+                        @endif
                         
                         <div class="nav-btn px-3">
                             <!-- <button class="btn-search btn btn-primary btn-md-square rounded-circle flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button> -->

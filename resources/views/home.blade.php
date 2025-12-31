@@ -33,7 +33,10 @@
                             </div>
                         </div>
                         <a href="/store" class="nav-item nav-link">Tienda</a>
+
+                        @if(config('features.vistas'))
                         <a href="/blog" class="nav-item nav-link">Blog</a>
+                        @endif
                         <a href="/contact" class="nav-item nav-link">Contáctanos</a>
                        
                         @if(config('features.vistas'))
