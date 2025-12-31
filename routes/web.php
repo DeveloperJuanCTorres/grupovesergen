@@ -51,7 +51,10 @@ Route::post('/reclamo',[App\Http\Controllers\HomeController::class,'correoReclam
 
 Route::get('/redes', [App\Http\Controllers\HomeController::class, 'redes'])->name('redes');
 
-Route::get('/sorteo', [App\Http\Controllers\HomeController::class, 'sorteo'])->name('sorteo');
+if(config('features.vistas'))
+{
+    Route::get('/sorteo', [App\Http\Controllers\HomeController::class, 'sorteo'])->name('sorteo');
+}
 
 Route::get('/sorteo/participar/{id}/{cantidad}', 
     [App\Http\Controllers\HomeController::class, 'participar'])
