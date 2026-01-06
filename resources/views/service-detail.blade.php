@@ -120,7 +120,7 @@
         <div class="col-lg-7 h-auto mb-30">
             <div class="h-100 bg-light p-4">
                 <h3>{{$service->title}}</h3>
-                <p class="mb-4">{{$service->description}}</p>
+                <p class="mb-4">{!! Str::markdown($service->description) !!}</p>
                                 
                 <div class="d-flex pt-2">
                     <strong class="text-dark mr-2">Encuentranos en:</strong>
