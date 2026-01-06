@@ -114,10 +114,23 @@
                             </div>
                         </div>
                         <div class="service-content p-4">
-                            <div class="service-content-inner">
-                                <a href="#" class="d-inline-block h4">{{$service->title}}</a>
-                                <p class="text-center">{{$service->subtitle}}</p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4 text-center" href="{{route('service.detail', $service)}}">Leer más</a>
+                            <div class="service-content-inner text-center">
+                                
+                                <a href="#" class="d-inline-block h4">
+                                    {{$service->title}}
+                                </a>
+
+                                <p class="subtitle-justificado">
+                                    {{$service->subtitle}}
+                                </p>
+
+                                <div class="d-flex justify-content-center">
+                                    <a class="btn btn-primary rounded-pill py-2 px-4"
+                                    href="{{ route('service.detail', $service) }}">
+                                        Leer más
+                                    </a>
+                                </div>
+
                             </div>
                         </div>
                     </div>
