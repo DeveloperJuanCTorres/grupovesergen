@@ -30,6 +30,9 @@ Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->nam
 Route::get('/services', [App\Http\Controllers\HomeController::class, 'services'])->name('services');
 Route::get('/service/{service}', [App\Http\Controllers\HomeController::class, 'serviceDetail'])->name('service.detail');
 
+Route::get('/terminos-y-condiciones', [App\Http\Controllers\HomeController::class, 'terminos'])->name('terminos');
+Route::get('/politicas-de-privacidad', [App\Http\Controllers\HomeController::class, 'politicas'])->name('politicas');
+
 if(config('features.vistas'))
 {
 Route::get('/blog', [App\Http\Controllers\HomeController::class, 'blog'])->name('blog');

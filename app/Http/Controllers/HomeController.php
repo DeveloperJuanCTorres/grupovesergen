@@ -12,6 +12,7 @@ use App\Models\Company;
 use App\Models\Field;
 use App\Models\Order;
 use App\Models\Page;
+use App\Models\Politica;
 use App\Models\Post;
 use App\Models\Price;
 use App\Models\Product;
@@ -23,6 +24,7 @@ use App\Models\Share;
 use App\Models\Sorteo;
 use App\Models\Taxonomy;
 use App\Models\Team;
+use App\Models\Termino;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -483,6 +485,22 @@ class HomeController extends Controller
         }
 
         return back()->with('success', "Participaste {$cantidad} veces en este sorteo.");
+    }
+
+    public function terminos()
+    {
+        $business = Company::find(1);
+        $nosotros = Field::find(1);
+        $terminos = Termino::first();
+        return view('terminos', compact('business','nosotros','terminos'));
+    }
+
+    public function politicas()
+    {
+        $business = Company::find(1);
+        $nosotros = Field::find(1);
+        $politicas = Politica::first();
+        return view('politicas', compact('business','nosotros','politicas'));
     }
 
 
