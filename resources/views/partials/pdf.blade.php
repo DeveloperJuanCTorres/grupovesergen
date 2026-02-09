@@ -171,11 +171,11 @@
         <table>
             <tr>
                 <td width="20%">
-                    <img src="{{ public_path('img/caja-piura.png') }}" width="90">
+                    <img src="{{ public_path('img/bcp.png') }}" width="90">
                 </td>
                 <td width="80%">
                     <strong>GRUPO VESERGENPERU E.I.R.L</strong><br>
-                    CTA CTE BCP: 305-2597666056
+                    Cta Cte Soles: 305-2597666056
                 </td>
             </tr>
         </table>
