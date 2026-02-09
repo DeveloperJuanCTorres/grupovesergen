@@ -146,7 +146,7 @@
                 <h3 class="font-weight-semi-bold mb-4">S/. {{$product->price}}</h3>
                 <p class="mb-4">{!! Str::markdown($product->description) !!}</p>
                 <div class="d-flex mb-3">
-                    <strong class="text-dark mr-3">Categría:</strong>
+                    <strong class="text-dark mr-3">Categoría:</strong>
                     <label class="">{{$product->taxonomy->name}}</label>
                 </div>
                 <div class="d-flex mb-4">
@@ -200,12 +200,12 @@
         <div class="col">
             <div class="bg-light p-30">
                 <div class="nav nav-tabs mb-4">
-                    <a class="nav-item nav-link text-dark active">Description</a>
+                    <a class="nav-item nav-link text-dark active">Información</a>
                 </div>
                 <div class="tab-content">
                     <div class="tab-pane fade show active p-4" id="tab-pane-1">
-                        <h4 class="mb-3">Descripción del Producto</h4>
-                        <p>{!! Str::markdown($product->description) !!}</p>
+                        <h4 class="mb-3">Información del Producto</h4>
+                        <p>{!! Str::markdown($product->information) !!}</p>
                     </div>
                 </div>
             </div>
