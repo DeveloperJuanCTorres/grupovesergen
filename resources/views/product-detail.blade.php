@@ -289,9 +289,6 @@
                         <img class="img-fluid w-100" src="{{asset('img/defectomaster.jpeg')}}" alt="">
                         @endif
                         <div class="product-action">
-                            <!-- <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a> -->
-                            <!-- <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a> -->
                             <input type="hidden" id="qty" value="1">
                             <a class="btn btn-outline-dark addcart" href="#" data-id="{{$product->id}}">
                                 <i class="fa fa-shopping-cart"></i>
@@ -326,7 +323,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="{{asset('js/addcart.js')}}"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
