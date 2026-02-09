@@ -103,7 +103,7 @@
 <!-- Shop Detail Start -->
 <div class="container-fluid pb-5 pt-5">
     <div class="row px-xl-5">
-        <div class="col-lg-5 mb-30">
+        <!-- <div class="col-lg-5 mb-30">
             <div id="product-carousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner bg-light">
                     @php
@@ -128,7 +128,64 @@
                     <i class="fa fa-2x fa-angle-right text-dark"></i>
                 </a>
             </div>
+        </div> -->
+
+        <div class="col-lg-5 mb-30">
+            <div id="product-carousel" class="carousel slide" data-bs-ride="carousel">
+
+                {{-- INDICADORES (puntitos) --}}
+                <div class="carousel-indicators">
+                    @foreach($imagenes as $key => $item)
+                        <button type="button"
+                                data-bs-target="#product-carousel"
+                                data-bs-slide-to="{{ $key }}"
+                                class="{{ $key == 0 ? 'active' : '' }}"
+                                aria-current="{{ $key == 0 ? 'true' : 'false' }}"
+                                aria-label="Slide {{ $key + 1 }}">
+                        </button>
+                    @endforeach
+                </div>
+
+                {{-- IMÁGENES --}}
+                <div class="carousel-inner bg-light">
+                    @foreach($imagenes as $key => $item)
+                        <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                            <img src="{{ asset('storage/' . $item) }}"
+                                class="d-block w-100"
+                                style="object-fit: contain; height: 400px;"
+                                alt="Imagen {{ $key + 1 }}">
+                        </div>
+                    @endforeach
+                </div>
+
+                {{-- CONTROLES --}}
+                <button class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#product-carousel"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+
+                <button class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#product-carousel"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+
+            {{-- MINIATURAS --}}
+            <div class="d-flex mt-3 gap-2 justify-content-center flex-wrap">
+                @foreach($imagenes as $key => $item)
+                    <img src="{{ asset('storage/' . $item) }}"
+                        class="img-thumbnail"
+                        style="width: 70px; height: 70px; object-fit: cover; cursor: pointer;"
+                        data-bs-target="#product-carousel"
+                        data-bs-slide-to="{{ $key }}">
+                @endforeach
+            </div>
         </div>
+
 
         <div class="col-lg-7 h-auto mb-30">
             <div class="h-100 bg-light p-4">
@@ -268,6 +325,10 @@
 @push('scripts')
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="{{asset('js/addcart.js')}}"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     @endpush
 
 @endsection
