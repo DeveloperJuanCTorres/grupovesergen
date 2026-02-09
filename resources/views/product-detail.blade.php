@@ -201,7 +201,7 @@
                     <small class="pt-1">(99 Reviews)</small>
                 </div>
                 <h3 class="font-weight-semi-bold mb-4">S/. {{$product->price}}</h3>
-                <p class="mb-4">{!! Str::markdown($product->description) !!}</p>
+                <p class="mb-4">{!! Str::markdown($product->description_corta) !!}</p>
                 <div class="d-flex mb-3">
                     <strong class="text-dark mr-3">Categoría:</strong>
                     <label class="">{{$product->taxonomy->name}}</label>
@@ -256,11 +256,44 @@
     <div class="row px-xl-5 pt-4">
         <div class="col">
             <div class="bg-light p-30">
+
                 <div class="nav nav-tabs mb-4">
-                    <a class="nav-item nav-link text-dark active">Información</a>
+                    <a class="nav-item nav-link text-dark active"
+                    data-bs-toggle="tab"
+                    href="#tab-info">
+                        Información
+                    </a>
+                    <a class="nav-item nav-link text-dark"
+                    data-bs-toggle="tab"
+                    href="#tab-description">
+                        Descripción
+                    </a>
                 </div>
+
+                <div class="tab-content">
+
+                    <div class="tab-pane fade show active p-4" id="tab-info">
+                        <h4 class="mb-3">Información del Producto</h4>
+                        <p>{!! Str::markdown($product->information) !!}</p>
+                    </div>
+
+                    <div class="tab-pane fade p-4" id="tab-description">
+                        <h4 class="mb-3">Descripción del Producto</h4>
+                        <p>{!! Str::markdown($product->description) !!}</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="row px-xl-5 pt-4">
+        <div class="col">
+            <div class="bg-light p-30">
                 <div class="nav nav-tabs mb-4">
                     <a class="nav-item nav-link text-dark active">Información</a>
+                    <a class="nav-item nav-link text-dark">Descripcion</a>
                 </div>
                 <div class="tab-content">
                     <div class="tab-pane fade show active p-4" id="tab-pane-1">
@@ -276,7 +309,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 <!-- Shop Detail End -->
  
