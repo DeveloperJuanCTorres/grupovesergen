@@ -119,9 +119,11 @@ class HomeController extends Controller
             $query->where('stock', '>', 0);
         })->take(8)->get();
 
-        $relatedProducts = Product::where('taxonomy_id', $product->taxonomy_id)
-                          ->where('id', '!=', $product->id)
-                          ->get();
+        $relatedProducts = Product::whereNotNull('taxonomy_id')
+            ->where('taxonomy_id', $product->taxonomy_id)
+            ->where('id', '!=', $product->id)
+            ->take(8)
+            ->get();
 
         return view('product-detail', compact('product','categories','relatedProducts','business','page','services'));
     }

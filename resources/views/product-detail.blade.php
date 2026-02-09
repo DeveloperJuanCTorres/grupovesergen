@@ -283,8 +283,8 @@
                         @php
                             $imagenes = json_decode($product->images)
                         @endphp
-                        @if($imagenes)
-                        <img class="img-fluid w-100" src="{{asset('storage/$imagenes[0]')}}" alt="">
+                        @if(is_array($imagenes) && count($imagenes) > 0)
+                        <img class="img-fluid w-100" src="{{ asset('storage/' . $imagenes[0]) }}" alt="">
                         @else
                         <img class="img-fluid w-100" src="{{asset('img/defectomaster.jpeg')}}" alt="">
                         @endif
@@ -329,6 +329,31 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.theme.default.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.related-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 4000,
+                responsive:{
+                    0:{ items:1 },
+                    576:{ items:2 },
+                    768:{ items:3 },
+                    992:{ items:4 }
+                }
+            });
+        });
+    </script>
     @endpush
 
 @endsection
