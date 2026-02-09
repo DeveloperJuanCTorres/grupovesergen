@@ -3,160 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <title>Factura Electrónica</title>
+
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            color: #000;
             margin: 0;
-            padding: 30px;
+            padding: 25px;
         }
-        .header, .footer {
-            /* text-align: center; */
-            margin-bottom: 20px;
-        }
-        .company-info, .client-info {
+
+        table {
             width: 100%;
-            margin-bottom: 30px;
+            border-collapse: collapse;
         }
-        .company-info td, .client-info td {
+
+        .text-right { text-align: right; }
+        .text-center { text-align: center; }
+        .bold { font-weight: bold; }
+
+        /* ===== CABECERA ===== */
+        .header td {
             vertical-align: top;
         }
-        .invoice-details {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
+
+        .company-data {
+            font-size: 11px;
         }
-        .invoice-details th, .invoice-details td {
-            border: 1px solid #ccc;
+
+        .invoice-box {
+            border: 2px solid #000;
             padding: 10px;
-            text-align: left;
+            text-align: center;
         }
+
+        .invoice-box h3 {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        /* ===== CLIENTE ===== */
+        .client-box {
+            border: 1px solid #000;
+            padding: 8px;
+            margin-top: 15px;
+        }
+
+        /* ===== DETALLE ===== */
+        .details th {
+            border: 1px solid #000;
+            padding: 6px;
+            background: #f0f0f0;
+        }
+
+        .details td {
+            border: 1px solid #000;
+            padding: 6px;
+        }
+
+        /* ===== TOTALES ===== */
         .totals {
-            float: right;
             width: 40%;
-            border-collapse: collapse;
+            float: right;
+            margin-top: 10px;
         }
-        .totals th, .totals td {
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: right;
+
+        .totals td {
+            border: 1px solid #000;
+            padding: 6px;
         }
-        .izquierda {
-            float: left;
-        }
-        .contenedor {
-        width: 300px; /* Ajusta el ancho según tus necesidades */
-        float: right; /* Mueve el div a la derecha */
-        }
-        .contenido {
-        text-align: left; /* Alinear el texto a la izquierda dentro del div */
-        }
-        .inferior {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 10px;
+
+        /* ===== FOOTER ===== */
+        .footer {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            right: 25px;
+            font-size: 10px;
         }
     </style>
 </head>
+
 <body>
-    <div class="header">
-        <img width="300" class="izquirda" src="{{public_path('img/logo-factura.png')}}" alt="">
-        <div class="contenedor">
-            <div class="contenido">
-                <span>Computadoras - Impresoras - Laptops</span>
-                <br>
-                <span>Servicio Técnico Garantizado</span>
-                <br>
-                <span>RUC: 20614007584</span>
-                <br>
-                <h4>Pedido PPP1-{{ $orden->id }}</h4>
-            </div>
-        </div>        
-    </div>
-    <br>
-    <table class="company-info">
+
+    <!-- ===== CABECERA ===== -->
+    <table class="header">
         <tr>
-            <td>
-                <strong>Cliente:</strong><br>
-                {{ $nombre . $apellidos . $empresa}}<br>
-                <strong>Dirección:</strong><br>
-                {{ $direccion }}<br>
-                @if($ruc != "")
-                RUC: {{$ruc}}
-                @endif
+            <td width="60%">
+                <img src="{{ public_path('img/logo-vesergen.png') }}" width="180"><br>
+                <div class="company-data">
+                    <strong>GRUPO VESERGENPERU E.I.R.L</strong><br>
+                    WWW.VESERGENPERU.COM<br>
+                    CALLE CONSTITUCIÓN NRO 435-439, JOSE LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE<br>
+                    RUC: 20604688605<br>
+                </div>
+            </td>
+
+            <td width="40%">
+                <div class="invoice-box">
+                    <h3>PEDIDO</h3>
+                    <strong>RUC 20604688605</strong><br>
+                    <strong>P001 - {{ $orden->id }}</strong>
+                </div>
             </td>
         </tr>
     </table>
 
-    <table class="invoice-details">
+    <!-- ===== CLIENTE ===== -->
+    <div class="client-box">
+        <table>
+            <tr>
+                <td width="70%">
+                    <strong>Cliente:</strong> {{ $nombre }} {{ $apellidos }} {{ $empresa }}<br>
+                    <strong>Dirección:</strong> {{ $direccion }}<br>
+                    @if($ruc != "")
+                        <strong>RUC:</strong> {{ $ruc }}
+                    @endif
+                </td>
+                <td width="30%">
+                    <strong>Fecha:</strong> {{ date('d/m/Y') }}<br>
+                    <strong>Moneda:</strong> SOLES
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ===== DETALLE ===== -->
+    <table class="details" style="margin-top:15px;">
         <thead>
-            <tr style="background-color: rgb(164, 206, 58);">
-                <th>CANT.</th>
-                <th style="text-align: center;">PRODUCTO</th>
-                <th style="width: 80px;">P. UN.</th>
-                <th style="width: 80px;">PRECIO</th>
+            <tr>
+                <th width="10%">Cant.</th>
+                <th width="50%">Descripción</th>
+                <th width="20%">P. Unit.</th>
+                <th width="20%">Importe</th>
             </tr>
         </thead>
         <tbody>
             @foreach(Cart::content() as $item)
             <tr>
-                <td>{{ $item->qty }}</td>
-                <td>
-                    <span style="font-family: 10px !important;">{{ $item->name }}</span>
-                </td>
-                <td>
-                    <span style="font-family: 10px !important;">S/ {{ number_format($item->price, 2) }}</span>
-                </td>
-                <td>
-                    <span style="font-family: 10px !important;">S/ {{ number_format($item->price * $item->qty, 2) }}</span>
-                </td>
+                <td class="text-center">{{ $item->qty }}</td>
+                <td>{{ $item->name }}</td>
+                <td class="text-right">S/ {{ number_format($item->price, 2) }}</td>
+                <td class="text-right">S/ {{ number_format($item->price * $item->qty, 2) }}</td>
             </tr>
             @endforeach
         </tbody>
     </table>
 
+    <!-- ===== TOTALES ===== -->
     <table class="totals">
-        <tr style="background-color: rgb(108, 117, 125); margin-top: 2px; margin-bottom: 2px; padding: 2px;">
-            <th style="float: left; color: white !important;">
-                Subtotal
-            </th>
-            <th style="float: right; color: white !important;">
-                S/ {{ number_format(Cart::subtotal()/1.18, 2) }}
-            </th>
+        <tr>
+            <td>Sub Total</td>
+            <td class="text-right">S/ {{ number_format(Cart::subtotal()/1.18, 2) }}</td>
         </tr>
-        <tr style="background-color: rgb(108, 117, 125); margin-top: 2px; margin-bottom: 2px; padding: 2px;">
-            <th style="float: left; color: white !important;">
-                IGV (18%)
-            </th>
-            <th style="float: right; color: white !important;">
-                S/ {{ number_format(Cart::subtotal() - Cart::subtotal()/1.18, 2) }}
-            </th>
+        <tr>
+            <td>IGV (18%)</td>
+            <td class="text-right">S/ {{ number_format(Cart::subtotal() - Cart::subtotal()/1.18, 2) }}</td>
         </tr>
-        <tr style="background-color: rgb(164, 206, 58); margin-top: 2px; margin-bottom: 2px; padding: 2px;">
-            <th style="float: left; color: #333 !important;">
-                Total
-            </th>
-            <th style="float: left; color: white !important;">
-                S/ {{ number_format(Cart::subtotal(), 2) }}
-            </th>
+        <tr>
+            <td class="bold">TOTAL</td>
+            <td class="text-right bold">S/ {{ number_format(Cart::subtotal(), 2) }}</td>
         </tr>
     </table>
 
-    <div class="footer" style="padding-right: 15px;">
-        <p style="text-align: justify !important;">Sin otro particular, estamos a su disposición para ampliar la información que estime conveniente y quedamos a la espera de sus noticias.</p>
+    <!-- ===== FOOTER ===== -->
+    <div class="footer">
+        <table>
+            <tr>
+                <td width="20%">
+                    <img src="{{ public_path('img/caja-piura.png') }}" width="90">
+                </td>
+                <td width="80%">
+                    <strong>GRUPO VESERGENPERU E.I.R.L</strong><br>
+                    CTA CTE BCP: 305-2597666056
+                </td>
+            </tr>
+        </table>
     </div>
 
-    <div class="inferior" style="display: flex;align-items: center;">
-        <img style="float: left;" width="100" src="{{public_path('img/caja-piura.png')}}" alt="">
-        <div>
-            <span style="color: rgb(164, 206, 58);">SOS PORTÁTILES E.I.R.</span>
-            <br>
-            <span>SOLES: 435 - 71 - 36192085</span>
-            <br>
-            <span>AHORROS: 00243500713619208564</span>
-        </div>        
-    </div>
 </body>
 </html>
