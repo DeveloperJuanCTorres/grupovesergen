@@ -219,7 +219,7 @@
             @endphp
             @if($imagenes)
             <a href="{{route('product.detail', $product)}}">
-                <img class="img-fluid w-100" style="height: 200px;" src="storage/{{$imagenes[0]}}" alt="">
+                <img class="img-fluid w-100" src="storage/{{$imagenes[0]}}" alt="">
             </a>
             @else
             <a href="{{route('product.detail', $product)}}">

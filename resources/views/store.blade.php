@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    body {
+        display: block !important;
+    }
+</style>
 
     @include('partials.topbar')
 
