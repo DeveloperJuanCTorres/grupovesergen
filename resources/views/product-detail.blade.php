@@ -144,7 +144,7 @@
                     <small class="pt-1">(99 Reviews)</small>
                 </div>
                 <h3 class="font-weight-semi-bold mb-4">S/. {{$product->price}}</h3>
-                <p class="mb-4">{{$product->description}}</p>
+                <p class="mb-4">{!! Str::markdown($product->description) !!}</p>
                 <div class="d-flex mb-3">
                     <strong class="text-dark mr-3">Categría:</strong>
                     <label class="">{{$product->taxonomy->name}}</label>
@@ -205,7 +205,7 @@
                 <div class="tab-content">
                     <div class="tab-pane fade show active p-4" id="tab-pane-1">
                         <h4 class="mb-3">Descripción del Producto</h4>
-                        <p>{{$product->description}}</p>
+                        <p>{!! Str::markdown($product->description) !!}</p>
                     </div>
                 </div>
             </div>
