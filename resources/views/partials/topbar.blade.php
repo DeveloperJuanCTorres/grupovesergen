@@ -13,8 +13,7 @@
                 <div class="col-lg-8 text-center text-lg-start mb-lg-0">
                     <div class="d-flex flex-wrap">
                         <div class="border-end border-primary pe-3">
-                            <!-- <a href="#" class="text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i>{{$business->address}}</a> -->
-                             <a href="https://www.google.com/maps/search/?api=1&query={{ urlencode($business->address) }}"
+                            <a href="https://www.google.com/maps/search/?api=1&query={{ urlencode($business->address) }}"
                             target="_blank"
                             class="text-muted small">
                                 <i class="fas fa-map-marker-alt text-primary me-2"></i>
@@ -22,7 +21,12 @@
                             </a>
                         </div>
                         <div class="border-end border-primary px-3">
-                            <a href="{{$business->email}}" class="text-muted small"><i class="fas fa-envelope text-primary me-2"></i>{{$business->email}}</a>
+                            <a href="mailto:{{ trim($business->email) }}"
+                            class="text-muted small"
+                            title="Enviar correo">
+                                <i class="fas fa-envelope text-primary me-2"></i>
+                                {{ $business->email }}
+                            </a>
                         </div>
                         <div class="ps-3 d-flex" style="right: 0;">
                             @auth
