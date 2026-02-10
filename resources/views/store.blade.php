@@ -244,7 +244,7 @@
 
 @push('scripts')
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="js/addcart.js"></script>
+<script src="{{ asset('js/addcart.js') }}?v={{ time() }}"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
