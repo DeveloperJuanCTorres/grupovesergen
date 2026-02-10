@@ -254,16 +254,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('productContainer');
     let timer;
 
-    // Buscar con debounce
     searchInput.addEventListener('input', () => {
         clearTimeout(timer);
-        timer = setTimeout(fetchProducts, 300);
+        timer = setTimeout(fetchProducts, 400);
     });
 
-    // Filtros
     form.addEventListener('change', fetchProducts);
 
-    // Limpiar
     resetBtn.addEventListener('click', () => {
         form.reset();
         updateURL('');
@@ -271,21 +268,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function fetchProducts(page = 1) {
-        const data = new FormData(form);
-        data.append('page', page);
+        const params = new URLSearchParams(new FormData(form));
+        params.set('page', page);
 
-        fetch(`{{ route('store') }}`, {
-            method: 'POST',
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest',
-                'X-CSRF-TOKEN': '{{ csrf_token() }}'
-            },
-            body: data
+        fetch(`{{ route('store') }}?${params.toString()}`, {
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
         })
         .then(r => r.text())
         .then(html => {
             container.innerHTML = html;
-            updateURL(new URLSearchParams(data).toString());
+            updateURL(params.toString());
         });
     }
 
@@ -296,6 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 </script>
+
 
 @endpush
 
