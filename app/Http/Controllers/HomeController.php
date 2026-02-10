@@ -113,6 +113,7 @@ class HomeController extends Controller
     public function store(Request $request)
     {
         $products = Product::where('stock', '>', 0);
+        $business = Company::find(1);
 
         if ($request->filled('search')) {
             $products->where('name', 'like', "%{$request->search}%");
@@ -136,6 +137,7 @@ class HomeController extends Controller
             'products' => $products,
             'categories' => Taxonomy::withCount('products')->get(),
             'brands' => Brand::withCount('products')->get(),
+            'business' => $business
         ]);
     }
 
