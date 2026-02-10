@@ -5,6 +5,47 @@
     body {
         display: block !important;
     }
+
+    .filter-panel {
+        background: #fff;
+        border-radius: 10px;
+        padding: 15px;
+        border: 1px solid #eee;
+    }
+
+    .filter-scroll {
+        max-height: 260px;
+        overflow-y: auto;
+    }
+
+    .filter-option {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        padding: 6px 0;
+        cursor: pointer;
+    }
+
+    .filter-option input {
+        margin-right: 8px;
+    }
+
+    .filter-option span {
+        flex: 1;
+    }
+
+    .filter-option small {
+        background: #f1f1f1;
+        border-radius: 10px;
+        padding: 2px 6px;
+        font-size: 12px;
+    }
+
+    .filter-option:hover {
+        color: #0d6efd;
+    }
+
 </style>
 
     @include('partials.topbar')
@@ -108,95 +149,76 @@
     <div class="container-fluid py-5 bg-light">
         <div class="row px-xl-5">
             <!-- Shop Sidebar Start -->
-            <div class="col-lg-3 col-md-4 pt-4">
-                <!-- Category Start -->
-                <!-- <h5 class="section-title position-relative text-uppercase mb-3"><span class="pr-3">Filtrar por categoría</span></h5> -->
-                 <form id="filterForm">
-                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
-                        <div class="input-group">
-                            <input type="text" name="search" class="form-control p-3" placeholder="Buscar producto" id="searchInput" value="{{ request('search') }}">
-                            <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
-                        </div>                    
+            <div class="col-lg-3 col-md-4">
+                <form id="filterForm" class="filter-panel">
+
+                    <!-- Buscar -->
+                    <div class="mb-3">
+                        <input type="text" name="search" id="searchInput"
+                            class="form-control form-control-sm"
+                            placeholder="Buscar productos...">
                     </div>
 
-                    <div class="filtro-mobil pb-4">
-                        <h4>Filtros</h4>
-                        <a href="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCategoria" aria-controls="offcanvasCategoria">
-                            <span class="badge bg-info text-dark">Categorías</span>                            
-                        </a>
-                        <a href="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMarca" aria-controls="offcanvasMarca">
-                            <span class="badge bg-info text-dark">Marcas</span>
-                        </a>
-                    </div>
+                    <!-- Accordion -->
+                    <div class="accordion" id="filterAccordion">
 
-                    <div class="offcanvas offcanvas-end offcanvas-70" tabindex="-1" id="offcanvasCategoria" aria-labelledby="offcanvasCategoriaLabel">
-                        <div class="offcanvas-header">
-                            <h5 id="offcanvasCategoriaLabel">Categorías</h5>
-                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            @foreach($categories as $key => $category)                        
-                            <div class="additional-product-item d-flex align-items-center justify-content-between py-2">
-                                <div class="d-flex align-items-center flex-grow-1 me-2">
-                                    <input type="radio" class="me-2" id="categorym-{{$key}}" name="categories[]" value="{{ $category->id }}" {{ request('categories') == $category->id ? 'checked' : '' }}>
-                                    <label for="categorym-{{$key}}" class="text-dark mb-0" style="font-size: 14px; word-break: break-word;">{{$category->name}}</label>
+                        <!-- Categorías -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button py-2" type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#filterCategories">
+                                    Categorías
+                                </button>
+                            </h2>
+                            <div id="filterCategories" class="accordion-collapse collapse show">
+                                <div class="accordion-body filter-scroll">
+                                    @foreach($categories as $category)
+                                    <label class="filter-option">
+                                        <input type="radio" name="category"
+                                            value="{{ $category->id }}">
+                                        <span>{{ $category->name }}</span>
+                                        <small>{{ $category->productsInStock->count() }}</small>
+                                    </label>
+                                    @endforeach
                                 </div>
-                                <span class="badge border font-weight-normal bg-primary">{{$category->productsInStock->count()}}</span>
                             </div>
-                            @endforeach
                         </div>
-                    </div>
 
-                    <div class="offcanvas offcanvas-end offcanvas-70" tabindex="-1" id="offcanvasMarca" aria-labelledby="offcanvasMarcaLabel">
-                        <div class="offcanvas-header">
-                            <h5 id="offcanvasMarcaLabel">Marcas</h5>
-                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            @foreach($brands as $key => $brand)
-                            <div class="additional-product-item d-flex align-items-center justify-content-between py-2">
-                                <div class="d-flex align-items-center flex-grow-1 me-2">
-                                    <input type="radio" class="me-2" id="brandm-{{$key}}" name="brands[]" value="{{ $brand->id }}">
-                                    <label for="brandm-{{$key}}" class="text-dark mb-0" style="font-size: 13px; word-break: break-word;">{{$brand->name}}</label>
+                        <!-- Marcas -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button py-2 collapsed" type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#filterBrands">
+                                    Marcas
+                                </button>
+                            </h2>
+                            <div id="filterBrands" class="accordion-collapse collapse">
+                                <div class="accordion-body filter-scroll">
+                                    @foreach($brands as $brand)
+                                    <label class="filter-option">
+                                        <input type="radio" name="brand"
+                                            value="{{ $brand->id }}">
+                                        <span>{{ $brand->name }}</span>
+                                        <small>{{ $brand->productsInStock->count() }}</small>
+                                    </label>
+                                    @endforeach
                                 </div>
-                                <span class="badge border font-weight-normal bg-primary">{{$brand->productsInStock->count()}}</span>
                             </div>
-                            @endforeach
                         </div>
+
                     </div>
 
-                    <div class="mb-4 w-100">
-                        <button type="button" id="resetFilters" class="btn btn-sm btn-danger">Limpiar filtros</button>
-                    </div>
-                    <h4 class="filtro-destock">Categorías</h4>
-                    <div class="additional-product mb-4 overflow-auto filtro-destock" style="max-height: 400px;">
-                        
-                        @foreach($categories as $key => $category)                        
-                        <div class="additional-product-item d-flex align-items-center justify-content-between py-2">
-                            <div class="d-flex align-items-center flex-grow-1 me-2">
-                                <input type="radio" class="me-2" id="category-{{$key}}" name="categories[]" value="{{ $category->id }}" {{ request('categories') == $category->id ? 'checked' : '' }}>
-                                <label for="category-{{$key}}" class="text-dark mb-0" style="font-size: 14px; word-break: break-word;">{{$category->name}}</label>
-                            </div>
-                            <span class="badge border font-weight-normal bg-primary">{{$category->productsInStock->count()}}</span>
-                        </div>
-                        @endforeach
-                    </div>
-                    <hr class="filtro-destock">
-                    <h4 class="filtro-destock">Marcas</h4>
-                    <div class="additional-product mb-4 overflow-auto filtro-destock" style="max-height: 400px;">
-                        
-                        @foreach($brands as $key => $brand)
-                        <div class="additional-product-item d-flex align-items-center justify-content-between py-2">
-                            <div class="d-flex align-items-center flex-grow-1 me-2">
-                                <input type="radio" class="me-2" id="brand-{{$key}}" name="brands[]" value="{{ $brand->id }}">
-                                <label for="brand-{{$key}}" class="text-dark mb-0" style="font-size: 14px; word-break: break-word;">{{$brand->name}}</label>
-                            </div>
-                            <span class="badge border font-weight-normal bg-primary">{{$brand->productsInStock->count()}}</span>
-                        </div>
-                        @endforeach
-                    </div>
+                    <!-- Limpiar -->
+                    <button type="button" id="resetFilters"
+                            class="btn btn-outline-danger btn-sm w-100 mt-3">
+                        Limpiar filtros
+                    </button>
+
                 </form>
             </div>
+
             <!-- Shop Sidebar End -->
 
 
@@ -224,80 +246,57 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="js/addcart.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
+
     const form = document.getElementById('filterForm');
-    const productContainer = document.getElementById('productContainer');
-    const loadingSpinner = document.getElementById('loadingSpinner');
     const searchInput = document.getElementById('searchInput');
-    const resetFilters = document.getElementById('resetFilters');
+    const resetBtn = document.getElementById('resetFilters');
+    const container = document.getElementById('productContainer');
+    let timer;
 
-    let debounceTimeout;
-
-    searchInput.addEventListener('input', function () {
-        clearTimeout(debounceTimeout);
-        debounceTimeout = setTimeout(() => {
-            fetchProducts();
-        }, 300);
+    // Buscar con debounce
+    searchInput.addEventListener('input', () => {
+        clearTimeout(timer);
+        timer = setTimeout(fetchProducts, 300);
     });
 
-    // 🟥 Limpiar todos los filtros
-    resetFilters.addEventListener('click', function () {
-        form.reset(); // limpia todos los inputs del formulario
-        searchInput.value = '';  
-        $('#buscar').val('');
-        form.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(el => el.checked = false);
-        updateURLWithoutParams();
-        fetchProducts(); // recarga todos los productos
-    });
+    // Filtros
+    form.addEventListener('change', fetchProducts);
 
-    form.addEventListener('change', function () {
+    // Limpiar
+    resetBtn.addEventListener('click', () => {
+        form.reset();
+        updateURL('');
         fetchProducts();
     });
 
     function fetchProducts(page = 1) {
-        const formData = new FormData(form);
-        const params = new URLSearchParams(formData);
+        const data = new FormData(form);
+        data.append('page', page);
 
-        loadingSpinner.classList.remove('hidden'); // Mostrar spinner
-
-        fetch(`{{ route('store') }}?${params.toString()}&page=${page}`, {
+        fetch(`{{ route('store') }}`, {
+            method: 'POST',
             headers: {
-                'X-Requested-With': 'XMLHttpRequest'
-            }
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            body: data
         })
-        .then(response => response.text())
+        .then(r => r.text())
         .then(html => {
-            productContainer.innerHTML = html;
-            updateURLParams(params);
-        })
-        .finally(() => {
-            loadingSpinner.classList.add('hidden'); // Ocultar spinner
+            container.innerHTML = html;
+            updateURL(new URLSearchParams(data).toString());
         });
     }
 
-    // Paginación AJAX
-    document.addEventListener('click', function(e) {
-        if (e.target.closest('.pagination a')) {
-            e.preventDefault();
-            const url = new URL(e.target.href);
-            const page = url.searchParams.get('page');
-            fetchProducts(page);
-        }
-    });
-
-    // 🧩 Actualiza la URL en tiempo real sin recargar la página
-    function updateURLParams(params) {
-        const newUrl = `${window.location.pathname}?${params.toString()}`;
-        window.history.replaceState({}, '', newUrl);
+    function updateURL(params) {
+        const url = params ? `?${params}` : location.pathname;
+        history.replaceState({}, '', url);
     }
 
-    // 🧼 Limpia la URL completamente (sin parámetros)
-    function updateURLWithoutParams() {
-        const cleanUrl = window.location.origin + window.location.pathname;
-        window.history.replaceState({}, '', cleanUrl);
-    }
 });
 </script>
+
 @endpush
 
 @endsection

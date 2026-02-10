@@ -68,27 +68,62 @@ class HomeController extends Controller
         return view('home',compact('categories','banners','caracteristicas','services','business','teams','questions','testimonios'));
     }
 
+    // public function store(Request $request)
+    // {
+    //     $search = $request->input('search');
+    //     $business = Company::find(1);
+    //     $products = Product::query()->where('stock', '>', 0)
+    //                 ->where('name', 'like', "%{$search}%");
+    //     $page = Page::where('title','Tienda')->first();
+    //     $services = Service::take(4)->get();
+       
+    //     if ($request->filled('categories')) {
+    //         $categories = is_array($request->categories) ? $request->categories : [$request->categories];
+    //         $products->whereIn('taxonomy_id', $categories);
+    //     }
+
+    //     if ($request->has('brands')) {
+    //         $products->whereIn('brand_id', $request->brands);
+    //     }
+
+    //     if ($request->filled('search')) {
+    //         $search = trim($request->search);
+    //         $products->where('name', 'like', "%{$search}%");
+    //     }
+
+    //     $products = $products->paginate(6);
+
+    //     if ($request->ajax()) {
+    //         return view('product-list', compact('products'))->render();
+    //     }
+
+
+    //     $categories = Taxonomy::whereHas('products', function ($query) {
+    //         $query->where('stock', '>', 0);
+    //     })->get();
+
+    //     $brands = Brand::whereHas('products', function ($query) {
+    //         $query->where('stock', '>', 0);
+    //     })->get();
+
+       
+    //     return view('store',compact('categories','brands','products','business','page','services'));
+    // }
+
     public function store(Request $request)
     {
-        $search = $request->input('search');
-        $business = Company::find(1);
-        $products = Product::query()->where('stock', '>', 0)
-                    ->where('name', 'like', "%{$search}%");
-        $page = Page::where('title','Tienda')->first();
-        $services = Service::take(4)->get();
-       
-        if ($request->filled('categories')) {
-            $categories = is_array($request->categories) ? $request->categories : [$request->categories];
-            $products->whereIn('taxonomy_id', $categories);
-        }
-
-        if ($request->has('brands')) {
-            $products->whereIn('brand_id', $request->brands);
-        }
+        $products = Product::where('stock', '>', 0);
 
         if ($request->filled('search')) {
-            $search = trim($request->search);
-            $products->where('name', 'like', "%{$search}%");
+            $products->where('name', 'like', "%{$request->search}%");
+        }
+
+        if ($request->filled('category')) {
+            $products->where('taxonomy_id', $request->category);
+        }
+
+        if ($request->filled('brand')) {
+            $products->where('brand_id', $request->brand);
         }
 
         $products = $products->paginate(6);
@@ -97,18 +132,13 @@ class HomeController extends Controller
             return view('product-list', compact('products'))->render();
         }
 
-
-        $categories = Taxonomy::whereHas('products', function ($query) {
-            $query->where('stock', '>', 0);
-        })->get();
-
-        $brands = Brand::whereHas('products', function ($query) {
-            $query->where('stock', '>', 0);
-        })->get();
-
-       
-        return view('store',compact('categories','brands','products','business','page','services'));
+        return view('store', [
+            'products' => $products,
+            'categories' => Taxonomy::withCount('products')->get(),
+            'brands' => Brand::withCount('products')->get(),
+        ]);
     }
+
 
     public function detail (Product $product)
     {
