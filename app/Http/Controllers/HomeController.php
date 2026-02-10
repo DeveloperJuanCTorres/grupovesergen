@@ -115,6 +115,7 @@ class HomeController extends Controller
         $products = Product::where('stock', '>', 0);
         $business = Company::find(1);
         $services = Service::take(4)->get();
+        $page = Page::where('title','Tienda')->first();
 
         if ($request->filled('search')) {
             $products->where('name', 'like', "%{$request->search}%");
@@ -139,7 +140,8 @@ class HomeController extends Controller
             'categories' => Taxonomy::withCount('products')->get(),
             'brands' => Brand::withCount('products')->get(),
             'business' => $business,
-            'services' => $services
+            'services' => $services,
+            'page' => $page
         ]);
     }
 
