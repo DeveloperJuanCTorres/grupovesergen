@@ -214,7 +214,7 @@
                                 <button class="accordion-button py-2 collapsed" type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#filterTypes">
-                                    Marcas
+                                    Características
                                 </button>
                             </h2>
                             <div id="filterTypes" class="accordion-collapse collapse">
