@@ -26,6 +26,7 @@ use App\Models\Taxonomy;
 use App\Models\Team;
 use App\Models\Termino;
 use App\Models\Testimonial;
+use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
@@ -88,6 +89,10 @@ class HomeController extends Controller
             $products->where('brand_id', $request->brand);
         }
 
+        if ($request->filled('type')) {
+            $products->where('type_id', $request->type);
+        }
+
         $products = $products->paginate(6)->withQueryString();
 
         // ⚠️ AJAX → solo productos
@@ -97,6 +102,7 @@ class HomeController extends Controller
 
         $categories = Taxonomy::whereHas('products', fn($q) => $q->where('stock', '>', 0))->get();
         $brands = Brand::whereHas('products', fn($q) => $q->where('stock', '>', 0))->get();
+        $types = Type::whereHas('products', fn($q) => $q->where('stock', '>', 0))->get();
 
         return view('store', compact(
             'products',

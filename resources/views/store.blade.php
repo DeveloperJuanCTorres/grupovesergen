@@ -208,6 +208,29 @@
                             </div>
                         </div>
 
+                        <!-- Caracteristicas -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button py-2 collapsed" type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#filterTypes">
+                                    Marcas
+                                </button>
+                            </h2>
+                            <div id="filterTypes" class="accordion-collapse collapse">
+                                <div class="accordion-body filter-scroll">
+                                    @foreach($types as $type)
+                                    <label class="filter-option">
+                                        <input type="radio" name="brand"
+                                            value="{{ $brand->id }}">
+                                        <span>{{ $type->name }}</span>
+                                        <small>{{ $type->productsInStock->count() }}</small>
+                                    </label>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                     <!-- Limpiar -->
