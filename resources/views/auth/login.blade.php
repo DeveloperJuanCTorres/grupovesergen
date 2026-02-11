@@ -103,11 +103,11 @@
                       </a>
                   @endif
               </div>
-              <div class="field text-center">
-                    <a class="btn btn-link" style="color: #044969;" href="{{ route('register') }}">
+              <!-- <div class="field text-center">
+                    <a class="btn btn-link" style="color: #044969;" href=" route('register') ">
                         ¿No tienes cuenta?, Registrarme
                     </a>
-              </div>
+              </div> -->
             </form>
           </div>
         </div>          
