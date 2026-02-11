@@ -230,7 +230,11 @@
         <div class="text-center py-4" style="min-height: 160px;">
             <a class="h6 text-decoration-none" href="{{route('product.detail', $product)}}">{{$product->name}}</a>
             <div class="d-flex align-items-center justify-content-center mt-2">
-                <h5>S/. {{$product->price}}</h5><h6 class="text-muted ml-2"><del>S/. {{$product->price*1.20}}</del></h6>
+                @auth
+                <h6 class="text-muted ml-2 mx-2"><del>S/. {{$product->price_tecnico}}</del></h6><h5>S/. {{$product->price}}</h5>
+                @else
+                <h5>S/. {{$product->price}}</h5>
+                @endauth
             </div>
         </div>
         <div class="product-action text-center pb-4 px-4 w-100">
