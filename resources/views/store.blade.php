@@ -46,6 +46,37 @@
         color: #0d6efd;
     }
 
+    .promo-bar {
+        background: linear-gradient(90deg, #007dc3, #005fa3);
+        color: #fff;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        padding: 12px 0;
+        font-weight: 500;
+        font-size: 15px;
+    }
+
+    .promo-track {
+        display: flex;
+        width: max-content;
+        animation: scrollPromo 25s linear infinite;
+    }
+
+    .promo-content {
+        display: inline-block;
+        padding-right: 50px;
+    }
+
+    @keyframes scrollPromo {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
 </style>
 
     @include('partials.topbar')
@@ -143,6 +174,25 @@
         </div>
     </div>
     <!-- Header End -->
+
+    <!-- Promo Bar Start -->
+    <div class="promo-bar">
+        <div class="promo-track">
+            <div class="promo-content">
+                🚀 Envíos a todo el Perú &nbsp;&nbsp; | &nbsp;&nbsp;
+                🔥 Descuentos exclusivos esta semana &nbsp;&nbsp; | &nbsp;&nbsp;
+                💳 Paga con tarjeta, Yape o Plin &nbsp;&nbsp; | &nbsp;&nbsp;
+                🎁 Garantía en todos nuestros productos &nbsp;&nbsp; | &nbsp;&nbsp;
+            </div>
+            <div class="promo-content">
+                🚀 Envíos a todo el Perú &nbsp;&nbsp; | &nbsp;&nbsp;
+                🔥 Descuentos exclusivos esta semana &nbsp;&nbsp; | &nbsp;&nbsp;
+                💳 Paga con tarjeta, Yape o Plin &nbsp;&nbsp; | &nbsp;&nbsp;
+                🎁 Garantía en todos nuestros productos &nbsp;&nbsp; | &nbsp;&nbsp;
+            </div>
+        </div>
+    </div>
+    <!-- Promo Bar End -->
 
 
     <!-- Shop Start -->
