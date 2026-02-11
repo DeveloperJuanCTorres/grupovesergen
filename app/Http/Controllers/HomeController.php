@@ -108,6 +108,7 @@ class HomeController extends Controller
             'products',
             'categories',
             'brands',
+            'types',
             'business',
             'services',
             'page'
