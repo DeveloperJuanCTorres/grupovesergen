@@ -103,7 +103,7 @@ class HomeController extends Controller
         $categories = Taxonomy::whereHas('products', fn($q) => $q->where('stock', '>', 0))->get();
         $brands = Brand::whereHas('products', fn($q) => $q->where('stock', '>', 0))->get();
         $types = Type::whereHas('products', fn($q) => $q->where('stock', '>', 0))->get();
-        $promociones = Promotion::with('product')->get();
+        $promociones = Promotion::all();
 
         return view('store', compact(
             'products',

@@ -13,7 +13,8 @@ class Promotion extends Model
     protected $fillable = [
         'id',
         'name',
-        'product_id'     
+        'product_id',
+        'active'   
     ];
 
     public function product()

@@ -60,7 +60,7 @@
     .promo-track {
         display: flex;
         width: max-content;
-        animation: scrollPromo 25s linear infinite;
+        animation: scrollPromo 15s linear infinite;
     }
 
     .promo-content {
@@ -180,12 +180,17 @@
         <div class="promo-track">
             <div class="promo-content">
                 @foreach($promociones as $promocion)
-                    @if($promocion->product)
+                @if($promocion->active == 1)
+                    @if($promocion->product_id)
                         <a class="text-white" href="{{ route('product.detail', $promocion->product) }}">
                             {{ $promocion->name }}
                         </a>
                         &nbsp;&nbsp; | &nbsp;&nbsp;
+                    @else                       
+                        {{ $promocion->name }}
+                        &nbsp;&nbsp; | &nbsp;&nbsp;
                     @endif
+                @endif
                 @endforeach
                 <!-- 🚀 Envíos a todo el Perú &nbsp;&nbsp; | &nbsp;&nbsp;
                 🔥 Descuentos exclusivos esta semana &nbsp;&nbsp; | &nbsp;&nbsp;
@@ -194,12 +199,17 @@
             </div>
             <div class="promo-content">
                 @foreach($promociones as $promocion)
-                    @if($promocion->product)
+                @if($promocion->active == 1)
+                    @if($promocion->product_id)
                         <a class="text-white" href="{{ route('product.detail', $promocion->product) }}">
                             {{ $promocion->name }}
                         </a>
                         &nbsp;&nbsp; | &nbsp;&nbsp;
+                    @else
+                        {{ $promocion->name }}
+                        &nbsp;&nbsp; | &nbsp;&nbsp;
                     @endif
+                @endif
                 @endforeach
             </div>
         </div>
