@@ -19,4 +19,10 @@ class Type extends Model
     {
         return $this->hasMany(Product::class, "type_id", "id");
     }
+
+    public function productsInStock()
+    {
+        return $this->hasMany(Product::class, 'type_id')->where('stock', '>', 0);
+    }
+}
 }
