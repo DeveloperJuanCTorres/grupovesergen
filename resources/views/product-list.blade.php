@@ -231,7 +231,7 @@
             <a class="h6 text-decoration-none" href="{{route('product.detail', $product)}}">{{$product->name}}</a>
             <div class="d-flex align-items-center justify-content-center mt-2">
                 @auth
-                <h6 class="text-muted ml-2 mx-2"><del>S/. {{$product->price_tecnico}}</del></h6><h5>S/. {{$product->price}}</h5>
+                <h6 class="text-muted ml-2 mx-2"><del>S/. {{$product->price}}</del></h6><h5>S/. {{$product->price_tecnico}}</h5>
                 @else
                 <h5>S/. {{$product->price}}</h5>
                 @endauth
