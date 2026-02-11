@@ -221,8 +221,8 @@
                                 <div class="accordion-body filter-scroll">
                                     @foreach($types as $type)
                                     <label class="filter-option">
-                                        <input type="radio" name="brand"
-                                            value="{{ $brand->id }}">
+                                        <input type="radio" name="type"
+                                            value="{{ $type->id }}">
                                         <span>{{ $type->name }}</span>
                                         <small>{{ $type->productsInStock->count() }}</small>
                                     </label>
