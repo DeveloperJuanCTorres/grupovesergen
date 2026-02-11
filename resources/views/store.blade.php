@@ -179,16 +179,28 @@
     <div class="promo-bar">
         <div class="promo-track">
             <div class="promo-content">
-                🚀 Envíos a todo el Perú &nbsp;&nbsp; | &nbsp;&nbsp;
+                @foreach($promociones as $promocion)
+                    @if($promocion->product)
+                        <a class="text-white" href="{{ route('product.detail', $promocion->product) }}">
+                            {{ $promocion->name }}
+                        </a>
+                        &nbsp;&nbsp; | &nbsp;&nbsp;
+                    @endif
+                @endforeach
+                <!-- 🚀 Envíos a todo el Perú &nbsp;&nbsp; | &nbsp;&nbsp;
                 🔥 Descuentos exclusivos esta semana &nbsp;&nbsp; | &nbsp;&nbsp;
                 💳 Paga con transferencia, Yape o Plin &nbsp;&nbsp; | &nbsp;&nbsp;
-                🎁 Garantía en todos nuestros productos &nbsp;&nbsp; | &nbsp;&nbsp;
+                🎁 Garantía en todos nuestros productos &nbsp;&nbsp; | &nbsp;&nbsp; -->
             </div>
             <div class="promo-content">
-                🚀 Envíos a todo el Perú &nbsp;&nbsp; | &nbsp;&nbsp;
-                🔥 Descuentos exclusivos esta semana &nbsp;&nbsp; | &nbsp;&nbsp;
-                💳 Paga con transferencia, Yape o Plin &nbsp;&nbsp; | &nbsp;&nbsp;
-                🎁 Garantía en todos nuestros productos &nbsp;&nbsp; | &nbsp;&nbsp;
+                @foreach($promociones as $promocion)
+                    @if($promocion->product)
+                        <a class="text-white" href="{{ route('product.detail', $promocion->product) }}">
+                            {{ $promocion->name }}
+                        </a>
+                        &nbsp;&nbsp; | &nbsp;&nbsp;
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>
