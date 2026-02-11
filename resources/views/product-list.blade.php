@@ -227,7 +227,7 @@
             </a>
             @endif
         </div>
-        <div class="text-center py-4" style="min-height: 160px;">
+        <div class="text-center py-4">
             <a class="h6 text-decoration-none" href="{{route('product.detail', $product)}}">{{$product->name}}</a>
             <div class="d-flex align-items-center justify-content-center mt-2">
                 @auth
