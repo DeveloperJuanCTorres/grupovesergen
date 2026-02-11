@@ -25,4 +25,4 @@ class Type extends Model
         return $this->hasMany(Product::class, 'type_id')->where('stock', '>', 0);
     }
 }
-}
+
