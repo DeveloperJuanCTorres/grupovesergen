@@ -97,7 +97,7 @@ class HomeController extends Controller
 
         // ⚠️ AJAX → solo productos
         if ($request->ajax()) {
-            return view('product-list', compact('products'))->render();
+            return view('product-list', compact('products', 'business'))->render();
         }
 
         $categories = Taxonomy::whereHas('products', fn($q) => $q->where('stock', '>', 0))->get();
