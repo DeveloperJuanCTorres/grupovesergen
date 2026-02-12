@@ -233,9 +233,9 @@
             </div>
             <div class="d-flex align-items-center justify-content-center mt-2">
                 @auth
-                <h6 class="text-muted ml-2 mx-2"><del>S/. {{$product->price}}</del></h6><h5 class="price-tecnico">S/. {{$product->price_tecnico * $business->tipo_cambio}} - $ {{$product->price_tecnico}}</h5>
+                <h6 class="text-muted ml-2 mx-2"><del>S/. {{number_format($product->price, 2)}}</del></h6><h5 class="price-tecnico">S/. {{number_format($product->price_tecnico * $business->tipo_cambio, 2)}} - $ {{number_format($product->price_tecnico, 2)}}</h5>
                 @else
-                <h5 class="price-tecnico">S/. {{$product->price * $business->tipo_cambio}}</h5>
+                <h5 class="price-tecnico">S/. {{number_format($product->price * $business->tipo_cambio, 2)}} - $ {{number_format($product->price, 2)}}</h5>
                 @endauth
             </div>
         </div>
