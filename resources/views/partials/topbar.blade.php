@@ -68,7 +68,7 @@
                             </div>
                         </div>
                         @else
-                        <a class="ms-3 text-dark" href="login">
+                        <a class="ms-3 text-dark" href="{{ route('login') }}">
                             <i class="fas fa-user text-primary me-2"></i>Iniciar sesión
                         </a>
                         @endauth
