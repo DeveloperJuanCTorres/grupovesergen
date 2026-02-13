@@ -204,19 +204,19 @@
                 <p class="mb-4">{{$product->description_corta}}</p>
 
                 <div class="d-flex mb-3">
-                    <strong class="text-dark mr-3">Código : </strong>
+                    <strong class="text-dark me-2">Código : </strong>
                     <label class=""> {{$product->codigo}}</label>
                 </div>
                 <div class="d-flex mb-3">
-                    <strong class="text-dark mr-3">Categoría : </strong>
+                    <strong class="text-dark me-2">Categoría : </strong>
                     <label class=""> {{$product->taxonomy->name}}</label>
                 </div>
                 <div class="d-flex mb-4">
-                    <strong class="text-dark mr-3">Marca : </strong>
+                    <strong class="text-dark me-2">Marca : </strong>
                     <label class=""> {{$product->brand->name}}</label>
                 </div>
                 <div class="d-flex mb-4">
-                    <strong class="text-dark mr-3">Stock : </strong>
+                    <strong class="text-dark me-2">Stock : </strong>
                     <label class=""> {{$product->stock}} Unidades</label>
                 </div>
                 <div class="d-flex align-items-center mb-4 pt-2">
