@@ -202,6 +202,11 @@
                 </div>
                 <h3 class="font-weight-semi-bold mb-4">S/. {{$product->price}}</h3>
                 <p class="mb-4">{{$product->description_corta}}</p>
+
+                <div class="d-flex mb-3">
+                    <strong class="text-dark mr-3">Código:</strong>
+                    <label class="">{{$product->codigo}}</label>
+                </div>
                 <div class="d-flex mb-3">
                     <strong class="text-dark mr-3">Categoría:</strong>
                     <label class="">{{$product->taxonomy->name}}</label>

@@ -23,7 +23,9 @@ class Product extends Model
         'unidad_medida',
         'stock',
         'slug',
-        'price_tecnico'        
+        'price_tecnico'    ,
+        'type_id',
+        'codigo'    
     ];
     
     public function taxonomy()
