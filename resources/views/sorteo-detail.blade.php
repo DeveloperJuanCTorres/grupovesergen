@@ -131,7 +131,7 @@
 
                         <div class="d-flex justify-content-between border-bottom py-2">
                             <span>{{ $primerNombre }}</span>
-                            <span class="text-muted">{{ $p->user->id ?? '-' }}</span>
+                            <span class="text-muted">Código: {{ $p->user->id ?? '-' }}</span>
                         </div>
 
                     @empty
