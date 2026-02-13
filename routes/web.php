@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -61,6 +62,8 @@ Route::get('/redes', [App\Http\Controllers\HomeController::class, 'redes'])->nam
 if(config('features.vistas'))
 {
     Route::get('/sorteo', [App\Http\Controllers\HomeController::class, 'sorteo'])->name('sorteo');
+    Route::get('/sorteo/{id}', [HomeController::class, 'showSorteo'])
+    ->name('sorteo.detail');
 }
 
 Route::get('/sorteo/participar/{id}/{cantidad}', 

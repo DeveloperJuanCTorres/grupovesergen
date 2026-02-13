@@ -12,6 +12,12 @@ class Share extends Model
 
     protected $fillable = [
         'user_id',
-        'sorteo_id',      
+        'sorteo_id',     
+        'cantidad' 
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

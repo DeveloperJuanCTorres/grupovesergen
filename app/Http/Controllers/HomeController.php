@@ -33,6 +33,7 @@ use Illuminate\Support\Str;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Storage;
 use Cart;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
@@ -468,8 +469,42 @@ class HomeController extends Controller
             $query->where('stock', '>', 0);
         })->take(8)->get();
         $sorteos = Sorteo::all();
-        return view('sorteo', compact('categories','business','nosotros','sorteos','page'));
+
+        $participacionesUsuario = [];
+
+        if (Auth::check()) {
+            $participacionesUsuario = Share::where('user_id', Auth::id())
+                ->selectRaw('sorteo_id, COUNT(*) as total')
+                ->groupBy('sorteo_id')
+                ->pluck('total', 'sorteo_id')
+                ->toArray();
+        }
+
+        return view('sorteo', compact('categories','business','nosotros','sorteos','page', 'participacionesUsuario'));
     }
+
+    public function showSorteo($id)
+    {
+        $business = Company::first(); 
+        $page = Page::where('title','Sorteos')->first();
+
+        $sorteo = Sorteo::findOrFail($id);
+
+        // Traer participantes del sorteo
+        $participantes = Share::where('sorteo_id', $id)
+            ->with('user') // relación con cliente
+            ->select('user_id')
+            ->distinct()
+            ->get();
+
+        return view('sorteo-detail', compact(
+            'business',
+            'page',
+            'sorteo',
+            'participantes'
+        ));
+    }
+
 
     public function participar($id, $cantidad)
     {
@@ -490,7 +525,7 @@ class HomeController extends Controller
         for ($i = 0; $i < $cantidad; $i++) {
             Share::create([
                 'user_id' => $user->id,
-                'sorteo_id' => $sorteo->id,
+                'sorteo_id' => $sorteo->id
             ]);
         }
 

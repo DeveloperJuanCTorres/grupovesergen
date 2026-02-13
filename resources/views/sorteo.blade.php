@@ -101,20 +101,42 @@
                 @foreach($sorteos as $key => $sorteo)
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="service-item">
-                        <div class="service-img">
+                        <div class="">
                             @php
                                 $imagenes = json_decode($sorteo->images);
                                 $primeraImagen = $imagenes[0];
                             @endphp
-                            <img src="{{ asset('storage/' . $primeraImagen) }}" class="img-fluid rounded-top w-100" alt="">
+                            <a href="{{ route('sorteo.detail', $sorteo->id) }}">
+                                <img src="{{ asset('storage/' . $primeraImagen) }}" 
+                                    class="img-fluid rounded-top w-100" 
+                                    alt="">
+                            </a>
                         </div>
                         <div class="service-content p-4">
                             <div class="service-content-inner">
-                                <a href="javascript:void(0)" class="d-inline-block h4 open-video" data-video="{{ $sorteo->video_url }}">{{$sorteo->name}}</a>
+                                <a href="{{ route('sorteo.detail', $sorteo->id) }}" class="d-inline-block h4">{{$sorteo->name}}</a>
                                 @if($sorteo->fecha_sorteo)
                                 <p class="">Sorteo: {{$sorteo->fecha_sorteo}}</p>
                                 @endif
                                 <p class="">{!! Str::markdown($sorteo->description) !!}</p>
+
+                                @php
+                                    $misParticipaciones = $participacionesUsuario[$sorteo->id] ?? 0;
+                                @endphp
+
+                                @if(Auth::check())
+                                    <div class="mb-3 text-center">
+                                        @if($misParticipaciones > 0)
+                                            <span class="badge bg-success">
+                                                🎟 Participas {{ $misParticipaciones }} veces
+                                            </span>
+                                        @else
+                                            <span class="badge bg-secondary">
+                                                Aún no participas
+                                            </span>
+                                        @endif
+                                    </div>
+                                @endif
                                 
                                 <div class="text-center">
                                     <a class="btn btn-primary rounded-pill px-4 btn-participar" 
