@@ -231,31 +231,14 @@
             <div style="height: 50px;">
                 <a class="h6 text-decoration-none" href="{{route('product.detail', $product)}}">{{$product->name}}</a>
             </div>
-            @php
-                function redondear05($valor) {
-                    return round($valor * 20) / 20;
-                }
-            @endphp
             <div class="d-flex align-items-center justify-content-center mt-2">
-            @auth
-                <h6 class="text-muted ml-2 mx-2">
-                    <del>
-                        S/. {{ number_format(redondear05($product->price * $business->tipo_cambio), 2) }}
-                        - $ {{ number_format(redondear05($product->price), 2) }}
-                    </del>
-                </h6>
-
-                <h5 class="price-tecnico">
-                    S/. {{ number_format(redondear05($product->price_tecnico * $business->tipo_cambio), 2) }}
-                    - $ {{ number_format(redondear05($product->price_tecnico), 2) }}
-                </h5>
-            @else
-                <h5 class="price-tecnico">
-                    S/. {{ number_format(redondear05($product->price * $business->tipo_cambio), 2) }}
-                    - $ {{ number_format(redondear05($product->price), 2) }}
-                </h5>
-            @endauth
-        </div>
+                @auth
+                <h6 class="text-muted ml-2 mx-2"><del>S/. {{number_format($product->price * $business->tipo_cambio, 2)}} - $. {{number_format($product->price, 2)}}</del></h6>
+                <h5 class="price-tecnico">S/. {{number_format($product->price_tecnico * $business->tipo_cambio, 2)}} - $ {{number_format($product->price_tecnico, 2)}}</h5>
+                @else
+                <h5 class="price-tecnico">S/. {{number_format($product->price * $business->tipo_cambio, 2)}} - $ {{number_format($product->price, 2)}}</h5>
+                @endauth
+            </div>
         </div>
         <div class="product-action text-center pb-4 px-4 w-100">
             <input type="hidden" id="qty" value="1">
