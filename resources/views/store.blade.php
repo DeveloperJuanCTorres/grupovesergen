@@ -373,6 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(html => {
             container.innerHTML = html;
             updateURL(params.toString());
+            initProductScripts(); // 👈 IMPORTANTE
         });
     }
 
@@ -380,6 +381,39 @@ document.addEventListener('DOMContentLoaded', () => {
         const url = params ? `?${params}` : location.pathname;
         history.replaceState({}, '', url);
     }
+
+    function initProductScripts() {
+        // Re-activar botones addcart si usas addcart.js
+        document.querySelectorAll('.addcart').forEach(btn => {
+            btn.addEventListener('click', function () {
+                // tu lógica si no está delegada
+            });
+        });
+
+        // Re-inicializar animaciones GSAP
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+
+            if (button.dataset.initialized) return;
+            button.dataset.initialized = true;
+
+            let morph = button.querySelector('.morph path'),
+                shirt = button.querySelectorAll('.shirt svg > path');
+
+            button.addEventListener('pointerdown', e => {
+                if(button.classList.contains('active')) return;
+                gsap.to(button, {
+                    '--background-scale': .97,
+                    duration: .15
+                });
+            });
+
+            button.addEventListener('click', e => {
+                if(button.classList.contains('active')) return;
+                // aquí dejas tu animación completa
+            });
+        });
+    }
+
 
 });
 </script>
