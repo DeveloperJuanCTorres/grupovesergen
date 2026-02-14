@@ -201,13 +201,31 @@
                     <small class="pt-1">(99 Reviews)</small>
                 </div>
                
+                @php
+                    function redondear05($valor) {
+                        return round($valor * 20) / 20;
+                    }
+                @endphp
                 <div class="mt-2">
-                    @auth
-                    <h5 class="text-muted ml-2 mx-2"><del>S/. {{number_format($product->price, 2)}}</del></h5><h3 class="price-tecnico">S/. {{number_format($product->price_tecnico * $business->tipo_cambio, 2)}} - $ {{number_format($product->price_tecnico, 2)}}</h3>
-                    @else
-                    <h3 class="price-tecnico">S/. {{number_format($product->price * $business->tipo_cambio, 2)}} - $ {{number_format($product->price, 2)}}</h3>
-                    @endauth
-                </div>
+                @auth
+                    <h6 class="text-muted ml-2 mx-2">
+                        <del>
+                            S/. {{ number_format(redondear05($product->price * $business->tipo_cambio), 2) }}
+                            - $ {{ number_format(redondear05($product->price), 2) }}
+                        </del>
+                    </h6>
+
+                    <h5 class="price-tecnico">
+                        S/. {{ number_format(redondear05($product->price_tecnico * $business->tipo_cambio), 2) }}
+                        - $ {{ number_format(redondear05($product->price_tecnico), 2) }}
+                    </h5>
+                @else
+                    <h5 class="price-tecnico">
+                        S/. {{ number_format(redondear05($product->price * $business->tipo_cambio), 2) }}
+                        - $ {{ number_format(redondear05($product->price), 2) }}
+                    </h5>
+                @endauth
+            </div>
                 <p class="mb-4">{{$product->description_corta}}</p>
 
                 <div class="d-flex mb-3">
