@@ -215,15 +215,15 @@
                         </del>
                     </h6>
 
-                    <h5 class="price-tecnico">
+                    <h3 class="price-tecnico">
                         S/. {{ number_format(redondear05($product->price_tecnico * $business->tipo_cambio), 2) }}
                         - $ {{ number_format(redondear05($product->price_tecnico), 2) }}
-                    </h5>
+                    </h3>
                 @else
-                    <h5 class="price-tecnico">
+                    <h3 class="price-tecnico">
                         S/. {{ number_format(redondear05($product->price * $business->tipo_cambio), 2) }}
                         - $ {{ number_format(redondear05($product->price), 2) }}
-                    </h5>
+                    </h3>
                 @endauth
             </div>
                 <p class="mb-4">{{$product->description_corta}}</p>
