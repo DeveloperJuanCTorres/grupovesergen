@@ -200,7 +200,14 @@
                     </div>
                     <small class="pt-1">(99 Reviews)</small>
                 </div>
-                <h3 class="font-weight-semi-bold mb-4">S/. {{$product->price}}</h3>
+               
+                <div class="d-flex align-items-center justify-content-center mt-2">
+                    @auth
+                    <h5 class="text-muted ml-2 mx-2"><del>S/. {{number_format($product->price, 2)}}</del></h5><h3 class="price-tecnico">S/. {{number_format($product->price_tecnico * $business->tipo_cambio, 2)}} - $ {{number_format($product->price_tecnico, 2)}}</h3>
+                    @else
+                    <h3 class="price-tecnico">S/. {{number_format($product->price * $business->tipo_cambio, 2)}} - $ {{number_format($product->price, 2)}}</h3>
+                    @endauth
+                </div>
                 <p class="mb-4">{{$product->description_corta}}</p>
 
                 <div class="d-flex mb-3">
