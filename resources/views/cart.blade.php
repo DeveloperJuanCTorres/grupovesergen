@@ -203,7 +203,55 @@
     @include('partials.whatsapp')
 
 @push('scripts')
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="{{ asset('js/addcart.js') }}?v={{ time() }}"></script>
+<script>
+    $(document).on('click', '.btn-plus, .btn-minus', function(e){
+        e.preventDefault();
+
+        let rowId = $(this).data('rowid');
+        let input = $('.qty-input[data-rowid="'+rowId+'"]');
+        let qty = parseInt(input.val()) || 1;
+
+        if($(this).hasClass('btn-plus')){
+            qty++;
+        } else {
+            qty = qty > 1 ? qty - 1 : 1;
+        }
+
+        updateCart(rowId, qty);
+    });
+
+    function updateCart(rowId, qty){
+
+        $.ajax({
+            url: "/cart/update",
+            method: "POST",
+            data: {
+                _token: $('meta[name="csrf-token"]').attr('content'),
+                rowId: rowId,
+                qty: qty
+            },
+            success: function(response){
+
+                if(response.status){
+
+                    // actualizar input
+                    $('.qty-input[data-rowid="'+rowId+'"]').val(qty);
+
+                    // actualizar subtotal fila
+                    $('.item-subtotal[data-rowid="'+rowId+'"]')
+                        .text("S/. " + response.item_subtotal);
+
+                    // actualizar resumen
+                    $('#cartSubtotal').text("S/. " + response.subtotal);
+                    $('#cartIgv').text("S/. " + response.igv);
+                    $('#cartTotal').text("S/. " + response.total);
+
+                    // actualizar contador navbar
+                    $('#cartCount').text(response.count);
+                }
+            }
+        });
+    }
+</script>
 
 @endsection
