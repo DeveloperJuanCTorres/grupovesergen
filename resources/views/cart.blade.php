@@ -121,7 +121,7 @@
                                     <img src="{{$item->options->image}}" alt="" style="width: 50px;"> 
                                     <p class="d-block my-auto px-2">{{$item->name}}</p>                              
                             </td>
-                            <td class="align-middle">S/. {{$item->price}}</td>
+                            <td class="align-middle">S/. {{number_format($item->price, 2)}}</td>
                             <td class="align-middle">
                                 <div class="input-group quantity mx-auto" style="width: 100px;">
                                     <div class="input-group-btn">
@@ -138,7 +138,7 @@
                                 </div>
                                 
                             </td>
-                            <td class="align-middle item-subtotal" data-rowid="{{$item->rowId}}">S/. {{$item->price*$item->qty}}</td>
+                            <td class="align-middle item-subtotal" data-rowid="{{$item->rowId}}">S/. {{number_format($item->price*$item->qty, 2)}}</td>
                             <td class="align-middle">
                                 <form action="{{route('removeitem')}}" method="post">
                                 @csrf
