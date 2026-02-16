@@ -68,7 +68,7 @@ class CartController extends Controller
             }
 
             // Convertir a soles
-            $tipoCambio = $request->session()->get('business.tipo_cambio') ?? 1;
+            $tipoCambio = Company::first()->tipo_cambio ?? 1;
             $precioSoles = $precioBase * $tipoCambio;
 
             Cart::add(
