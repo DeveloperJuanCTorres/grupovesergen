@@ -409,9 +409,21 @@
     <script>
         $('.btn-plus').click(function(e){
             e.preventDefault();
-            
-            let qty = parseInt($('#qty').val());
+
+            let qty = parseInt($('#qty').val()) || 1;
             $('#qty').val(qty + 1);
+        });
+
+        $('.btn-minus').click(function(e){
+            e.preventDefault();
+
+            let qty = parseInt($('#qty').val()) || 1;
+
+            if(qty > 1){
+                $('#qty').val(qty - 1);
+            } else {
+                $('#qty').val(1);
+            }
         });
     </script>
     @endpush
