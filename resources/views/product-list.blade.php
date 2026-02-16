@@ -278,7 +278,7 @@
         {{-- ACCIONES --}}
         <div class="product-action text-center pb-4 px-4 w-100">
 
-            <input type="hidden" value="1">
+            <input id="qty" type="hidden" value="1">
 
             <button class="add-to-cart addcart w-100"
                     data-id="{{ $product->id }}">

@@ -58,7 +58,7 @@
 						});
 						Toast.fire({
 						icon: "error",
-						title: "Algo salió mal"
+						title: "Algo salió mal" + response.msg
 						});
                     }
                 },
