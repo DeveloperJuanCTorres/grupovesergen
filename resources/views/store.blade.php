@@ -77,6 +77,217 @@
         }
     }
 
+
+
+
+
+
+    .add-to-cart {
+    --background-default: #015fc9;
+    --background-hover: #0A0A0C;
+    --background-scale: 1;
+    --text-color: #fff;
+    --text-o: 1;
+    --text-x: 12px;
+    --cart: #fff;
+    --cart-x: -68px;
+    --cart-y: 0px;
+    --cart-rotate: 0deg;
+    --cart-scale: .75;
+    --cart-clip: 0px;
+    --cart-clip-x: 0px;
+    --cart-tick-offset: 10px;
+    --cart-tick-color: #FF328B;
+    --shirt-y: -16px;
+    --shirt-scale: 0;
+    --shirt-color: #17171B;
+    --shirt-logo: #fff;
+    --shirt-second-y: 24px;
+    --shirt-second-color: #fff;
+    --shirt-second-logo: #17171B;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    outline: none;
+    background: none;
+    border: none;
+    padding: 8px 0;
+    width: 164px;
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+    font-family: inherit;
+    }
+    .add-to-cart:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+    transition: background 0.25s;
+    background: var(--background, var(--background-default));
+    transform: scaleX(var(--background-scale)) translateZ(0);
+    }
+    .add-to-cart:not(.active):hover {
+    --background: var(--background-hover);
+    }
+    .add-to-cart span {
+    display: block;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--text-color);
+    opacity: var(--text-o);
+    transform: translateX(var(--text-x)) translateZ(0);
+    }
+    .add-to-cart svg {
+    display: block;
+    width: var(--svg-width, 24px);
+    height: var(--svg-height, 24px);
+    position: var(--svg-position, relative);
+    left: var(--svg-left, 0);
+    top: var(--svg-top, 0);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    }
+    .add-to-cart svg path {
+    fill: var(--svg-fill, none);
+    stroke: var(--svg-stroke, none);
+    stroke-width: var(--svg-stroke-width, 2);
+    }
+    .add-to-cart .morph {
+    --svg-width: 64px;
+    --svg-height: 13px;
+    --svg-left: 50%;
+    --svg-top: -12px;
+    --svg-position: absolute;
+    --svg-fill: var(--background, var(--background-default));
+    transition: fill 0.25s;
+    pointer-events: none;
+    margin-left: -32px;
+    }
+    .add-to-cart .shirt,
+    .add-to-cart .cart {
+    pointer-events: none;
+    position: absolute;
+    left: 50%;
+    }
+    .add-to-cart .shirt {
+    margin: -12px 0 0 -12px;
+    top: 0;
+    transform-origin: 50% 100%;
+    transform: translateY(var(--shirt-y)) scale(var(--shirt-scale));
+    }
+    .add-to-cart .shirt svg {
+    --svg-fill: var(--shirt-color);
+    }
+    .add-to-cart .shirt svg g {
+    --svg-fill: var(--svg-g-fill, var(--shirt-logo));
+    }
+    .add-to-cart .shirt svg.second {
+    --svg-fill: var(--shirt-second-color);
+    --svg-g-fill: var(--shirt-second-logo);
+    --svg-position: absolute;
+    -webkit-clip-path: polygon(0 var(--shirt-second-y), 24px var(--shirt-second-y), 24px 24px, 0 24px);
+            clip-path: polygon(0 var(--shirt-second-y), 24px var(--shirt-second-y), 24px 24px, 0 24px);
+    }
+    .add-to-cart .cart {
+    --svg-width: 36px;
+    --svg-height: 26px;
+    --svg-stroke: var(--cart);
+    top: 7px;
+    margin-left: -18px;
+    transform: translate(var(--cart-x), var(--cart-y)) rotate(var(--cart-rotate)) scale(var(--cart-scale)) translateZ(0);
+    }
+    .add-to-cart .cart:before {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 12px;
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    background: var(--cart);
+    -webkit-clip-path: polygon(0 0, 22px 0, calc(22px - var(--cart-clip-x)) var(--cart-clip), var(--cart-clip-x) var(--cart-clip));
+            clip-path: polygon(0 0, 22px 0, calc(22px - var(--cart-clip-x)) var(--cart-clip), var(--cart-clip-x) var(--cart-clip));
+    }
+    .add-to-cart .cart path.wheel {
+    --svg-stroke-width: 1.5;
+    }
+    .add-to-cart .cart path.tick {
+    --svg-stroke: var(--cart-tick-color);
+    stroke-dasharray: 10px;
+    stroke-dashoffset: var(--cart-tick-offset);
+    }
+
+    .white,
+    .dark {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .dark {
+    background: #17171B;
+    }
+    .dark .add-to-cart {
+    --background-default: #fff;
+    --background-hover: #F2F2F9;
+    --text-color: #17171B;
+    --cart: #17171B;
+    --cart-tick-color: #FF328B;
+    --shirt-color: #fff;
+    --shirt-logo: #17171B;
+    --shirt-second-color: #17171B;
+    --shirt-second-logo: #fff;
+    }
+
+    html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    }
+
+    * {
+    box-sizing: inherit;
+    }
+    *:before, *:after {
+    box-sizing: inherit;
+    }
+
+    body {
+    min-height: 100vh;
+    display: flex;
+    font-family: "Inter", Arial;
+    background: #F2F2F9;
+    }
+    body .dribbble {
+    position: fixed;
+    display: block;
+    right: 20px;
+    bottom: 20px;
+    }
+    body .dribbble img {
+    display: block;
+    height: 28px;
+    }
+    body .twitter {
+    position: fixed;
+    display: block;
+    right: 64px;
+    bottom: 14px;
+    }
+    body .twitter svg {
+    width: 32px;
+    height: 32px;
+    fill: #1da1f2;
+    }
+
 </style>
 
     @include('partials.topbar')
@@ -339,222 +550,176 @@
 
 @push('scripts')
 
+
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="{{ asset('js/addcart.js') }}?v={{ time() }}"></script>
 
 <script>
-    console.log("STORE SCRIPT CARGADO");
+    document.addEventListener('DOMContentLoaded', function () {
 
-    document.addEventListener("DOMContentLoaded", function () {
-
-        console.log("DOM LISTO");
-
-        const form = document.getElementById('filterForm');
-        const searchInput = document.getElementById('searchInput');
-        const resetBtn = document.getElementById('resetFilters');
         const container = document.getElementById('productContainer');
 
-        console.log("form:", form);
-        console.log("container:", container);
-
-        if (!form || !container) {
-            console.warn("No se encontraron elementos del filtro");
+        if (!container) {
+            console.error("No existe #product-container");
             return;
         }
 
-        let timer;
-
-        if (searchInput) {
-            searchInput.addEventListener('input', () => {
-                clearTimeout(timer);
-                timer = setTimeout(() => fetchProducts(1), 400);
-            });
-        }
-
-        form.addEventListener('change', function (e) {
-            e.preventDefault();
-            fetchProducts(1);
-        });
-
-        if (resetBtn) {
-            resetBtn.addEventListener('click', () => {
-                form.reset();
-                updateURL('');
-                fetchProducts(1);
-            });
-        }
-
         function fetchProducts(page = 1) {
-            const params = new URLSearchParams(new FormData(form));
-            params.set('page', page);
+
+            const params = new URLSearchParams();
+
+            const search = document.querySelector('[name="search"]')?.value;
+            const category = document.querySelector('[name="category"]:checked')?.value;
+            const brand = document.querySelector('[name="brand"]:checked')?.value;
+            const type = document.querySelector('[name="type"]:checked')?.value;
+
+            if (search) params.append('search', search);
+            if (category) params.append('category', category);
+            if (brand) params.append('brand', brand);
+            if (type) params.append('type', type);
+
+            params.append('page', page);
+
+            console.log("Enviando filtros:", params.toString());
+
+            container.style.opacity = "0.4";
 
             fetch(`{{ route('store') }}?${params.toString()}`, {
-                headers: { 'X-Requested-With': 'XMLHttpRequest' },
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
                 credentials: 'same-origin'
             })
-            .then(r => r.text())
+            .then(response => response.text())
             .then(html => {
                 container.innerHTML = html;
-                updateURL(params.toString());
+                container.style.opacity = "1";
+            })
+            .catch(error => {
+                console.error("Error AJAX:", error);
+                container.style.opacity = "1";
             });
         }
 
-        function updateURL(params) {
-            const url = params ? `?${params}` : location.pathname;
-            history.replaceState({}, '', url);
-        }
+        // EVENTO FILTROS
+        document.addEventListener('change', function (e) {
+            if (
+                e.target.matches('[name="category"]') ||
+                e.target.matches('[name="brand"]') ||
+                e.target.matches('[name="type"]')
+            ) {
+                fetchProducts(1);
+            }
+        });
+
+        // BUSCADOR
+        document.addEventListener('input', function (e) {
+            if (e.target.matches('[name="search"]')) {
+                fetchProducts(1);
+            }
+        });
+
+        // PAGINACIÓN
+        document.addEventListener('click', function (e) {
+            if (e.target.closest('.pagination a')) {
+                e.preventDefault();
+                const url = new URL(e.target.closest('a').href);
+                const page = url.searchParams.get('page');
+                fetchProducts(page);
+            }
+        });
 
     });
 </script>
 
+
+
+<!-- ==============================
+     ANIMACIÓN ADD TO CART (DELEGADO)
+============================== -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
 <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin3.min.js"></script>
-<script>
-    gsap.registerPlugin(MorphSVGPlugin)
 
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-        let morph = button.querySelector('.morph path'),
-            shirt = button.querySelectorAll('.shirt svg > path')
-        button.addEventListener('pointerdown', e => {
-            if(button.classList.contains('active')) {
-                return
-            }
-            gsap.to(button, {
+<script>
+    gsap.registerPlugin(MorphSVGPlugin);
+
+    /* EVENTO DELEGADO → NO SE ROMPE CON AJAX */
+    document.addEventListener('click', function(e) {
+
+        const button = e.target.closest('.add-to-cart');
+        if (!button) return;
+
+        e.preventDefault();
+        if(button.classList.contains('active')) return;
+
+        const morph = button.querySelector('.morph path');
+        const shirt = button.querySelectorAll('.shirt svg > path');
+
+        button.classList.add('active');
+
+        gsap.to(button, {
+            keyframes: [{
                 '--background-scale': .97,
                 duration: .15
-            })
-        })
-        button.addEventListener('click', e => {
-            e.preventDefault()
-            if(button.classList.contains('active')) {
-                return
-            }
-            button.classList.add('active')
-            gsap.to(button, {
-                keyframes: [{
-                    '--background-scale': .97,
-                    duration: .15
-                }, {
-                    '--background-scale': 1,
-                    delay: .125,
-                    duration: 1.2,
-                    ease: 'elastic.out(1, .6)'
-                }]
-            })
-            gsap.to(button, {
-                keyframes: [{
-                    '--shirt-scale': 1,
-                    '--shirt-y': '-42px',
-                    '--cart-x': '0px',
-                    '--cart-scale': 1,
-                    duration: .4,
-                    ease: 'power1.in'
-                }, {
-                    '--shirt-y': '-40px',
-                    duration: .3
-                }, {
-                    '--shirt-y': '16px',
-                    '--shirt-scale': .9,
-                    duration: .25,
-                    ease: 'none'
-                }, {
-                    '--shirt-scale': 0,
-                    duration: .3,
-                    ease: 'none'
-                }]
-            })
-            gsap.to(button, {
-                '--shirt-second-y': '0px',
-                delay: .835,
-                duration: .12
-            })
-            gsap.to(button, {
-                keyframes: [{
-                    '--cart-clip': '12px',
-                    '--cart-clip-x': '3px',
-                    delay: .9,
-                    duration: .06
-                }, {
-                    '--cart-y': '2px',
-                    duration: .1
-                }, {
-                    '--cart-tick-offset': '0px',
-                    '--cart-y': '0px',
-                    duration: .2,
-                    onComplete() {
-                        button.style.overflow = 'hidden'
-                    }
-                }, {
-                    '--cart-x': '52px',
-                    '--cart-rotate': '-15deg',
-                    duration: .2
-                }, {
-                    '--cart-x': '104px',
-                    '--cart-rotate': '0deg',
-                    duration: .2,
-                    clearProps: true,
-                    onComplete() {
-                        button.style.overflow = 'hidden'
-                        button.style.setProperty('--text-o', 0)
-                        button.style.setProperty('--text-x', '0px')
-                        button.style.setProperty('--cart-x', '-104px')
-                    }
-                }, {
-                    '--text-o': 1,
-                    '--text-x': '12px',
-                    '--cart-x': '-48px',
-                    '--cart-scale': .75,
-                    duration: .25,
-                    clearProps: true,
-                    onComplete() {
-                        button.classList.remove('active')
-                    }
-                }]
-            })
-            gsap.to(button, {
+            }, {
+                '--background-scale': 1,
+                delay: .125,
+                duration: 1.2,
+                ease: 'elastic.out(1, .6)'
+            }]
+        });
+
+        gsap.to(button, {
             keyframes: [{
-                '--text-o': 0,
+                '--shirt-scale': 1,
+                '--shirt-y': '-42px',
+                '--cart-x': '0px',
+                '--cart-scale': 1,
+                duration: .4,
+                ease: 'power1.in'
+            }, {
+                '--shirt-y': '-40px',
+                duration: .3
+            }, {
+                '--shirt-y': '16px',
+                '--shirt-scale': .9,
+                duration: .25
+            }, {
+                '--shirt-scale': 0,
                 duration: .3
             }]
-            })
+        });
 
-            gsap.to(morph, {
+        gsap.to(button, {
             keyframes: [{
-                morphSVG: 'M0 12C6 12 20 10 32 0C43.9024 9.99999 58 12 64 12V13H0V12Z',
-                duration: .25,
-                ease: 'power1.out'
+                '--cart-clip': '12px',
+                '--cart-clip-x': '3px',
+                delay: .9,
+                duration: .06
             }, {
-                morphSVG: 'M0 12C6 12 17 12 32 12C47.9024 12 58 12 64 12V13H0V12Z',
-                duration: .15,
-                ease: 'none'
-            }]
-            })
-
-            gsap.to(shirt, {
-            keyframes: [
-                {
-                morphSVG: 'M4.99997 3L8.99997 1.5C8.99997 1.5 10.6901 3 12 3C13.3098 3 15 1.5 15 1.5L19 3L23.5 8L20.5 11L19 9.5L18 22.5C18 22.5 14 21.5 12 21.5C10 21.5 5.99997 22.5 5.99997 22.5L4.99997 9.5L3.5 11L0.5 8L4.99997 3Z',
-                duration: .25,
-                delay: .25
-                },
-                {
-                morphSVG: 'M4.99997 3L8.99997 1.5C8.99997 1.5 10.6901 3 12 3C13.3098 3 15 1.5 15 1.5L19 3L23.5 8L20.5 11L19 9.5L18.5 22.5C18.5 22.5 13.5 22.5 12 22.5C10.5 22.5 5.5 22.5 5.5 22.5L4.99997 9.5L3.5 11L0.5 8L4.99997 3Z',
-                duration: .85,
-                ease: 'elastic.out(1, .5)'
-                },
-                {
-                morphSVG: 'M12 2C6.48 2 2 6.48 2 12V17C2 18.1 2.9 19 4 19H5C6.1 19 7 18.1 7 17V13C7 11.9 6.1 11 5 11H4.5C4.5 7.36 7.36 4.5 11 4.5H13C16.64 4.5 19.5 7.36 19.5 11H19C17.9 11 17 11.9 17 13V17C17 18.1 17.9 19 19 19H20C21.1 19 22 18.1 22 17V12C22 6.48 17.52 2 12 2Z',
-                duration: 0,
-                delay: 1.25
+                '--cart-y': '2px',
+                duration: .1
+            }, {
+                '--cart-tick-offset': '0px',
+                '--cart-y': '0px',
+                duration: .2
+            }, {
+                '--cart-x': '52px',
+                '--cart-rotate': '-15deg',
+                duration: .2
+            }, {
+                '--cart-x': '104px',
+                '--cart-rotate': '0deg',
+                duration: .2,
+                onComplete() {
+                    button.classList.remove('active');
                 }
-            ]
-            })
-        })
-    })
+            }]
+        });
 
+    });
 </script>
-
-
 
 
 @endpush

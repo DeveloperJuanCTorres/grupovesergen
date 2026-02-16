@@ -73,10 +73,14 @@ class HomeController extends Controller
     
     public function store(Request $request)
     {
+        \Log::info('User:', ['user' => auth()->user()]);
         $products = Product::where('stock', '>', 0);
         $business = Company::find(1);
         $services = Service::take(4)->get();
         $page = Page::where('title','Tienda')->first();
+
+        
+        \Log::info('SQL:', [$products->toSql(), $products->getBindings()]);
 
         if ($request->filled('search')) {
             $products->where('name', 'like', '%' . trim($request->search) . '%');
@@ -117,6 +121,52 @@ class HomeController extends Controller
             'promociones'
         ));
     }
+
+    // public function store(Request $request)
+    // {
+    //     $business = Company::find(1);
+    //     $services = Service::take(4)->get();
+    //     $page = Page::where('title','Tienda')->first();
+
+    //     $products = Product::query()
+    //         ->where('stock', '>', 0)
+
+    //         ->when($request->search, function ($q) use ($request) {
+    //             $q->where('name', 'like', '%' . trim($request->search) . '%');
+    //         })
+
+    //         ->when($request->category, function ($q) use ($request) {
+    //             $q->where('taxonomy_id', $request->category);
+    //         })
+
+    //         ->when($request->brand, function ($q) use ($request) {
+    //             $q->where('brand_id', $request->brand);
+    //         })
+
+    //         ->when($request->type, function ($q) use ($request) {
+    //             $q->where('type_id', $request->type);
+    //         })
+
+    //         ->paginate(6)
+    //         ->withQueryString();
+
+    //     $categories = Taxonomy::whereHas('products', fn($q) => $q->where('stock', '>', 0))->get();
+    //     $brands = Brand::whereHas('products', fn($q) => $q->where('stock', '>', 0))->get();
+    //     $types = Type::whereHas('products', fn($q) => $q->where('stock', '>', 0))->get();
+    //     $promociones = Promotion::all();
+
+    //     return view('store', compact(
+    //         'products',
+    //         'categories',
+    //         'brands',
+    //         'types',
+    //         'business',
+    //         'services',
+    //         'page',
+    //         'promociones'
+    //     ));
+    // }
+
 
 
     public function detail (Product $product)
