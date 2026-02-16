@@ -629,6 +629,24 @@
             }
         });
 
+        // LIMPIAR FILTROS
+        document.addEventListener('click', function (e) {
+            if (e.target.closest('#resetFilters')) {
+
+                // limpiar radios
+                document.querySelectorAll('[name="category"]').forEach(el => el.checked = false);
+                document.querySelectorAll('[name="brand"]').forEach(el => el.checked = false);
+                document.querySelectorAll('[name="type"]').forEach(el => el.checked = false);
+
+                // limpiar buscador
+                const searchInput = document.querySelector('[name="search"]');
+                if (searchInput) searchInput.value = '';
+
+                // volver a cargar productos
+                fetchProducts(1);
+            }
+        });
+
     });
 </script>
 
