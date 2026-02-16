@@ -125,19 +125,19 @@
                             <td class="align-middle">
                                 <div class="input-group quantity mx-auto" style="width: 100px;">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus" >
+                                        <button type="button" class="btn btn-sm btn-primary btn-minus" data-rowid="{{$item->rowId}}">
                                         <i class="fa fa-minus"></i>
                                         </button>
                                     </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" value="{{$item->qty}}">
+                                    <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center qty-input" value="{{$item->qty}}" data-rowid="{{$item->rowId}}">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus">
+                                        <button type="button" class="btn btn-sm btn-primary btn-plus" data-rowid="{{$item->rowId}}">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </div>
                                 </div>
                             </td>
-                            <td class="align-middle">S/. {{$item->price*$item->qty}}</td>
+                            <td class="align-middle item-subtotal" data-rowid="{{$item->rowId}}">S/. {{$item->price*$item->qty}}</td>
                             <td class="align-middle">
                                 <form action="{{route('removeitem')}}" method="post">
                                 @csrf
@@ -169,17 +169,17 @@
                     <div class="border-bottom pb-2">
                         <div class="d-flex justify-content-between mb-3">
                             <h6>Subtotal</h6>
-                            <h6>S/. {{number_format(Cart::subtotal() - Cart::subtotal()*0.18,2)}}</h6>
+                            <h6 id="cartSubtotal">S/. {{number_format(Cart::subtotal() - Cart::subtotal()*0.18,2)}}</h6>
                         </div>
                         <div class="d-flex justify-content-between">
                             <h6 class="font-weight-medium">IGV</h6>
-                            <h6 class="font-weight-medium">S/. {{number_format(Cart::subtotal()*0.18,2)}}</h6>
+                            <h6 id="cartIgv" class="font-weight-medium">S/. {{number_format(Cart::subtotal()*0.18,2)}}</h6>
                         </div>
                     </div>
                     <div class="pt-2">
                         <div class="d-flex justify-content-between mt-2">
                             <h5>Total</h5>
-                            <h5>S/. {{number_format(Cart::subtotal(),2)}}</h5>
+                            <h5 id="cartTotal">S/. {{number_format(Cart::subtotal(),2)}}</h5>
                         </div>
                         <a href="/checkout" class="btn btn-block btn-primary font-weight-bold my-3 py-3 w-100">Ir a pagar</a>
                     </div>
@@ -201,5 +201,9 @@
 
     @include('partials.footer')
     @include('partials.whatsapp')
+
+@push('scripts')
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{{ asset('js/addcart.js') }}?v={{ time() }}"></script>
 
 @endsection

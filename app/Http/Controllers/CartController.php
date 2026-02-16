@@ -41,6 +41,27 @@ class CartController extends Controller
         }        
     }
 
+    public function update(Request $request)
+    {
+        $rowId = $request->rowId;
+        $qty = (int) $request->qty;
+
+        if ($qty < 1) {
+            $qty = 1;
+        }
+
+        \Cart::update($rowId, $qty);
+
+        return response()->json([
+            'status' => true,
+            'count' => \Cart::count(),
+            'subtotal' => number_format(\Cart::subtotal() - \Cart::subtotal()*0.18, 2),
+            'igv' => number_format(\Cart::subtotal()*0.18, 2),
+            'total' => number_format(\Cart::subtotal(), 2),
+            'item_subtotal' => number_format(\Cart::get($rowId)->price * $qty, 2)
+        ]);
+    }
+
     public function cart()
     {
         $business = Company::find(1);

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,6 +50,7 @@ Route::get('/apicategory', [App\Http\Controllers\HomeController::class, 'apiCate
 Route::get('/apiproduct', [App\Http\Controllers\HomeController::class, 'apiProduct'])->name('apiproduct');
 
 Route::post('add', [App\Http\Controllers\CartController::class, 'add'])->name('add');
+Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
 Route::get('cart', [App\Http\Controllers\CartController::class, 'cart'])->name('cart');
 Route::get('cart/clear', [App\Http\Controllers\CartController::class, 'clear'])->name('clear');
 Route::post('cart/removeitem', [App\Http\Controllers\CartController::class, 'removeItem'])->name('removeitem');
