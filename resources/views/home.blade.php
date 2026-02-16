@@ -56,15 +56,20 @@
                     </div>
                 </div>
                 <div class="d-none d-xl-flex flex-shrink-0 ps-4">
-                    <a href="#" class="btn btn-light btn-lg-square rounded-circle position-relative wow tada" data-wow-delay=".9s">
+                    <!-- <a href="#" class="btn btn-light btn-lg-square rounded-circle position-relative wow tada" data-wow-delay=".9s">
                         <i class="fa fa-phone-alt fa-2x"></i>
                         <div class="position-absolute" style="top: 7px; right: 12px;">
                             <span><i class="fa fa-comment-dots text-secondary"></i></span>
                         </div>
-                    </a>
+                    </a> -->
                     <div class="d-flex flex-column ms-3">
-                        <span>Llama a nuestros expertos</span>
-                        <a href="tel:+ 0123 456 7890"><span class="text-dark">{{$business->phone}}</span></a>
+                        <span class="mb-2">¿Quieres ser distribuidor?</span>
+                        
+                        <a href="contact" 
+                        class="btn text-white"
+                        style="background: linear-gradient(135deg, #044969 0%, #044969 100%); border: none;">
+                            Solicitar Registro
+                        </a>
                     </div>
                 </div>
             </nav>
