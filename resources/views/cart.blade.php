@@ -125,17 +125,18 @@
                             <td class="align-middle">
                                 <div class="input-group quantity mx-auto" style="width: 100px;">
                                     <div class="input-group-btn">
-                                        <button type="button" class="btn btn-sm btn-primary btn-minus" data-rowid="{{$item->rowId}}">
+                                        <button type="button" class="btn btn-sm btn-primary btn-minus" style="height: 30px;" data-rowid="{{$item->rowId}}">
                                         <i class="fa fa-minus"></i>
                                         </button>
                                     </div>
                                     <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center qty-input" value="{{$item->qty}}" data-rowid="{{$item->rowId}}">
                                     <div class="input-group-btn">
-                                        <button type="button" class="btn btn-sm btn-primary btn-plus" data-rowid="{{$item->rowId}}">
+                                        <button type="button" class="btn btn-sm btn-primary btn-plus" style="height: 30px;"  data-rowid="{{$item->rowId}}">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </div>
                                 </div>
+                                
                             </td>
                             <td class="align-middle item-subtotal" data-rowid="{{$item->rowId}}">S/. {{$item->price*$item->qty}}</td>
                             <td class="align-middle">
@@ -165,7 +166,7 @@
                     </div>
                 </form>
                 <h5 class="section-title position-relative text-uppercase mb-3 pt-4"><span class="pr-3">Resumen del carrito</span></h5>
-                <div class="bg-light p-30 mb-5">
+                <div class="bg-light p-30 mb-5 p-4">
                     <div class="border-bottom pb-2">
                         <div class="d-flex justify-content-between mb-3">
                             <h6>Subtotal</h6>
@@ -203,6 +204,7 @@
     @include('partials.whatsapp')
 
 @push('scripts')
+
 <script>
     $(document).on('click', '.btn-plus, .btn-minus', function(e){
         e.preventDefault();

@@ -12,34 +12,93 @@ use Cart;
 
 class CartController extends Controller
 {
+    // public function add(Request $request)
+    // {
+    //     try {
+    //         $producto = Product::find($request->id);
+    //         if (empty($producto)) {
+    //             return redirect('/');
+    //         }
+    //         $imagen = json_decode($producto->images);
+    //         if ($imagen) {
+    //             $img = 'storage/' . $imagen[0];
+    //         }
+    //         else{
+    //             $img = 'img/defectomaster.png';
+    //         }
+    //         Cart::add(
+    //             $producto->id,
+    //             $producto->name,
+    //             $request->qty,
+    //             $producto->price,
+    //             ["image"=>$img]
+    //         );
+
+    //         return response()->json(['status' => true, 'msg' => 'Porducto se agrego a su carrito', 'count' => Cart::count()]);
+
+    //     } catch (\Throwable $th) {
+    //         return response()->json(['status' => false, 'msg' => $th->getMessage()]);
+    //     }        
+    // }
+
     public function add(Request $request)
     {
         try {
+
             $producto = Product::find($request->id);
-            if (empty($producto)) {
-                return redirect('/');
+
+            if (!$producto) {
+                return response()->json([
+                    'status' => false,
+                    'msg' => 'Producto no encontrado'
+                ]);
             }
+
+            // Imagen
             $imagen = json_decode($producto->images);
-            if ($imagen) {
-                $img = 'storage/' . $imagen[0];
+            $img = $imagen 
+                ? 'storage/' . $imagen[0] 
+                : 'img/defectomaster.png';
+
+            // 🔥 LÓGICA DE PRECIO
+            if (auth()->check()) {
+                $precioBase = $producto->price_tecnico;
+            } else {
+                $precioBase = $producto->price;
             }
-            else{
-                $img = 'img/defectomaster.png';
-            }
+
+            // Convertir a soles
+            $tipoCambio = $request->session()->get('business.tipo_cambio') ?? 1;
+            $precioSoles = $precioBase * $tipoCambio;
+
             Cart::add(
                 $producto->id,
                 $producto->name,
                 $request->qty,
-                $producto->price,
-                ["image"=>$img]
+                $precioSoles,
+                [
+                    "image" => $img,
+                    "currency" => "PEN",
+                    "original_price" => $precioBase
+                ]
             );
 
-            return response()->json(['status' => true, 'msg' => 'Porducto se agrego a su carrito', 'count' => Cart::count()]);
+            return response()->json([
+                'status' => true,
+                'msg' => 'Producto agregado al carrito',
+                'count' => Cart::count()
+            ]);
 
         } catch (\Throwable $th) {
-            return response()->json(['status' => false, 'msg' => $th->getMessage()]);
-        }        
+
+            return response()->json([
+                'status' => false,
+                'msg' => $th->getMessage()
+            ]);
+        }
     }
+
+
 
     public function update(Request $request)
     {
