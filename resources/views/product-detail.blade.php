@@ -405,6 +405,15 @@
             });
         });
     </script>
+
+    <script>
+        $('.btn-plus').click(function(e){
+            e.preventDefault();
+            
+            let qty = parseInt($('#qty').val());
+            $('#qty').val(qty + 1);
+        });
+    </script>
     @endpush
 
 @endsection
