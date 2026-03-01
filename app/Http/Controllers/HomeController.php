@@ -105,9 +105,9 @@ class HomeController extends Controller
             return view('product-list', compact('products', 'business'))->render();
         }
 
-        $categories = Taxonomy::whereHas('products', fn($q) => $q->where('stock', '>', 0))->get();
-        $brands = Brand::whereHas('products', fn($q) => $q->where('stock', '>', 0))->get();
-        $types = Type::whereHas('products', fn($q) => $q->where('stock', '>', 0))->get();
+        $categories = Taxonomy::whereHas('products', fn($q) => $q->where('stock', '>', 0))->orderBy('name')->get();
+        $brands = Brand::whereHas('products', fn($q) => $q->where('stock', '>', 0))->orderBy('name')->get();
+        $types = Type::whereHas('products', fn($q) => $q->where('stock', '>', 0))->orderBy('name')->get();
         $promociones = Promotion::all();
 
         return view('store', compact(
