@@ -474,14 +474,14 @@
 
                     <div class="tab-pane fade show active p-4" id="tab-info">
                         <h4 class="mb-3">Información del Producto</h4>
-                        @if($product->information != '')
+                        @if($product->information)
                         <p>{!! Str::markdown($product->information) !!}</p>
                         @endif
                     </div>
 
                     <div class="tab-pane fade p-4" id="tab-description">
                         <h4 class="mb-3">Descripción del Producto</h4>
-                        @if($product->information != '')
+                        @if($product->information)
                         <p>{!! Str::markdown($product->description) !!}</p>
                         @endif
                     </div>
