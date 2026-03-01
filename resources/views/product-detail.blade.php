@@ -399,6 +399,10 @@
                     <label class=""> {{$product->codigo}}</label>
                 </div>
                 <div class="d-flex mb-3">
+                    <strong class="text-dark me-2">Condición : </strong>
+                    <label class=""> {{$product->condition->name}}</label>
+                </div>
+                <div class="d-flex mb-3">
                     <strong class="text-dark me-2">Categoría : </strong>
                     <label class=""> {{$product->taxonomy->name}}</label>
                 </div>
@@ -470,12 +474,16 @@
 
                     <div class="tab-pane fade show active p-4" id="tab-info">
                         <h4 class="mb-3">Información del Producto</h4>
+                        @if($product->information != '')
                         <p>{!! Str::markdown($product->information) !!}</p>
+                        @endif
                     </div>
 
                     <div class="tab-pane fade p-4" id="tab-description">
                         <h4 class="mb-3">Descripción del Producto</h4>
+                        @if($product->information != '')
                         <p>{!! Str::markdown($product->description) !!}</p>
+                        @endif
                     </div>
 
                 </div>

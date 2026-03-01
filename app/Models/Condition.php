@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Condition extends Model
 {
     use HasFactory;
+    
+    protected $fillable = [
+        'id',
+        'name',       
+    ];
+
+    public function products()
+    {
+        return $this->hasMany(Product::class, "condition_id", "id");
+    }
 }

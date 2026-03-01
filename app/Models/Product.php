@@ -43,6 +43,11 @@ class Product extends Model
         return $this->belongsTo(Type::class);
     }
 
+    public function condition()
+    {
+        return $this->belongsTo(Condition::class);
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';
