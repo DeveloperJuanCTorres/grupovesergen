@@ -152,7 +152,7 @@
                 </div>
 
                 {{-- IMÁGENES --}}
-                <div class="carousel-inner bg-light">
+                <div class="carousel-inner bg-white">
                     @foreach($imagenes as $key => $item)
                         <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
                             <img src="{{ asset('storage/' . $item) }}"
