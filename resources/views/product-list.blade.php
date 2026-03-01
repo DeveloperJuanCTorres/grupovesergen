@@ -237,7 +237,7 @@
         {{-- INFO --}}
         <div class="text-center py-4">
 
-            <div style="height: 50px;">
+            <div class="px-4" style="height: 50px;">
                 <a class="h6 text-decoration-none"
                    href="{{ route('product.detail', $product) }}">
                     {{ $product->name }}
