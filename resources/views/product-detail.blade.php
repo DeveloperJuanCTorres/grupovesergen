@@ -451,7 +451,7 @@
     </div>
     <div class="row px-xl-5 pt-4">
         <div class="col">
-            <div class="bg-light p-30">
+            <div class="bg-white p-30">
 
                 <div class="nav nav-tabs mb-4">
                     <a class="nav-item nav-link text-dark active"
