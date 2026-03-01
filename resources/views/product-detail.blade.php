@@ -495,29 +495,7 @@
             </div>
         </div>
     </div>
-
-    <!-- <div class="row px-xl-5 pt-4">
-        <div class="col">
-            <div class="bg-light p-30">
-                <div class="nav nav-tabs mb-4">
-                    <a class="nav-item nav-link text-dark active">Información</a>
-                    <a class="nav-item nav-link text-dark">Descripcion</a>
-                </div>
-                <div class="tab-content">
-                    <div class="tab-pane fade show active p-4" id="tab-pane-1">
-                        <h4 class="mb-3">Información del Producto</h4>
-                        <p>{!! Str::markdown($product->information) !!}</p>
-                    </div>
-                </div>
-                <div class="tab-content">
-                    <div class="tab-pane fade p-4" id="tab-pane-1">
-                        <h4 class="mb-3">Información del Producto</h4>
-                        <p>{!! Str::markdown($product->information) !!}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+    
 </div>
 <!-- Shop Detail End -->
  
