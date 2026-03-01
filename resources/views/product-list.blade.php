@@ -216,18 +216,18 @@
     <div class="product-item bg-white mb-4" style="border-radius: 15px;">
 
         {{-- IMAGEN --}}
-        <div class="product-img position-relative overflow-hidden bg-light">
+        <div class="product-img position-relative overflow-hidden bg-white">
             @php
                 $imagenes = json_decode($product->images, true);
             @endphp
 
             <a href="{{ route('product.detail', $product) }}">
                 @if(!empty($imagenes) && isset($imagenes[0]))
-                    <img class="img-fluid w-100"
+                    <img class="img-fluid d-block m-auto" style="height: 300px; width: 300px;"
                          src="{{ asset('storage/' . $imagenes[0]) }}"
                          alt="{{ $product->name }}">
                 @else
-                    <img class="img-fluid d-block m-auto"
+                    <img class="img-fluid d-block m-auto" style="height: 300px; width: 300px;"
                          src="{{ asset('img/defectomaster.png') }}"
                          alt="Imagen no disponible">
                 @endif
