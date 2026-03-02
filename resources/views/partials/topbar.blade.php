@@ -60,11 +60,21 @@
                                     <i class="fas fa-user text-primary me-2"></i> {{auth::user()->name}}
                                 </small>
                             </a>
-                            <div class="dropdown-menu rounded">                                
+                            <div class="dropdown-menu rounded">      
+                                {{-- BOTÓN SOLO PARA ADMIN --}}
+                                @if(auth()->user()->email === 'admin@admin.com')
+                                    <button type="button"
+                                            class="dropdown-item"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#importModal">
+                                        Importar Productos
+                                    </button>
+                                    <div class="dropdown-divider"></div>
+                                @endif                          
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-                                <!-- <a href="#" class="dropdown-item">Cerrar sesión</a> -->
-                                <button type="submit" class="dropdown-item">Cerrar sesión</button>
+                                    <button type="submit" class="dropdown-item">Cerrar sesión</button>
+                                </form>
                             </div>
                         </div>
                         @else
@@ -78,3 +88,50 @@
         </div>
     </div>
     <!-- Topbar End -->
+
+
+    <div class="modal fade" id="importModal" tabindex="-1" aria-labelledby="importModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="importModalLabel">
+                        Importar Productos desde Excel
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="{{ route('products.import') }}"
+                        method="POST"
+                        enctype="multipart/form-data">
+                        @csrf
+
+                        <div class="form-group mb-3">
+                            <label class="form-label">Seleccionar archivo Excel</label>
+                            <input type="file"
+                                name="file"
+                                class="form-control"
+                                accept=".xlsx,.xls,.csv"
+                                required>
+                        </div>
+
+                        <div class="text-end">
+                            <button type="button"
+                                    class="btn btn-secondary"
+                                    data-bs-dismiss="modal">
+                                Cancelar
+                            </button>
+
+                            <button type="submit"
+                                    class="btn btn-primary">
+                                Importar
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>

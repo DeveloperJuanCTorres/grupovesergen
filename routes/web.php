@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -84,6 +85,10 @@ Route::get('/user/credit-check', function () {
         'creditos' => auth()->user()->creditos // AJUSTA si tu campo es diferente
     ]);
 });
+
+
+Route::post('/products/import', [ProductController::class, 'import'])
+    ->name('products.import');
 
 
 Route::group(['prefix' => 'admin'], function () {
