@@ -25,7 +25,10 @@ class Product extends Model
         'slug',
         'price_tecnico'    ,
         'type_id',
-        'codigo'    
+        'codigo',
+        'codigo_intrno_proveedor',
+        'proveedor_id',
+        'condition_id'    
     ];
     
     public function taxonomy()
