@@ -26,7 +26,7 @@ class Product extends Model
         'price_tecnico'    ,
         'type_id',
         'codigo',
-        'codigo_intrno_proveedor',
+        'codigo_interno_proveedor',
         'proveedor_id',
         'condition_id'    
     ];
