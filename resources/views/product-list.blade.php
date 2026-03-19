@@ -244,7 +244,7 @@
                 </a>
             </div>
 
-            <div class="d-block align-items-center justify-content-center mt-4">
+            <div class="d-block align-items-center justify-content-center mt-5">
 
                 @auth
 
