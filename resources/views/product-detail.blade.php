@@ -314,7 +314,7 @@
             </div>
         </div> -->
 
-        <div class="col-lg-5 mb-30">
+        <!-- <div class="col-lg-5 mb-30">
             <div id="product-carousel" class="carousel slide" data-bs-ride="carousel">
 
                 {{-- INDICADORES (puntitos) --}}
@@ -367,6 +367,114 @@
                         data-bs-target="#product-carousel"
                         data-bs-slide-to="{{ $key }}">
                 @endforeach
+            </div>
+        </div> -->
+
+        @php
+            $imagenes = json_decode($product->images, true);
+
+            if (is_string($imagenes)) {
+                $imagenes = json_decode($imagenes, true);
+            }
+
+            $video = $product->video;
+
+            // Convertir URL de YouTube a embed
+            $videoEmbed = null;
+            if ($video) {
+                preg_match('/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&]+)/', $video, $matches);
+                $videoId = $matches[1] ?? null;
+
+                if ($videoId) {
+                    $videoEmbed = "https://www.youtube.com/embed/" . $videoId;
+                }
+            }
+        @endphp
+
+        <div class="col-lg-5 mb-30">
+            <div id="product-carousel" class="carousel slide" data-bs-ride="carousel">
+
+                {{-- INDICADORES --}}
+                <div class="carousel-indicators">
+                    @if($videoEmbed)
+                        <button type="button" data-bs-target="#product-carousel" data-bs-slide-to="0" class="active"></button>
+                    @endif
+
+                    @foreach($imagenes as $key => $item)
+                        <button type="button"
+                                data-bs-target="#product-carousel"
+                                data-bs-slide-to="{{ $videoEmbed ? $key + 1 : $key }}"
+                                class="{{ !$videoEmbed && $key == 0 ? 'active' : '' }}">
+                        </button>
+                    @endforeach
+                </div>
+
+                {{-- CONTENIDO --}}
+                <div class="carousel-inner bg-white">
+
+                    {{-- 🎥 VIDEO --}}
+                    @if($videoEmbed)
+                        <div class="carousel-item active">
+                            <iframe 
+                                width="100%" 
+                                height="400"
+                                src="{{ $videoEmbed }}"
+                                frameborder="0"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    @endif
+
+                    {{-- 🖼️ IMÁGENES --}}
+                    @foreach($imagenes as $key => $item)
+                        <div class="carousel-item {{ !$videoEmbed && $key == 0 ? 'active' : '' }}">
+                            <img src="{{ asset('storage/' . $item) }}"
+                                class="d-block w-100"
+                                style="object-fit: contain; height: 400px;">
+                        </div>
+                    @endforeach
+
+                </div>
+
+                {{-- CONTROLES --}}
+                <button class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#product-carousel"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+
+                <button class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#product-carousel"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+
+            {{-- MINIATURAS --}}
+            <div class="d-flex mt-3 gap-2 justify-content-center flex-wrap">
+
+                {{-- 🎥 MINIATURA VIDEO --}}
+                @if($videoEmbed)
+                    <div style="width:70px; height:70px; cursor:pointer;"
+                        data-bs-target="#product-carousel"
+                        data-bs-slide-to="0">
+
+                        <img src="https://img.youtube.com/vi/{{ $videoId }}/0.jpg"
+                            style="width:100%; height:100%; object-fit:cover; border:2px solid red;">
+                    </div>
+                @endif
+
+                {{-- 🖼️ MINIATURAS IMÁGENES --}}
+                @foreach($imagenes as $key => $item)
+                    <img src="{{ asset('storage/' . $item) }}"
+                        class="img-thumbnail"
+                        style="width:70px; height:70px; object-fit:cover; cursor:pointer;"
+                        data-bs-target="#product-carousel"
+                        data-bs-slide-to="{{ $videoEmbed ? $key + 1 : $key }}">
+                @endforeach
+
             </div>
         </div>
 
