@@ -28,7 +28,8 @@ class Product extends Model
         'codigo',
         'codigo_interno_proveedor',
         'proveedor_id',
-        'condition_id'    
+        'condition_id',
+        'video'
     ];
     
     public function taxonomy()
