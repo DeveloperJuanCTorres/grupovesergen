@@ -1686,3 +1686,10 @@
     color: #007dc3 !important;
 }
 
+.btn-dark
+ {
+    color: #fff;
+    background-color: #007dc3;
+    border-color: #007dc3;
+}
+
