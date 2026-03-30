@@ -98,7 +98,7 @@
     <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb-store" style="background: linear-gradient(rgba(0, 0, 0, 0.2)), url('{{ asset(str_replace('\\', '/', 'storage/' . $page->image)) }}');background-size: cover; background-position: center;">
         <div class="container text-center py-5" style="max-width: 1200px;">
-            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">{{$service->title}}</h4>
+            <h4 class="text-vesergen-color display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">{{$service->title}}</h4>
               
         </div>
     </div>
