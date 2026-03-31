@@ -365,6 +365,34 @@
         </div>
     </div>
     <!-- Testimonial End -->
+
+
+    <!-- 🤖 Asistente tipo pensamiento -->
+    <div id="assistant-container">
+
+        <!-- Robot -->
+        <div class="assistant-robot">
+            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="Robot">
+        </div>
+
+        <!-- Burbuja -->
+        <div class="assistant-bubble">
+
+            <p class="assistant-text">
+                ¡Hola! Espero no haberte asustado 😄 <br><br>
+                Una pregunta... <br>
+                ¿Quieres estar a la última de todo lo relacionado con nuestros servicios y productos?
+            </p>
+
+            <div class="assistant-actions">
+                <button class="btn-yes">¡Sí, claro!</button>
+                <button class="btn-no">Nah, otro día</button>
+            </div>
+
+            <span class="assistant-close">&times;</span>
+
+        </div>
+    </div>
    
     @include('partials.footer')
     @include('partials.whatsapp')
@@ -374,6 +402,27 @@
 <script src="js/addcart.js"></script>
 <script>
     const baseUrl = "{{ url('/product.detail') }}"; // Esto será "/producto"
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const container = document.getElementById('assistant-container');
+        const closeBtn = document.querySelector('.assistant-close');
+        const yesBtn = document.querySelector('.btn-yes');
+        const noBtn = document.querySelector('.btn-no');
+
+        closeBtn.onclick = () => container.style.display = 'none';
+        noBtn.onclick = () => container.style.display = 'none';
+
+        yesBtn.onclick = () => {
+            container.style.display = 'none';
+
+            // Aquí puedes abrir modal o redirigir
+            alert("🚀 ¡Perfecto! Te mantendremos informado.");
+        };
+
+    });
 </script>
 @endpush
 
