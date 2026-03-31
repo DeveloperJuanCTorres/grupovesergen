@@ -1726,7 +1726,7 @@
 .assistant-robot img {
     width: 90px;
     animation: float 3s ease-in-out infinite;
-    filter: drop-shadow(0 0 10px rgba(1, 125, 195, 1));
+    /* filter: drop-shadow(0 0 10px rgba(1, 125, 195, 1)); */
 }
 
 @keyframes float {
@@ -1834,6 +1834,6 @@
     }
 
     .assistant-robot img {
-        width: 70px;
+        width: 250px;
     }
 }

@@ -372,7 +372,7 @@
 
         <!-- Robot -->
         <div class="assistant-robot">
-            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="Robot">
+            <img src="{{asset('img/mascota.png')}}" alt="Robot">
         </div>
 
         <!-- Burbuja -->
