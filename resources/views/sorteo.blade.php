@@ -28,7 +28,7 @@
                         <a href="/contact" class="nav-item nav-link">Contáctanos</a>
                        
                         @if(config('features.vistas'))
-                        <a href="/sorteo" class="nav-item nav-link">Sorteo</a>
+                        <a href="/sorteo" class="nav-item nav-link active">Sorteo</a>
                         @endif
                        
                         <div class="nav-btn px-3">
