@@ -3,6 +3,7 @@
 @section('content')
 
     @include('partials.topbar')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- Navbar & Hero Start -->
     <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
@@ -20,7 +21,7 @@
                         <a href="/" class="nav-item nav-link">Inicio</a>
                         <a href="/about" class="nav-item nav-link">Nosotros</a>
                         <div class="nav-item dropdown">
-                            <a href="" class="nav-link" data-bs-toggle="dropdown">
+                            <a href="" class="nav-link active" data-bs-toggle="dropdown">
                                 <span class="dropdown-toggle">Servicios</span>
                             </a>
                             <div class="dropdown-menu">
@@ -97,7 +98,7 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-breadcrumb" style="background: linear-gradient(rgba(0, 0, 0, 0.2)), url('{{ asset(str_replace('\\', '/', 'storage/' . $page->image)) }}');background-size: cover; background-position: center;">
+    <div class="container-fluid bg-breadcrumb" style="background: url('{{ asset(str_replace('\\', '/', 'storage/' . $page->image)) }}');background-size: cover; background-position: center;">
         <div class="container text-center py-5" style="max-width: 900px;">
             <h4 class="text-vesergen-color display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">{{$page->title}}</h4>
               
@@ -496,6 +497,7 @@
 @push('scripts')
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="js/addcart.js"></script>
+
 <script>
     const baseUrl = "{{ url('/product.detail') }}"; // Esto será "/producto"
 </script>
